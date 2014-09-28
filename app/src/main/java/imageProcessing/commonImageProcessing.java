@@ -7,6 +7,7 @@ import android.graphics.ColorMatrix;
 import android.graphics.ColorMatrixColorFilter;
 import android.graphics.Paint;
 import android.util.Log;
+import org.opencv.core.MatOfFloat;
 
 /**
  * Created by Jason on 7/9/2014.
