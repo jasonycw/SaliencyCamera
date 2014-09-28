@@ -27,8 +27,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:id="@+id/lenaImage"
-                android:layout_gravity="center_horizontal"
-                android:src="@drawable/lena1_" />
+                android:layout_gravity="center_horizontal"  />
         </LinearLayout>
 
         <LinearLayout
@@ -41,8 +40,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:id="@+id/toyImage"
-                android:layout_gravity="center_horizontal"
-                android:src="@drawable/toy" />
+                android:layout_gravity="center_horizontal"  />
         </LinearLayout>
     </LinearLayout>
 

@@ -88,14 +88,14 @@ public class ImageViewActivity extends Activity {
 
         Log.d("Image1 Size", "X,Y is " + bitmap1.getWidth()+","+bitmap1.getHeight());
         Log.d("Image2 Size", "X,Y is " + bitmap2.getWidth()+","+bitmap2.getHeight()); 
-//        if (bitmap1 != null)
-//            bitmapIIF1 = commonImageProcessing.toGrayScale(bitmap1);
-//        if (bitmap2 != null)
-//            bitmapIIF2 = commonImageProcessing.toGrayScale(bitmap2);
         if (bitmap1 != null)
-            bitmapIIF1 = LSH.IIF(bitmap1);
+            bitmapIIF1 = commonImageProcessing.toGrayScale(bitmap1);
         if (bitmap2 != null)
-            bitmapIIF2 = LSH.IIF(bitmap2);
+            bitmapIIF2 = commonImageProcessing.toGrayScale(bitmap2);
+//        if (bitmap1 != null)
+//            bitmapIIF1 = LSH.IIF(bitmap1);
+//        if (bitmap2 != null)
+//            bitmapIIF2 = LSH.IIF(bitmap2);
 
         // Set up the imageViews
         setImageBitmap(imageView, bitmap1);

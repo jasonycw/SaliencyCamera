@@ -2,11 +2,14 @@ package com.jason.saliencycamera;
 
 import android.app.Activity;
 import android.content.Intent;
+import android.graphics.BitmapFactory;
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.ImageView;
+
+import java.io.IOException;
 
 
 public class TestImageActivity extends Activity {
@@ -17,6 +20,11 @@ public class TestImageActivity extends Activity {
         setContentView(R.layout.activity_test_image);
 
         ImageView lenaImage = (ImageView)findViewById(R.id.lenaImage);
+        try {
+            lenaImage.setImageBitmap(BitmapFactory.decodeStream(getApplicationContext().getAssets().open("lena1_.png")));
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
         lenaImage.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -31,6 +39,11 @@ public class TestImageActivity extends Activity {
             }
         });
         ImageView toyImage = (ImageView)findViewById(R.id.toyImage);
+        try {
+            toyImage.setImageBitmap(BitmapFactory.decodeStream(getApplicationContext().getAssets().open("toy.jpg")));
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
         toyImage.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
