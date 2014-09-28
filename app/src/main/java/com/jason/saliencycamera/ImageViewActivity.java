@@ -14,6 +14,10 @@ import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.TextView;
 
+import org.opencv.android.BaseLoaderCallback;
+import org.opencv.android.LoaderCallbackInterface;
+import org.opencv.android.OpenCVLoader;
+
 import java.io.File;
 import java.io.IOException;
 import java.util.Date;
@@ -88,14 +92,37 @@ public class ImageViewActivity extends Activity {
 
         Log.d("Image1 Size", "X,Y is " + bitmap1.getWidth()+","+bitmap1.getHeight());
         Log.d("Image2 Size", "X,Y is " + bitmap2.getWidth()+","+bitmap2.getHeight()); 
-        if (bitmap1 != null)
-            bitmapIIF1 = commonImageProcessing.toGrayScale(bitmap1);
-        if (bitmap2 != null)
-            bitmapIIF2 = commonImageProcessing.toGrayScale(bitmap2);
+//        if (bitmap1 != null)
+//            bitmapIIF1 = commonImageProcessing.toGrayScale(bitmap1);
+//        if (bitmap2 != null)
+//            bitmapIIF2 = commonImageProcessing.toGrayScale(bitmap2);
+
+        // Test LSH.IIF
 //        if (bitmap1 != null)
 //            bitmapIIF1 = LSH.IIF(bitmap1);
 //        if (bitmap2 != null)
 //            bitmapIIF2 = LSH.IIF(bitmap2);
+
+        // Test Watershed Segmentation
+        OpenCVLoader.initAsync(OpenCVLoader.OPENCV_VERSION_2_4_9, this, new BaseLoaderCallback(this) {
+            @Override
+            public void onManagerConnected(int status) {
+                switch (status) {
+                    case LoaderCallbackInterface.SUCCESS:
+                    {
+                        if (bitmap1 != null)
+                            bitmapIIF1 = commonImageProcessing.imageSegmentation(bitmap1);
+                        if (bitmap2 != null)
+                            bitmapIIF2 = commonImageProcessing.imageSegmentation(bitmap2);
+                    } break;
+                    default:
+                    {
+                        super.onManagerConnected(status);
+                    } break;
+                }
+            }
+        });
+
 
         // Set up the imageViews
         setImageBitmap(imageView, bitmap1);

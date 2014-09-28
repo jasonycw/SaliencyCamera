@@ -7,7 +7,13 @@ import android.graphics.ColorMatrix;
 import android.graphics.ColorMatrixColorFilter;
 import android.graphics.Paint;
 import android.util.Log;
-import org.opencv.core.MatOfFloat;
+
+import org.opencv.android.OpenCVLoader;
+import org.opencv.android.Utils;
+import org.opencv.core.Core;
+import org.opencv.core.CvType;
+import org.opencv.core.Mat;
+import org.opencv.imgproc.Imgproc;
 
 /**
  * Created by Jason on 7/9/2014.
@@ -96,6 +102,33 @@ public class commonImageProcessing {
             }
 //        grayBitmap1.recycle();
 //        grayBitmap2.recycle();
+        return result;
+    }
+
+    public static Bitmap imageSegmentation(Bitmap input){
+        int width = input.getWidth();
+        int height = input.getHeight();
+        Mat mat = new Mat(height,width, CvType.CV_8UC3);
+        Mat resultMat = new Mat(height,width, CvType.CV_32SC1);
+
+//        Imgproc.COLOR_RGBA2BGR
+        Utils.bitmapToMat(input,mat);
+        Imgproc.cvtColor(mat,mat, Imgproc.COLOR_RGBA2BGR);
+//        Imgproc.cvtColor(resultMat,resultMat, Imgproc.COLOR_RGBA2BGR);
+        Log.d("Mat channels: ",Integer.toString(mat.channels()));
+        Log.d("resultMat type: ",Integer.toString(resultMat.type()));
+        Log.d("resultMat channels: ",Integer.toString(resultMat.channels()));
+        Log.d("resultMat depth: ",Integer.toString(resultMat.depth()));
+        Imgproc.watershed(mat, resultMat);
+
+
+        Log.d("resultMat channels (after watershed): ",Integer.toString(resultMat.channels()));
+        Log.d("resultMat depth (after watershed): ",Integer.toString(resultMat.depth()));
+        resultMat.convertTo(resultMat,CvType.CV_8UC1);
+        Log.d("resultMat channels (after convertTo): ",Integer.toString(resultMat.channels()));
+        Log.d("resultMat depth (after convertTo): ",Integer.toString(resultMat.depth()));
+        Bitmap result = Bitmap.createBitmap(width , height, Bitmap.Config.ARGB_8888);
+        Utils.matToBitmap(resultMat,result);
         return result;
     }
 }
