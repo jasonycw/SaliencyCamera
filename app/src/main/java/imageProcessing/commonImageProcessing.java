@@ -134,29 +134,52 @@ public class commonImageProcessing {
 
         Mat threeChannel = new Mat();
         Imgproc.cvtColor(mat, threeChannel, Imgproc.COLOR_BGR2GRAY);
-        Imgproc.threshold(threeChannel, threeChannel, 100, 255, Imgproc.THRESH_BINARY);
+        Imgproc.threshold(threeChannel, threeChannel, 100, 255, Imgproc.THRESH_BINARY); //result in 2-bit image (black < 3rd Parameter < white)
+//        Mat threshold85 = new Mat();
+//        Mat threshold170 = new Mat();
+//        Imgproc.cvtColor(mat, threshold85, Imgproc.COLOR_BGR2GRAY);
+//        Imgproc.threshold(threshold85 , threshold85 , 85, 85, Imgproc.THRESH_BINARY); //result in 2-bit image (black < 3rd Parameter < white)
+//        Imgproc.cvtColor(mat, threshold170, Imgproc.COLOR_BGR2GRAY);
+//        Imgproc.threshold(threshold170, threshold170 , 170, 170, Imgproc.THRESH_BINARY); //result in 2-bit image (black < 3rd Parameter < white)
 
-        Mat fg = new Mat(mat.size(),CvType.CV_8U);
-        Imgproc.erode(threeChannel,fg,new Mat(),new Point(-1,-1),2);
+//        Mat fg = new Mat(mat.size(),CvType.CV_8U);
+//        Imgproc.erode(threeChannel,fg,new Mat(),new Point(-1,-1),3);//result in a "bold" image (objects are larger than it should)
+//
+//        Mat bg = new Mat(mat.size(),CvType.CV_8U);
+//        Imgproc.dilate(threeChannel,bg,new Mat(),new Point(-1,-1),3);//result in a "slim" image (objects are smaller than it should)
+//        Imgproc.threshold(bg,bg,1, 128,Imgproc.THRESH_BINARY_INV);
+//
+//        Mat markers = new Mat(mat.size(),CvType.CV_32SC1);
+//        Core.add(fg, bg, markers);
 
-        Mat bg = new Mat(mat.size(),CvType.CV_8U);
-        Imgproc.dilate(threeChannel,bg,new Mat(),new Point(-1,-1),3);
-        Imgproc.threshold(bg,bg,1, 128,Imgproc.THRESH_BINARY_INV);
-
-        Mat markers = new Mat(mat.size(),CvType.CV_32SC1);
-        Core.add(fg, bg, markers);
+        Mat markers = createMarkers(threeChannel,255);
+//        Mat markers = new Mat(mat.size(),CvType.CV_32SC1);
+//        Core.add(createMarkers(threshold85,85) , createMarkers(threshold170,170), markers);
 
         WatershedSegmenter segmenter = new WatershedSegmenter();
-//        if(markers == null){
-//            Log.d("markers is Null? ","Yes");
-//        }
-//        else
-//            Log.d("markers is Null? ","No");
         segmenter.setMarkers(markers);
         Mat resultMat = segmenter.process(mat);
 
         Bitmap result = Bitmap.createBitmap(width , height, Bitmap.Config.ARGB_8888);
+//        Utils.matToBitmap(threeChannel,result);
+//        Utils.matToBitmap(fg,result);
+//        Utils.matToBitmap(bg,result);
+//        Utils.matToBitmap(markers,result);
         Utils.matToBitmap(resultMat,result);
         return result;
+    }
+
+    public static Mat createMarkers(Mat thresholdedImage, int thresh){
+        Mat fg = new Mat(thresholdedImage.size(),CvType.CV_8U);
+        Imgproc.erode(thresholdedImage,fg,new Mat(),new Point(-1,-1),3);//result in a "bold" image (objects are larger than it should)
+
+        Mat bg = new Mat(thresholdedImage.size(),CvType.CV_8U);
+        Imgproc.dilate(thresholdedImage,bg,new Mat(),new Point(-1,-1),3);//result in a "slim" image (objects are smaller than it should)
+        Imgproc.threshold(bg,bg,1, thresh/2,Imgproc.THRESH_BINARY_INV);
+
+        Mat markers = new Mat(thresholdedImage.size(),CvType.CV_32SC1);
+        Core.add(fg, bg, markers); //Create outline for the input threshold image
+
+        return markers;
     }
 }
