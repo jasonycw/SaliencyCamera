@@ -8,11 +8,12 @@ import android.graphics.ColorMatrixColorFilter;
 import android.graphics.Paint;
 import android.util.Log;
 
-import org.opencv.android.OpenCVLoader;
 import org.opencv.android.Utils;
 import org.opencv.core.Core;
 import org.opencv.core.CvType;
 import org.opencv.core.Mat;
+import org.opencv.core.Scalar;
+import org.opencv.core.Point;
 import org.opencv.imgproc.Imgproc;
 
 /**
@@ -111,9 +112,11 @@ public class commonImageProcessing {
 
         Mat mat = new Mat(height,width, CvType.CV_8UC3);
         Utils.bitmapToMat(input,mat);
-//        Imgproc.cvtColor(mat,mat, Imgproc.COLOR_RGBA2BGR);
+        Imgproc.cvtColor(mat,mat, Imgproc.COLOR_RGBA2BGR);
+//        Log.d("Mat type: ",Integer.toString(mat.type()));
 //        Log.d("Mat channels: ",Integer.toString(mat.channels()));
-//
+//        Log.d("Mat depth: ",Integer.toString(mat .depth()));
+
 //        Mat resultMat = new Mat(height,width, CvType.CV_32SC1);
 //        Log.d("resultMat type: ",Integer.toString(resultMat.type()));
 //        Log.d("resultMat channels: ",Integer.toString(resultMat.channels()));
@@ -124,13 +127,36 @@ public class commonImageProcessing {
 //        Log.d("resultMat channels (after watershed): ",Integer.toString(resultMat.channels()));
 //        Log.d("resultMat depth (after watershed): ",Integer.toString(resultMat.depth()));
 //
-//        resultMat.convertTo(resultMat,CvType.CV_8UC4);
+//        resultMat.convertTo(resultMat,CvType.CV_8UC3);
 //        Log.d("resultMat type (after convertTo) : ",Integer.toString(resultMat.type()));
 //        Log.d("resultMat channels (after convertTo): ",Integer.toString(resultMat.channels()));
 //        Log.d("resultMat depth (after convertTo): ",Integer.toString(resultMat.depth()));
 
+        Mat threeChannel = new Mat();
+        Imgproc.cvtColor(mat, threeChannel, Imgproc.COLOR_BGR2GRAY);
+        Imgproc.threshold(threeChannel, threeChannel, 100, 255, Imgproc.THRESH_BINARY);
+
+        Mat fg = new Mat(mat.size(),CvType.CV_8U);
+        Imgproc.erode(threeChannel,fg,new Mat(),new Point(-1,-1),2);
+
+        Mat bg = new Mat(mat.size(),CvType.CV_8U);
+        Imgproc.dilate(threeChannel,bg,new Mat(),new Point(-1,-1),3);
+        Imgproc.threshold(bg,bg,1, 128,Imgproc.THRESH_BINARY_INV);
+
+        Mat markers = new Mat(mat.size(),CvType.CV_32SC1);
+        Core.add(fg, bg, markers);
+
+        WatershedSegmenter segmenter = new WatershedSegmenter();
+//        if(markers == null){
+//            Log.d("markers is Null? ","Yes");
+//        }
+//        else
+//            Log.d("markers is Null? ","No");
+        segmenter.setMarkers(markers);
+        Mat resultMat = segmenter.process(mat);
+
         Bitmap result = Bitmap.createBitmap(width , height, Bitmap.Config.ARGB_8888);
-        Utils.matToBitmap(mat,result);
+        Utils.matToBitmap(resultMat,result);
         return result;
     }
 }
