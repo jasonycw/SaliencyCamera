@@ -43,6 +43,13 @@ public class ImageViewActivity extends Activity {
     private Bitmap bitmapIIF2;
 
     @Override
+    protected void onResume() {
+        super.onResume();
+        setImageBitmap(imageView, bitmap1);
+        setImageBitmap(grayImageView, bitmapIIF1);
+    }
+
+    @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_image_view);
@@ -91,7 +98,7 @@ public class ImageViewActivity extends Activity {
         }
 
         Log.d("Image1 Size", "X,Y is " + bitmap1.getWidth()+","+bitmap1.getHeight());
-        Log.d("Image2 Size", "X,Y is " + bitmap2.getWidth()+","+bitmap2.getHeight()); 
+        Log.d("Image2 Size", "X,Y is " + bitmap2.getWidth()+","+bitmap2.getHeight());
 //        if (bitmap1 != null)
 //            bitmapIIF1 = commonImageProcessing.toGrayScale(bitmap1);
 //        if (bitmap2 != null)
@@ -113,7 +120,9 @@ public class ImageViewActivity extends Activity {
                         if (bitmap1 != null)
                             bitmapIIF1 = commonImageProcessing.imageSegmentation(bitmap1);
                         if (bitmap2 != null)
-                            bitmapIIF2 = commonImageProcessing.imageSegmentation(bitmap2);
+                            bitmapIIF2 = bitmapIIF1;
+                        setImageBitmap(imageView, bitmap1);
+                        setImageBitmap(grayImageView, bitmapIIF1);
                     } break;
                     default:
                     {

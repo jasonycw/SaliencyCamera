@@ -147,12 +147,16 @@ public class CameraActivity extends Activity {
                                     Log.d("1) TAKE PICTURE", "1st picture captured");
 //                                    logShowParameterDetails(camera);
                                 } else {
+                                    // set the focus mode
+                                    params.setFocusMode(Camera.Parameters.FOCUS_MODE_CONTINUOUS_PICTURE);
+                                    // set Camera parameters
+                                    mCamera.setParameters(params);
+
                                     Log.d("1) TAKE PICTURE", "CANNOT FOCUS...");
                                     logShowParameterDetails(camera);
 
                                     CharSequence text = "Cannot focus";
                                     int duration = Toast.LENGTH_SHORT;
-
                                     Toast toast = Toast.makeText(context, text, duration);
                                     toast.show();
                                 }
