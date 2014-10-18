@@ -3,6 +3,7 @@ package imageProcessing;
 import android.graphics.Bitmap;
 import android.util.Log;
 
+import org.opencv.android.Utils;
 import org.opencv.core.CvType;
 import org.opencv.core.Mat;
 import org.opencv.core.Core;
@@ -11,7 +12,6 @@ import org.opencv.core.MatOfPoint2f;
 import org.opencv.core.Point;
 import org.opencv.core.Range;
 import org.opencv.core.Scalar;
-import org.opencv.highgui.Highgui;
 import org.opencv.imgproc.Imgproc;
 
 import java.util.ArrayList;
@@ -38,7 +38,6 @@ public class SLIC {
 
     private int nx, ny;
     private int m;
-    private Bitmap input;
 
     public SLIC(int nx, int ny, int m){
         this.nx = nx;
@@ -48,10 +47,12 @@ public class SLIC {
 
     public Bitmap createBoundedBitmap(Bitmap input){
         // Read in image
-        Mat im = imread(input);
+//        Mat im = imread(input);
+        Mat im = new Mat();
+        Utils.bitmapToMat(input,im);
 
         if (input == null) {
-            Log.d("SLIC ERROR: ","no image data at "+input)
+            Log.d("SLIC ERROR: ","no image data at "+input);
             return null;
         }
 
@@ -98,8 +99,8 @@ public class SLIC {
 
         Mat window;
         Point p1, p2;
-        float[] p1_lab = new float[3];
-        float[] p2_lab = new float[3];
+        double[] p1_lab;
+        double[] p2_lab;
 
         // Iterate 10 times. In practice more than enough to converge
         for (int i = 0; i < 10; i++) {
@@ -108,7 +109,7 @@ public class SLIC {
             {
                 int label = label_vec.get(c);
                 p1 = centers.toArray()[c];
-                p1_lab = imlab.at<Vec3f>(p1);
+                p1_lab = imlab.get((int)p1.y,(int)p1.x);//.at<Vec3f>(p1);
                 int xmin = (int) Math.max(p1.x - S, 0);
                 int ymin = (int) Math.max(p1.y-S, 0);
                 int xmax = (int) Math.min(p1.x+S, w-1);
@@ -118,15 +119,15 @@ public class SLIC {
                 window = new Mat(im, new Range(ymin, ymax), new Range(xmin, xmax));
 
                 // Reassign pixels to nearest center
-                for (int i = 0; i < window.rows(); i++) {
-                    for (int j = 0; j < window.cols(); j++) {
-                        p2 = new Point(xmin + j, ymin + i);
-                        p2_lab = imlab.at<Vec3f>(p2);
+                for (int row = 0; row < window.rows(); row++) {
+                    for (int col = 0; col < window.cols(); col++) {
+                        p2 = new Point(xmin + col, ymin + row);
+                        p2_lab = imlab.get((int)p2.y,(int)p1.x);// at<Vec3f>(p2);
                         float d = dist(p1, p2, p1_lab, p2_lab, m, S);
-                        float last_d = (float) dists.get((int)p2.x,(int)p2.y)[0];
+                        float last_d = (float) dists.get((int)p2.y,(int)p2.x)[0];
                         if (d < last_d || last_d == -1) {
-                            dists.put((int)p2.x,(int)p2.y,d);
-                            labels.put((int)p2.x,(int)p2.y,label);
+                            dists.put((int)p2.y,(int)p2.x,d);
+                            labels.put((int)p2.y,(int)p2.x,label);
                         }
                     }
                 }
@@ -135,7 +136,9 @@ public class SLIC {
 
         // Calculate superpixel boundaries
         labels.convertTo(labels, CvType.CV_32F);
-        Mat gx, gy, grad;
+        Mat gx = new Mat();
+        Mat gy = new Mat();
+        Mat grad = new Mat();
         Imgproc.filter2D(labels, gx, -1, sobel);
         Imgproc.filter2D(labels, gy, -1, sobel.t());
         Core.magnitude(gx, gy, grad);
@@ -152,16 +155,18 @@ public class SLIC {
 
         Core.merge(rgb, im);
 
-        imwrite(output, 255*im);
-
-        Bitmap output = new Bitmap();
+//        imwrite(output, 255*im);
+        Mat outputMat = new Mat();
+        Core.multiply(im, new Scalar(255), outputMat);
+        Bitmap output = Bitmap.createBitmap(outputMat.width() , outputMat.height(), Bitmap.Config.ARGB_8888);
+        Utils.matToBitmap(outputMat, output);
         return output;
     }
 
-    private float dist(Point p1, Point p2, float[] p1_lab, float[] p2_lab, float compactness, float S){
-        float dl = p1_lab[0] - p2_lab[0];
-        float da = p1_lab[1] - p2_lab[1];
-        float db = p1_lab[2] - p2_lab[2];
+    private float dist(Point p1, Point p2, double[] p1_lab, double[] p2_lab, float compactness, float S){
+        float dl = (float) (p1_lab[0] - p2_lab[0]);
+        float da = (float) (p1_lab[1] - p2_lab[1]);
+        float db = (float) (p1_lab[2] - p2_lab[2]);
 
         float d_lab = (float) Math.sqrt(dl*dl + da*da + db*db);
 
