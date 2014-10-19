@@ -24,18 +24,7 @@ public class SLIC {
 //    RNG rng(12345);
 
 //    Mat sobel = (Mat_<float>(3,3) << -1/16., -2/16., -1/16., 0, 0, 0, 1/16., 2/16., 1/16.);
-    Mat sobel = new Mat(3, 3, CvType.CV_8U);
-    sobel.put(0, 0, (byte) 0);
-    sobel.put(0, 1, (byte) 1);
-    sobel.put(0, 2, (byte) 0);
-    sobel.put(1, 0, (byte) 1);
-    sobel.put(1, 1, (byte) 1);
-    sobel.put(1, 2, (byte) 1);
-    sobel.put(2, 0, (byte) 0);
-    sobel.put(2, 1, (byte) 1);
-    sobel.put(2, 2, (byte) 0);
-    Imgproc.dilate(outerbox, outerbox, ukernel);
-
+    Mat sobel;
     private int nx, ny;
     private int m;
 
@@ -43,6 +32,16 @@ public class SLIC {
         this.nx = nx;
         this.ny = ny;
         this.m = m;
+        sobel = new Mat(3, 3, CvType.CV_8U);
+        sobel.put(0, 0, -1/16.);
+        sobel.put(0, 1, -2/16.);
+        sobel.put(0, 2, -1/16.);
+        sobel.put(1, 0, 0);
+        sobel.put(1, 1, 0);
+        sobel.put(1, 2, 0);
+        sobel.put(2, 0, 1/16.);
+        sobel.put(2, 1, 2/16.);
+        sobel.put(2, 2, 1/16.);
     }
 
     public Bitmap createBoundedBitmap(Bitmap input){
@@ -142,7 +141,8 @@ public class SLIC {
         Imgproc.filter2D(labels, gx, -1, sobel);
         Imgproc.filter2D(labels, gy, -1, sobel.t());
         Core.magnitude(gx, gy, grad);
-        grad = (grad > 1e-4)/255;
+//        grad = (grad > 1e-4)/255;
+        Core.compare(grad,new Scalar(1e-4),grad,Core.CMP_GT);
         Mat show = new Mat();
         Core.subtract(Mat.ones(grad.size(),CvType.CV_32F),grad,show);
         show.convertTo(show, CvType.CV_32F);

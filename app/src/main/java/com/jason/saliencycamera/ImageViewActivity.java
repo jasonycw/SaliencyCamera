@@ -118,7 +118,7 @@ public class ImageViewActivity extends Activity {
                     case LoaderCallbackInterface.SUCCESS:
                     {
                         if (bitmap1 != null)
-                            bitmapIIF1 = commonImageProcessing.imageSegmentation(bitmap1);
+                            bitmapIIF1 = commonImageProcessing.SLIC(bitmap1);
                         if (bitmap2 != null)
                             bitmapIIF2 = bitmapIIF1;
                         setImageBitmap(imageView, bitmap1);

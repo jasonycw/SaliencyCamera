@@ -182,4 +182,9 @@ public class commonImageProcessing {
 
         return markers;
     }
+
+    public static Bitmap SLIC(Bitmap input){
+        SLIC slic = new SlicBuilder().buildSLIC();
+        return slic.createBoundedBitmap(input);
+    }
 }
