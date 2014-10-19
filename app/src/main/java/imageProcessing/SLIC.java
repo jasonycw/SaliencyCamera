@@ -7,6 +7,7 @@ import org.opencv.android.Utils;
 import org.opencv.core.CvType;
 import org.opencv.core.Mat;
 import org.opencv.core.Core;
+import org.opencv.core.MatOfInt;
 import org.opencv.core.MatOfPoint;
 import org.opencv.core.MatOfPoint2f;
 import org.opencv.core.Point;
@@ -15,6 +16,7 @@ import org.opencv.core.Scalar;
 import org.opencv.imgproc.Imgproc;
 
 import java.util.ArrayList;
+import java.util.List;
 import java.util.Vector;
 
 /**
@@ -47,7 +49,7 @@ public class SLIC {
     public Bitmap createBoundedBitmap(Bitmap input){
         // Read in image
 //        Mat im = imread(input);
-        Mat im = new Mat();
+        Mat im = new Mat(input.getWidth(),input.getHeight(),CvType.CV_8U);
         Utils.bitmapToMat(input,im);
 
         if (input == null) {
@@ -74,19 +76,23 @@ public class SLIC {
 //            for (int j = 0; j < nx; j++)
 //                centers.push_back( Point2f(j*dx+dx/2, i*dy+dy/2));
         MatOfPoint2f centers = new MatOfPoint2f();
+        List<Point> centersList = new ArrayList<Point>();
         for (int i = 0; i < ny; i++) {
             for (int j = 0; j < nx; j++) {
-                centers.push_back(new MatOfPoint(new Point(j*dx+dx/2, i*dy+dy/2)));
+                centersList.add(new Point(j * dx + dx / 2, i * dy + dy / 2));
             }
         }
+        centers.fromList(centersList);
 
         // Initialize labels and distance maps
 //        vector<int> label_vec(n);
 //        for (int i = 0; i < n; i++)
 //            label_vec[i] = i*255*255/n;
-        ArrayList<Integer> label_vec = new ArrayList<Integer>(n);
+        MatOfInt label_vec = new MatOfInt(n);
+        List<Integer> label_vec_list = new ArrayList<Integer>();
         for (int i = 0; i < n; i++)
-            label_vec.set(i,i*255*255/n);
+            label_vec_list.add(i * 255 * 255 / n);
+        label_vec.fromList(label_vec_list);
 
 //        Mat labels = -1*Mat.ones(imlab.size(), CvType.CV_32S));
 //        Mat dists = -1*Mat.ones(imlab.size(), CvType .CV_32F);
@@ -94,7 +100,7 @@ public class SLIC {
         Mat labels = new Mat();
         Mat dists = new Mat();
         Core.multiply(Mat.ones(imlab.size(), CvType.CV_32S),negativeOne,labels);
-        Core.multiply(Mat.ones(imlab.size(), CvType.CV_32S),negativeOne,labels);
+        Core.multiply(Mat.ones(imlab.size(), CvType.CV_32S),negativeOne,dists);
 
         Mat window;
         Point p1, p2;
@@ -106,8 +112,8 @@ public class SLIC {
             // For each center...
             for (int c = 0; c < n; c++)
             {
-                int label = label_vec.get(c);
-                p1 = centers.toArray()[c];
+                int label = label_vec.toList().get(c);
+                p1 = centers.toList().get(c);
                 p1_lab = imlab.get((int)p1.y,(int)p1.x);//.at<Vec3f>(p1);
                 int xmin = (int) Math.max(p1.x - S, 0);
                 int ymin = (int) Math.max(p1.y-S, 0);
@@ -133,6 +139,11 @@ public class SLIC {
             }
         }
 
+//        Bitmap test = Bitmap.createBitmap(im.width() , im.height(), Bitmap.Config.ARGB_8888);
+//        Core.multiply(im, new Scalar(255), im);
+//        im.convertTo(im,CvType.CV_8U);
+//        Utils.matToBitmap(im, test);
+
         // Calculate superpixel boundaries
         labels.convertTo(labels, CvType.CV_32F);
         Mat gx = new Mat();
@@ -141,10 +152,9 @@ public class SLIC {
         Imgproc.filter2D(labels, gx, -1, sobel);
         Imgproc.filter2D(labels, gy, -1, sobel.t());
         Core.magnitude(gx, gy, grad);
-//        grad = (grad > 1e-4)/255;
         Core.compare(grad,new Scalar(1e-4),grad,Core.CMP_GT);
         Mat show = new Mat();
-        Core.subtract(Mat.ones(grad.size(),CvType.CV_32F),grad,show);
+        Core.subtract(Mat.ones(grad.size(),grad.type()),grad,show);
         show.convertTo(show, CvType.CV_32F);
 
         // Draw boundaries on original image
@@ -155,11 +165,19 @@ public class SLIC {
 
         Core.merge(rgb, im);
 
-//        imwrite(output, 255*im);
+        Log.d("SLIC im ","im.channels = "+im.channels());
+
         Mat outputMat = new Mat();
         Core.multiply(im, new Scalar(255), outputMat);
-        Bitmap output = Bitmap.createBitmap(outputMat.width() , outputMat.height(), Bitmap.Config.ARGB_8888);
-        Utils.matToBitmap(outputMat, output);
+        outputMat.convertTo(outputMat,CvType.CV_8UC3);
+
+        Log.d("SLIC outputMat ","output cols = "+outputMat.cols());
+        Log.d("SLIC outputMat ","output cols  = "+outputMat.rows());
+        Log.d("SLIC outputMat ","output width = "+outputMat.width());
+        Log.d("SLIC outputMat ","output height = "+outputMat.height());
+
+        Bitmap output = Bitmap.createBitmap(outputMat.width() , outputMat.height(), Bitmap.Config.RGB_565);
+        Utils.matToBitmap(outputMat , output);
         return output;
     }
 
