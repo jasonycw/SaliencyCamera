@@ -166,10 +166,14 @@ public class SLIC {
         Core.merge(rgb, im);
 
         Log.d("SLIC im ","im.channels = "+im.channels());
+        Log.d("SLIC labels ","labels.channels = "+labels.channels());
+
 
         Mat outputMat = new Mat();
-        Core.multiply(im, new Scalar(255), outputMat);
-        outputMat.convertTo(outputMat,CvType.CV_8UC3);
+//        Core.multiply(im, new Scalar(255), outputMat);
+//        outputMat.convertTo(outputMat,CvType.CV_8U);
+        labels.convertTo(outputMat,CvType.CV_8U);
+        Log.d("SLIC labels ","labels.channels = "+labels.channels());
 
         Log.d("SLIC outputMat ","output cols = "+outputMat.cols());
         Log.d("SLIC outputMat ","output cols  = "+outputMat.rows());
@@ -177,7 +181,7 @@ public class SLIC {
         Log.d("SLIC outputMat ","output height = "+outputMat.height());
 
         Bitmap output = Bitmap.createBitmap(outputMat.width() , outputMat.height(), Bitmap.Config.RGB_565);
-        Utils.matToBitmap(outputMat , output);
+        Utils.matToBitmap(outputMat, output);
         return output;
     }
 

@@ -47,6 +47,10 @@ public class commonImageProcessing {
         return intensity;
     }
 
+    public static String getARGBstring(Bitmap bitmap, int x, int y){
+        return "ARGB at "+x+","+y+" is \t\tA " + String.format("%03d", Color.alpha(bitmap.getPixel(x,y))) +"\t\tR "+ String.format("%03d", Color.red(bitmap.getPixel(x,y))) +"\t\tG "+ String.format("%03d",  Color.green(bitmap .getPixel(x,y))) +"\t\tB "+ String.format("%03d",  Color.blue(bitmap.getPixel(x,y)));
+    }
+
     public static Bitmap subtract(Bitmap bitmap1, Bitmap bitmap2) {
         int width = bitmap1.getWidth();
         int height = bitmap1.getHeight();

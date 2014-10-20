@@ -233,18 +233,19 @@ public class CameraActivity extends Activity {
         Camera.Size result = null;
 
         for (Camera.Size size : parameters.getSupportedPictureSizes()) {
+            Log.d("Camera.parameters.getSupportedPictureSizes()", "width: " + size.width +"\theight: "+ size.height);
             if (result == null) {
                 result = size;
             } else {
                 int resultArea = result.width * result.height;
                 int newArea = size.width * size.height;
 
-                if (newArea < resultArea) {
+                if (newArea < resultArea && newArea >= 320*240) {
                     result = size;
                 }
             }
         }
-
+        Log.d("Camera.Size", "width: " + result.width +"\theight: "+ result.height);
         return (result);
     }
 

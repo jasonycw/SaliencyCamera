@@ -4,6 +4,7 @@ import android.app.Activity;
 import android.content.Intent;
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
+import android.graphics.Color;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.Menu;
@@ -123,6 +124,11 @@ public class ImageViewActivity extends Activity {
                             bitmapIIF2 = bitmapIIF1;
                         setImageBitmap(imageView, bitmap1);
                         setImageBitmap(grayImageView, bitmapIIF1);
+
+
+                        for(int i=50;i<100;i++)
+                            for(int j=50;j<100;j++)
+                                Log.d("bitmap", "TOP: "+commonImageProcessing.getARGBstring(bitmap1,i,j)+"\t\tBOTTOM: "+commonImageProcessing.getARGBstring(bitmapIIF1,i,j));
                     } break;
                     default:
                     {
