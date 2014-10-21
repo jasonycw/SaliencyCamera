@@ -126,9 +126,9 @@ public class ImageViewActivity extends Activity {
                         setImageBitmap(grayImageView, bitmapIIF1);
 
 
-                        for(int i=50;i<100;i++)
-                            for(int j=50;j<100;j++)
-                                Log.d("bitmap", "TOP: "+commonImageProcessing.getARGBstring(bitmap1,i,j)+"\t\tBOTTOM: "+commonImageProcessing.getARGBstring(bitmapIIF1,i,j));
+//                        for(int i=50;i<100;i++)
+//                            for(int j=50;j<100;j++)
+//                                Log.d("bitmap", "TOP: "+commonImageProcessing.getARGBstring(bitmap1,i,j)+"\t\tBOTTOM: "+commonImageProcessing.getARGBstring(bitmapIIF1,i,j));
                     } break;
                     default:
                     {

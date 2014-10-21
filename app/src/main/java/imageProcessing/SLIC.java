@@ -88,7 +88,7 @@ public class SLIC {
 //        vector<int> label_vec(n);
 //        for (int i = 0; i < n; i++)
 //            label_vec[i] = i*255*255/n;
-        MatOfInt label_vec = new MatOfInt(n);
+        MatOfInt label_vec = new MatOfInt();
         List<Integer> label_vec_list = new ArrayList<Integer>();
         for (int i = 0; i < n; i++)
             label_vec_list.add(i * 255 * 255 / n);
@@ -172,7 +172,7 @@ public class SLIC {
         Mat outputMat = new Mat();
 //        Core.multiply(im, new Scalar(255), outputMat);
 //        outputMat.convertTo(outputMat,CvType.CV_8U);
-        labels.convertTo(outputMat,CvType.CV_8U);
+        show.convertTo(outputMat,CvType.CV_8U);
         Log.d("SLIC labels ","labels.channels = "+labels.channels());
 
         Log.d("SLIC outputMat ","output cols = "+outputMat.cols());
