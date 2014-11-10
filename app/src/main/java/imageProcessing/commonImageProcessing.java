@@ -1,5 +1,6 @@
 package imageProcessing;
 
+import android.content.Context;
 import android.graphics.Bitmap;
 import android.graphics.Canvas;
 import android.graphics.Color;
@@ -189,6 +190,11 @@ public class commonImageProcessing {
 
     public static Bitmap SLIC(Bitmap input){
         SLIC slic = new SlicBuilder().buildSLIC();
+        return slic.createBoundedBitmap(input);
+    }
+
+    public static Bitmap SLIC(Bitmap input, Context context){
+        SLIC slic = new SlicBuilder().context(context).buildSLIC();
         return slic.createBoundedBitmap(input);
     }
 }
