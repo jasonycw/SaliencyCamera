@@ -15,33 +15,16 @@
         android:id="@+id/linearLayout"
         android:layout_centerVertical="true"
         android:layout_centerHorizontal="true"
-        android:weightSum="2">
+        android:weightSum="2.5">
 
-        <LinearLayout
-            android:orientation="horizontal"
+        <GridView
             android:layout_width="match_parent"
-            android:layout_height="0dp"
-            android:layout_weight="1">
-
-            <ImageView
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:id="@+id/lenaImage"
-                android:layout_gravity="center_horizontal"  />
-        </LinearLayout>
-
-        <LinearLayout
-            android:orientation="horizontal"
-            android:layout_width="match_parent"
-            android:layout_height="0dp"
-            android:layout_weight="1">
-
-            <ImageView
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:id="@+id/toyImage"
-                android:layout_gravity="center_horizontal"  />
-        </LinearLayout>
+            android:layout_height="match_parent"
+            android:id="@+id/gridView"
+            android:verticalSpacing="4dp"
+            android:horizontalSpacing="4dp"
+            android:stretchMode="columnWidth"
+            android:gravity="center" />
     </LinearLayout>
 
 </RelativeLayout>
