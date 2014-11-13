@@ -4,7 +4,6 @@ import android.app.Activity;
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
 import android.os.Bundle;
-import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.MotionEvent;
@@ -12,31 +11,35 @@ import android.view.View;
 import android.widget.ImageView;
 import android.widget.TextView;
 
+import org.opencv.android.BaseLoaderCallback;
+import org.opencv.android.LoaderCallbackInterface;
+import org.opencv.android.OpenCVLoader;
+
 import java.io.File;
 import java.io.IOException;
 import java.util.Date;
 
+import imageProcessing.CommonImageProcessing;
 import imageProcessing.LSH;
-import imageProcessing.commonImageProcessing;
 
 
-public class ResultImageViewActivity extends Activity {
+public class ResultImageActivity extends Activity {
     private ImageView imageView;
     private ImageView resultImageView;
     private TextView textView;
     private Date oldDate;
     private Date newDate;
+    private long timeDifference;
 
+    private int action = 0;
     private String picture1Uri = "";
     private String picture2Uri = "";
-    private String drawable1;
-    private String drawable2;
-
+    private String drawable1 = "";
+    private String drawable2 = "";
     private Bitmap bitmap1;
     private Bitmap bitmap2;
-    private Bitmap subtractBitmap;
-    private Bitmap divideBitmap;
-    private Bitmap resultBitmap;
+    private Bitmap resultBitmap1;
+    private Bitmap resultBitmap2;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -45,12 +48,13 @@ public class ResultImageViewActivity extends Activity {
 
         // Initialize
         Bundle bundle = this.getIntent().getExtras();
+        action = bundle.getInt("ACTION");
         picture1Uri = bundle.getString("picture1_URI");
         picture2Uri = bundle.getString("picture2_URI");
         oldDate = new Date(this.getIntent().getLongExtra("date", -1));
 
-        imageView = (ImageView) findViewById(R.id.imageView);
-        resultImageView = (ImageView) findViewById(R.id.resultImageView);
+        imageView = (ImageView) findViewById(R.id.inputImage);
+        resultImageView = (ImageView) findViewById(R.id.resultImage);
         textView = (TextView) findViewById(R.id.textView);
 
         // Get the pictures
@@ -84,34 +88,71 @@ public class ResultImageViewActivity extends Activity {
         }
 
         if (bitmap1 != null && bitmap2 != null) {
-            Log.d("START_SUBTRACT", oldDate.toString());
-//            subtractBitmap = commonImageProcessing.subtract(bitmap1, bitmap2);
-//            divideBitmap = commonImageProcessing.divide(bitmap1, bitmap2);
-//            resultBitmap = commonImageProcessing.multiply(subtractBitmap, divideBitmap);
-            subtractBitmap = LSH.IIF(bitmap1);
-            divideBitmap = LSH.IIF(bitmap2);
-            resultBitmap = bitmap1;
-            newDate = new Date();
-            Log.d("END___SUBTRACT", newDate.toString());
-            long timeDifference = newDate.getTime() - oldDate.getTime();
-            imageView.setImageBitmap(subtractBitmap);
-            resultImageView.setImageBitmap(resultBitmap);
-            textView.setText("used " + timeDifference + " ms");
+            switch(action){
+                case CommonImageProcessing.LSHIIF:
+                    resultBitmap1 = LSH.IIF(bitmap1);
+                    resultBitmap2 = LSH.IIF(bitmap2);
+                    if(resultBitmap1!=null&&resultBitmap2!=null)
+                        finishLayout();
+                    break;
+                case CommonImageProcessing.MotionDetection:
+                    resultBitmap1 = bitmap1;
+                    resultBitmap2 = bitmap2;
+                    if(resultBitmap1!=null&&resultBitmap2!=null)
+                        finishLayout();
+                    break;
+                case CommonImageProcessing.SLIC:
+                    OpenCVLoader.initAsync(OpenCVLoader.OPENCV_VERSION_2_4_9, this, new BaseLoaderCallback(this) {
+                        @Override
+                        public void onManagerConnected(int status) {
+                            switch (status) {
+                                case LoaderCallbackInterface.SUCCESS: {
+                                    if (bitmap1 != null)
+                                        resultBitmap1 = CommonImageProcessing.SLIC(bitmap1, getApplicationContext());
+                                    resultBitmap2 = resultBitmap1;
+                                    if(resultBitmap1!=null&&resultBitmap2!=null)
+                                        finishLayout();
+                                }
+                                break;
+                                default: {
+                                    super.onManagerConnected(status);
+                                }
+                                break;
+                            }
+                        }
+                    });
+                    break;
+                case CommonImageProcessing.SaliencyDetection_withoutMD:
+                    resultBitmap1 = bitmap1;
+                    resultBitmap2 = bitmap2;
+                    if(resultBitmap1!=null&&resultBitmap2!=null)
+                        finishLayout();
+                    break;
+                case CommonImageProcessing.SaliencyDetection_withMD:
+                    resultBitmap1 = bitmap1;
+                    resultBitmap2 = bitmap2;
+                    if(resultBitmap1!=null&&resultBitmap2!=null)
+                        finishLayout();
+                    break;
+            }
         }
         View.OnTouchListener onTouchListener = new View.OnTouchListener() {
             @Override
             public boolean onTouch(View view, MotionEvent motionEvent) {
                 switch (motionEvent.getAction()) {
                     case MotionEvent.ACTION_UP: {
-                        imageView.setImageBitmap(subtractBitmap);
+                        imageView.setImageBitmap(bitmap1);
+                        resultImageView.setImageBitmap(resultBitmap1);
                         break;
                     }
                     case MotionEvent.ACTION_DOWN: {
-                        imageView.setImageBitmap(divideBitmap);
+                        imageView.setImageBitmap(bitmap2);
+                        resultImageView.setImageBitmap(resultBitmap2);
                         break;
                     }
                     case MotionEvent.ACTION_MOVE: {
-                        imageView.setImageBitmap(divideBitmap);
+                        imageView.setImageBitmap(bitmap2);
+                        resultImageView.setImageBitmap(resultBitmap2);
                         break;
                     }
                 }
@@ -122,6 +163,13 @@ public class ResultImageViewActivity extends Activity {
         resultImageView.setOnTouchListener(onTouchListener);
     }
 
+    private void finishLayout(){
+        newDate = new Date();
+        timeDifference = newDate.getTime() - oldDate.getTime();
+        imageView.setImageBitmap(bitmap1);
+        resultImageView.setImageBitmap(resultBitmap1);
+        textView.setText("used " + timeDifference + " ms");
+    }
 
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {

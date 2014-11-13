@@ -14,14 +14,13 @@
         android:layout_width="fill_parent"
         android:layout_height="fill_parent"
         android:layout_alignParentBottom="true"
-        android:layout_centerHorizontal="true"
-        android:background="#ff000000">
+        android:layout_centerHorizontal="true" >
 
         <LinearLayout
             android:orientation="horizontal"
             android:layout_width="fill_parent"
             android:layout_height="0dp"
-            android:layout_weight="5">
+            android:layout_weight="4">
 
             <ImageView
                 android:layout_width="fill_parent"
@@ -43,27 +42,55 @@
                 android:textAppearance="?android:attr/textAppearanceLarge"
                 android:text="Large Text"
                 android:id="@+id/textView"
-                android:layout_gravity="center_vertical"
-                android:textColor="#ffffffff" />
+                android:layout_gravity="center_vertical" />
+
+        </LinearLayout>
+
+        <RelativeLayout
+            android:layout_width="fill_parent"
+            android:layout_height="0dp"
+            android:layout_weight="6">
 
             <Button
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Calculate"
-                android:id="@+id/calculateButton" />
-        </LinearLayout>
+                android:text="LSH IIF"
+                android:id="@+id/LSHIIF_button"
+                android:layout_alignParentTop="true"
+                android:layout_centerHorizontal="true" />
 
-        <LinearLayout
-            android:orientation="horizontal"
-            android:layout_width="fill_parent"
-            android:layout_height="0dp"
-            android:layout_weight="5">
+            <Button
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Motion Detection"
+                android:id="@+id/MotionDetection_button"
+                android:layout_below="@+id/LSHIIF_button"
+                android:layout_centerHorizontal="true" />
 
-            <ImageView
-                android:layout_width="fill_parent"
-                android:layout_height="fill_parent"
-                android:id="@+id/grayImageView"
-                android:layout_gravity="center_horizontal" />
-        </LinearLayout>
+            <Button
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="SLIC Superpixel Segmentation"
+                android:id="@+id/SLIC_button"
+                android:layout_below="@+id/MotionDetection_button"
+                android:layout_centerHorizontal="true" />
+
+            <Button
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Saliency (without Motion Detection)"
+                android:id="@+id/Saliency_withoutMD_button"
+                android:layout_below="@+id/SLIC_button"
+                android:layout_centerHorizontal="true" />
+
+            <Button
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Saliency Detection (Result)"
+                android:id="@+id/Saliency_withMD_button"
+                android:layout_below="@+id/Saliency_withoutMD_button"
+                android:layout_centerHorizontal="true" />
+        </RelativeLayout>
+
     </LinearLayout>
 </RelativeLayout>

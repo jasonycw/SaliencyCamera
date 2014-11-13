@@ -4,7 +4,6 @@ import android.app.Activity;
 import android.content.Intent;
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
-import android.graphics.Color;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.Menu;
@@ -15,23 +14,21 @@ import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.TextView;
 
-import org.opencv.android.BaseLoaderCallback;
-import org.opencv.android.LoaderCallbackInterface;
-import org.opencv.android.OpenCVLoader;
-
 import java.io.File;
 import java.io.IOException;
 import java.util.Date;
 
-import imageProcessing.LSH;
-import imageProcessing.commonImageProcessing;
+import imageProcessing.CommonImageProcessing;
 
 
 public class ImageViewActivity extends Activity {
     private ImageView imageView;
-    private ImageView grayImageView;
-    private TextView textView;
-    private Button calculateButton;
+    private Button LSHIIF_button;
+    private Button MotionDetection_button;
+    private Button SLIC_button;
+    private Button Saliency_withoutMD_button;
+    private Button Saliency_withMD_button;
+
 
     private String picture1Uri = "";
     private String picture2Uri = "";
@@ -40,14 +37,11 @@ public class ImageViewActivity extends Activity {
     private Long timeDifference = Long.valueOf(0);
     private Bitmap bitmap1;
     private Bitmap bitmap2;
-    private Bitmap bitmapIIF1;
-    private Bitmap bitmapIIF2;
 
     @Override
     protected void onResume() {
         super.onResume();
         setImageBitmap(imageView, bitmap1);
-        setImageBitmap(grayImageView, bitmapIIF1);
     }
 
     @Override
@@ -62,9 +56,7 @@ public class ImageViewActivity extends Activity {
         timeDifference = bundle.getLong("timeDifference");
 
         imageView = (ImageView) findViewById(R.id.imageView);
-        grayImageView = (ImageView) findViewById(R.id.grayImageView);
-        textView = (TextView) findViewById(R.id.textView);
-        calculateButton = (Button) findViewById(R.id.calculateButton);
+        TextView textView = (TextView) findViewById(R.id.textView);
 
         // Get the pictures
         if (picture1Uri != null) {
@@ -98,12 +90,9 @@ public class ImageViewActivity extends Activity {
             }
         }
 
-        Log.d("Image1 Size", "X,Y is " + bitmap1.getWidth()+","+bitmap1.getHeight());
-        Log.d("Image2 Size", "X,Y is " + bitmap2.getWidth()+","+bitmap2.getHeight());
-//        if (bitmap1 != null)
-//            bitmapIIF1 = commonImageProcessing.toGrayScale(bitmap1);
-//        if (bitmap2 != null)
-//            bitmapIIF2 = commonImageProcessing.toGrayScale(bitmap2);
+//        Log.d("Image1 Size", "X,Y is " + bitmap1.getWidth()+","+bitmap1.getHeight());
+//        Log.d("Image2 Size", "X,Y is " + bitmap2.getWidth()+","+bitmap2.getHeight());
+
 
         // Test LSH.IIF
 //        if (bitmap1 != null)
@@ -111,57 +100,50 @@ public class ImageViewActivity extends Activity {
 //        if (bitmap2 != null)
 //            bitmapIIF2 = LSH.IIF(bitmap2);
 
-        // Test Watershed Segmentation
-        OpenCVLoader.initAsync(OpenCVLoader.OPENCV_VERSION_2_4_9, this, new BaseLoaderCallback(this) {
-            @Override
-            public void onManagerConnected(int status) {
-                switch (status) {
-                    case LoaderCallbackInterface.SUCCESS:
-                    {
-                        if (bitmap1 != null)
-                            bitmapIIF1 = commonImageProcessing.SLIC(bitmap1,getApplicationContext());
-                        if (bitmap2 != null)
-                            bitmapIIF2 = bitmapIIF1;
-                        setImageBitmap(imageView, bitmap1);
-                        setImageBitmap(grayImageView, bitmapIIF1);
-
-
-//                        for(int i=50;i<100;i++)
-//                            for(int j=50;j<100;j++)
-//                                Log.d("bitmap", "TOP: "+commonImageProcessing.getARGBstring(bitmap1,i,j)+"\t\tBOTTOM: "+commonImageProcessing.getARGBstring(bitmapIIF1,i,j));
-                    } break;
-                    default:
-                    {
-                        super.onManagerConnected(status);
-                    } break;
-                }
-            }
-        });
+        // Test SLIC
+//        OpenCVLoader.initAsync(OpenCVLoader.OPENCV_VERSION_2_4_9, this, new BaseLoaderCallback(this) {
+//            @Override
+//            public void onManagerConnected(int status) {
+//                switch (status) {
+//                    case LoaderCallbackInterface.SUCCESS:
+//                    {
+//                        if (bitmap1 != null)
+//                            bitmapIIF1 = CommonImageProcessing.SLIC(bitmap1,getApplicationContext());
+//                        if (bitmap2 != null)
+//                            bitmapIIF2 = bitmapIIF1;
+//                        setImageBitmap(imageView, bitmap1);
+//                        setImageBitmap(grayImageView, bitmapIIF1);
+//
+//
+////                        for(int i=50;i<100;i++)
+////                            for(int j=50;j<100;j++)
+////                                Log.d("bitmap", "TOP: "+CommonImageProcessing.getARGBstring(bitmap1,i,j)+"\t\tBOTTOM: "+CommonImageProcessing.getARGBstring(bitmapIIF1,i,j));
+//                    } break;
+//                    default:
+//                    {
+//                        super.onManagerConnected(status);
+//                    } break;
+//                }
+//            }
+//        });
 
 
         // Set up the imageViews
         setImageBitmap(imageView, bitmap1);
-        setImageBitmap(grayImageView, bitmapIIF1);
         View.OnTouchListener onTouchListener = new View.OnTouchListener() {
             @Override
             public boolean onTouch(View view, MotionEvent motionEvent) {
                 switch (motionEvent.getAction()) {
                     case MotionEvent.ACTION_UP: {
                         setImageBitmap(imageView, bitmap1);
-                        setImageBitmap(grayImageView, bitmapIIF1);
-//                        Log.d("ACTION_UP", (picture1.exists()) ? "Picture1 exist" : "Picture1 not exist");
                         break;
                     }
                     case MotionEvent.ACTION_DOWN: {
                         setImageBitmap(imageView, bitmap2);
-                        setImageBitmap(grayImageView, bitmapIIF2);
-//                        Log.d("ACTION_DOWN", (picture2.exists()) ? "Picture2 exist " : "Picture1 not exist");
                         break;
                     }
                     case MotionEvent.ACTION_MOVE: {
                         setImageBitmap(imageView, bitmap2);
-                        setImageBitmap(grayImageView, bitmapIIF2);
-//                        Log.d("ACTION_DOWN ", (picture2.exists()) ? "Picture1 exist " : "Picture1 not exist");
                         break;
                     }
                 }
@@ -169,33 +151,80 @@ public class ImageViewActivity extends Activity {
             }
         };
         imageView.setOnTouchListener(onTouchListener);
-        grayImageView.setOnTouchListener(onTouchListener);
 
         // Setup the followings
         textView.setText(timeDifference + " ms");
-        calculateButton.setOnClickListener(
+
+        LSHIIF_button = (Button)findViewById(R.id.LSHIIF_button);
+        LSHIIF_button.setOnClickListener(
                 new View.OnClickListener() {
                     @Override
                     public void onClick(View v) {
-                        Intent intent = new Intent(ImageViewActivity.this, ResultImageViewActivity.class);
-
-                        Bundle bundle = new Bundle();
-                        if(picture1Uri!=null)
-                            bundle.putString("picture1_URI", picture1Uri);
-                        else
-                            bundle.putString("drawable1", drawable1);
-
-                        if(picture1Uri!=null)
-                            bundle.putString("picture2_URI", picture2Uri);
-                        else
-                            bundle.putString("drawable2", drawable2);
-
-                        intent.putExtras(bundle);
-                        intent.putExtra("date", new Date().getTime());
-                        startActivity(intent);
+                        startResultImageActivity(CommonImageProcessing.LSHIIF);
                     }
                 }
         );
+
+        MotionDetection_button = (Button)findViewById(R.id.MotionDetection_button);
+        MotionDetection_button.setOnClickListener(
+                new View.OnClickListener() {
+                    @Override
+                    public void onClick(View v) {
+                        startResultImageActivity(CommonImageProcessing.MotionDetection);
+                    }
+                }
+        );
+
+        SLIC_button = (Button)findViewById(R.id.SLIC_button);
+        SLIC_button.setOnClickListener(
+                new View.OnClickListener() {
+                    @Override
+                    public void onClick(View v) {
+                        startResultImageActivity(CommonImageProcessing.SLIC);
+                    }
+                }
+        );
+
+        Saliency_withoutMD_button = (Button)findViewById(R.id.Saliency_withoutMD_button);
+        Saliency_withoutMD_button.setOnClickListener(
+                new View.OnClickListener() {
+                    @Override
+                    public void onClick(View v) {
+                        startResultImageActivity(CommonImageProcessing.SaliencyDetection_withoutMD);
+                    }
+                }
+        );
+
+        Saliency_withMD_button = (Button)findViewById(R.id.Saliency_withMD_button);
+        Saliency_withMD_button.setOnClickListener(
+                new View.OnClickListener() {
+                    @Override
+                    public void onClick(View v) {
+                        startResultImageActivity(CommonImageProcessing.SaliencyDetection_withMD);
+                    }
+                }
+        );
+
+    }
+
+    private void startResultImageActivity(int action){
+        Intent intent = new Intent(ImageViewActivity.this, ResultImageActivity.class);
+
+        Bundle bundle = new Bundle();
+        bundle.putInt("ACTION", action);
+        if(picture1Uri!=null)
+            bundle.putString("picture1_URI", picture1Uri);
+        else
+            bundle.putString("drawable1", drawable1);
+
+        if(picture1Uri!=null)
+            bundle.putString("picture2_URI", picture2Uri);
+        else
+            bundle.putString("drawable2", drawable2);
+
+        intent.putExtras(bundle);
+        intent.putExtra("date", new Date().getTime());
+        startActivity(intent);
     }
 
     private void setImageBitmap(ImageView imageView, Bitmap bitmap) {

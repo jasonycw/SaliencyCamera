@@ -35,7 +35,7 @@
                 android:value="com.jason.saliencycamera.CameraActivity" />
         </activity>
         <activity
-            android:name=".ResultImageViewActivity"
+            android:name=".ResultImageActivity"
             android:label="@string/title_activity_result_image_view" >
         </activity>
         <activity

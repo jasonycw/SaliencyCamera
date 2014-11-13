@@ -20,7 +20,14 @@ import org.opencv.imgproc.Imgproc;
 /**
  * Created by Jason on 7/9/2014.
  */
-public class commonImageProcessing {
+public class CommonImageProcessing {
+    public static final int LSHIIF = 2;
+    public static final int MotionDetection = 4;
+    public static final int SLIC = 8;
+    public static final int SaliencyDetection_withoutMD = 16;
+    public static final int SaliencyDetection_withMD = 32;
+
+
     public static Bitmap toGrayScale(Bitmap bmpOriginal) {
         int width, height;
         height = bmpOriginal.getHeight();

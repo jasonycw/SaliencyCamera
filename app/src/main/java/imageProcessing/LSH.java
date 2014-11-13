@@ -54,7 +54,7 @@ public class LSH {
         }
         for (int y = 0; y < imgHeight; y++)
             for (int x = 0; x < imgWidth; x++) {
-                float value = commonImageProcessing.getValue(image, x,y);
+                float value = CommonImageProcessing.getValue(image, x, y);
                 int own_bin = (int) Math.round(value / (255.0 / bin_number));
                 if (x == 0) {
                     for (int i = 0; i < bin_number; i++) {
@@ -74,7 +74,7 @@ public class LSH {
         }
         for (int y = 0; y < imgHeight; y++)
             for (int x = imgWidth - 1; x >= 0; x--) {
-                float value = commonImageProcessing.getValue(image, x,y);
+                float value = CommonImageProcessing.getValue(image, x, y);
                 int own_bin = (int) Math.round(value / (255.0 / bin_number));
                 if (x == imgWidth - 1) {
                     for (int i = 0; i < bin_number; i++) {
@@ -102,7 +102,7 @@ public class LSH {
         }
         for (int x = 0; x < imgWidth; x++)
             for (int y = 0; y < imgHeight; y++) {
-                float value = commonImageProcessing.getValue(image, x,y);
+                float value = CommonImageProcessing.getValue(image, x, y);
                 int own_bin = (int) Math.round(value / (255.0 / bin_number));
                 if (y == 0) {
                     for (int i = 0; i < bin_number; i++) {
@@ -122,7 +122,7 @@ public class LSH {
         }
         for (int x = 0; x < imgWidth; x++)
             for (int y = imgHeight - 1; y >= 0; y--) {
-                float value = commonImageProcessing.getValue(image, x,y);
+                float value = CommonImageProcessing.getValue(image, x, y);
                 int own_bin = (int) Math.round(value / (255.0 / bin_number));
                 if (y == imgHeight - 1) {
                     for (int i = 0; i < bin_number; i++) {
@@ -187,7 +187,7 @@ public class LSH {
                 float value = 0;
                 for (int i = 0; i < bin_number; i++) {
                     float b_bp2 = (float) Math.pow((i - own_bin[x + (y * imgWidth)]), 2);
-                    float maxKrp2 = (float) Math.pow((k * commonImageProcessing.getValue(bitmap, x,y)), 2);
+                    float maxKrp2 = (float) Math.pow((k * CommonImageProcessing.getValue(bitmap, x, y)), 2);
                     if (maxKrp2 < k)
                         maxKrp2 = k;
                     value += Math.exp(-b_bp2 / (2 * maxKrp2)) * histogram[x + (y * imgWidth)][i];
@@ -217,7 +217,7 @@ public class LSH {
      * @param y     y coordinate
      */
     private static int findBin(Bitmap image, int x, int y) {
-        float value = commonImageProcessing.getValue(image, x, y);
+        float value = CommonImageProcessing.getValue(image, x, y);
         int bin;
         bin = (int) Math.round(value / (255.0 / bin_number));
         return bin;
@@ -239,7 +239,7 @@ public class LSH {
         int green = Color.green(color);
         int blue = Color.blue(color);
         float value = (float) (0.299 * red + 0.587 * green + 0.114 * blue);
-//        float value = commonImageProcessing.getValue(image, x,y);
+//        float value = CommonImageProcessing.getValue(image, x,y);
         int own_bin = (int) Math.round(value / (255.0 / bin_number));
         if (x == 1) {
             for (int i = 0; i < bin_number; i++) {
@@ -262,7 +262,7 @@ public class LSH {
      * @param y         the row that need to perform this calculation
      */
     private static void LSH_right(float[][] histogram, int x, int y, Bitmap image) {
-        float value = commonImageProcessing.getValue(image, x,y);
+        float value = CommonImageProcessing.getValue(image, x, y);
         int own_bin = (int) Math.round(value / (255.0 / bin_number));
         if (x == image.getWidth()) {
             for (int i = 0; i < bin_number; i++) {
@@ -285,7 +285,7 @@ public class LSH {
      * @param y         should be imgHeight of image
      */
     private static void LSH_up(float[][] histogram, int x, int y, Bitmap image) {
-        float value = commonImageProcessing.getValue(image, x,y);
+        float value = CommonImageProcessing.getValue(image, x, y);
         int own_bin = (int) Math.round(value / (255.0 / bin_number));
         if (y == 1) {
             for (int i = 0; i < bin_number; i++) {
@@ -308,7 +308,7 @@ public class LSH {
      * @param y         should be 1
      */
     private static void LSH_down(float[][] histogram, int x, int y, Bitmap image) {
-        float value = commonImageProcessing.getValue(image, x,y);
+        float value = CommonImageProcessing.getValue(image, x, y);
         int own_bin = (int) Math.round(value / (255.0 / bin_number));
         if (y == image.getHeight()) {
             for (int i = 0; i < bin_number; i++) {
