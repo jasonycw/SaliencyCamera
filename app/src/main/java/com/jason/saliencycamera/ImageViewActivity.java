@@ -90,44 +90,6 @@ public class ImageViewActivity extends Activity {
             }
         }
 
-//        Log.d("Image1 Size", "X,Y is " + bitmap1.getWidth()+","+bitmap1.getHeight());
-//        Log.d("Image2 Size", "X,Y is " + bitmap2.getWidth()+","+bitmap2.getHeight());
-
-
-        // Test LSH.IIF
-//        if (bitmap1 != null)
-//            bitmapIIF1 = LSH.IIF(bitmap1);
-//        if (bitmap2 != null)
-//            bitmapIIF2 = LSH.IIF(bitmap2);
-
-        // Test SLIC
-//        OpenCVLoader.initAsync(OpenCVLoader.OPENCV_VERSION_2_4_9, this, new BaseLoaderCallback(this) {
-//            @Override
-//            public void onManagerConnected(int status) {
-//                switch (status) {
-//                    case LoaderCallbackInterface.SUCCESS:
-//                    {
-//                        if (bitmap1 != null)
-//                            bitmapIIF1 = CommonImageProcessing.SLIC(bitmap1,getApplicationContext());
-//                        if (bitmap2 != null)
-//                            bitmapIIF2 = bitmapIIF1;
-//                        setImageBitmap(imageView, bitmap1);
-//                        setImageBitmap(grayImageView, bitmapIIF1);
-//
-//
-////                        for(int i=50;i<100;i++)
-////                            for(int j=50;j<100;j++)
-////                                Log.d("bitmap", "TOP: "+CommonImageProcessing.getARGBstring(bitmap1,i,j)+"\t\tBOTTOM: "+CommonImageProcessing.getARGBstring(bitmapIIF1,i,j));
-//                    } break;
-//                    default:
-//                    {
-//                        super.onManagerConnected(status);
-//                    } break;
-//                }
-//            }
-//        });
-
-
         // Set up the imageViews
         setImageBitmap(imageView, bitmap1);
         View.OnTouchListener onTouchListener = new View.OnTouchListener() {

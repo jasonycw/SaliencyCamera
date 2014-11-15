@@ -92,14 +92,12 @@ public class ResultImageActivity extends Activity {
                 case CommonImageProcessing.LSHIIF:
                     resultBitmap1 = LSH.IIF(bitmap1);
                     resultBitmap2 = LSH.IIF(bitmap2);
-                    if(resultBitmap1!=null&&resultBitmap2!=null)
-                        finishLayout();
+                    finishLayout();
                     break;
                 case CommonImageProcessing.MotionDetection:
                     resultBitmap1 = bitmap1;
                     resultBitmap2 = bitmap2;
-                    if(resultBitmap1!=null&&resultBitmap2!=null)
-                        finishLayout();
+                    finishLayout();
                     break;
                 case CommonImageProcessing.SLIC:
                     OpenCVLoader.initAsync(OpenCVLoader.OPENCV_VERSION_2_4_9, this, new BaseLoaderCallback(this) {
@@ -110,8 +108,7 @@ public class ResultImageActivity extends Activity {
                                     if (bitmap1 != null)
                                         resultBitmap1 = CommonImageProcessing.SLIC(bitmap1, getApplicationContext());
                                     resultBitmap2 = resultBitmap1;
-                                    if(resultBitmap1!=null&&resultBitmap2!=null)
-                                        finishLayout();
+                                    finishLayout();
                                 }
                                 break;
                                 default: {
@@ -125,14 +122,12 @@ public class ResultImageActivity extends Activity {
                 case CommonImageProcessing.SaliencyDetection_withoutMD:
                     resultBitmap1 = bitmap1;
                     resultBitmap2 = bitmap2;
-                    if(resultBitmap1!=null&&resultBitmap2!=null)
-                        finishLayout();
+                    finishLayout();
                     break;
                 case CommonImageProcessing.SaliencyDetection_withMD:
                     resultBitmap1 = bitmap1;
                     resultBitmap2 = bitmap2;
-                    if(resultBitmap1!=null&&resultBitmap2!=null)
-                        finishLayout();
+                    finishLayout();
                     break;
             }
         }
@@ -164,11 +159,14 @@ public class ResultImageActivity extends Activity {
     }
 
     private void finishLayout(){
-        newDate = new Date();
-        timeDifference = newDate.getTime() - oldDate.getTime();
-        imageView.setImageBitmap(bitmap1);
-        resultImageView.setImageBitmap(resultBitmap1);
-        textView.setText("used " + timeDifference + " ms");
+        if(resultBitmap1!=null&&resultBitmap2!=null){
+            newDate = new Date();
+            timeDifference = newDate.getTime() - oldDate.getTime();
+            imageView.setImageBitmap(bitmap1);
+            resultImageView.setImageBitmap(resultBitmap1);
+            textView.setText("used " + timeDifference + " ms");
+        }
+
     }
 
     @Override
