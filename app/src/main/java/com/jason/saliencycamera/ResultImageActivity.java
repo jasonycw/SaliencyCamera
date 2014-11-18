@@ -120,9 +120,24 @@ public class ResultImageActivity extends Activity {
                     });
                     break;
                 case CommonImageProcessing.SaliencyDetection_withoutMD:
-                    resultBitmap1 = bitmap1;
-                    resultBitmap2 = bitmap2;
-                    finishLayout();
+                    OpenCVLoader.initAsync(OpenCVLoader.OPENCV_VERSION_2_4_9, this, new BaseLoaderCallback(this) {
+                        @Override
+                        public void onManagerConnected(int status) {
+                            switch (status) {
+                                case LoaderCallbackInterface.SUCCESS: {
+                                    if (bitmap1 != null && bitmap2 != null)
+                                        resultBitmap1 = CommonImageProcessing.roughDepthMap(bitmap1, bitmap2);
+                                    resultBitmap2 = resultBitmap1;
+                                    finishLayout();
+                                }
+                                break;
+                                default: {
+                                    super.onManagerConnected(status);
+                                }
+                                break;
+                            }
+                        }
+                    });
                     break;
                 case CommonImageProcessing.SaliencyDetection_withMD:
                     resultBitmap1 = bitmap1;
