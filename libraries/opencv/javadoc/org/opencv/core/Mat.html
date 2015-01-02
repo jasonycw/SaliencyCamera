@@ -403,7 +403,7 @@ extends java.lang.Object</pre>
 
  <p>With this approach, you first call a constructor of the "Mat_" class with the
  proper parameters, and then you just put <code><<</code> operator followed by
- comma-separated values that can be constants, variables, expressions, and so
+ comma-separated valueOfEachSuperpixel that can be constants, variables, expressions, and so
  on. Also, note the extra parentheses required to avoid compilation errors.</p>
 
  <p>Once the array is created, it is automatically managed via a
@@ -1552,7 +1552,7 @@ extends java.lang.Object</pre>
              int&nbsp;rtype)</pre>
 <div class="block"><p>Converts an array to another data type with optional scaling.</p>
 
- <p>The method converts source pixel values to the target data type.
+ <p>The method converts source pixel valueOfEachSuperpixel to the target data type.
  <code>saturate_cast<></code> is applied at the end to avoid possible
  overflows:</p>
 
@@ -1574,7 +1574,7 @@ extends java.lang.Object</pre>
              double&nbsp;alpha)</pre>
 <div class="block"><p>Converts an array to another data type with optional scaling.</p>
 
- <p>The method converts source pixel values to the target data type.
+ <p>The method converts source pixel valueOfEachSuperpixel to the target data type.
  <code>saturate_cast<></code> is applied at the end to avoid possible
  overflows:</p>
 
@@ -1597,7 +1597,7 @@ extends java.lang.Object</pre>
              double&nbsp;beta)</pre>
 <div class="block"><p>Converts an array to another data type with optional scaling.</p>
 
- <p>The method converts source pixel values to the target data type.
+ <p>The method converts source pixel valueOfEachSuperpixel to the target data type.
  <code>saturate_cast<></code> is applied at the end to avoid possible
  overflows:</p>
 
@@ -1605,7 +1605,7 @@ extends java.lang.Object</pre>
 <dl><dt><span class="strong">Parameters:</span></dt><dd><code>m</code> - output matrix; if it does not have a proper size or type before the
  operation, it is reallocated.</dd><dd><code>rtype</code> - desired output matrix type or, rather, the depth since the
  number of channels are the same as the input has; if <code>rtype</code> is
- negative, the output matrix will have the same type as the input.</dd><dd><code>alpha</code> - optional scale factor.</dd><dd><code>beta</code> - optional delta added to the scaled values.</dd><dt><span class="strong">See Also:</span></dt><dd><a href="http://docs.opencv.org/modules/core/doc/basic_structures.html#mat-convertto">org.opencv.core.Mat.convertTo</a></dd></dl>
+ negative, the output matrix will have the same type as the input.</dd><dd><code>alpha</code> - optional scale factor.</dd><dd><code>beta</code> - optional delta added to the scaled valueOfEachSuperpixel.</dd><dt><span class="strong">See Also:</span></dt><dd><a href="http://docs.opencv.org/modules/core/doc/basic_structures.html#mat-convertto">org.opencv.core.Mat.convertTo</a></dd></dl>
 </li>
 </ul>
 <a name="copyTo(org.opencv.core.Mat)">
@@ -1802,7 +1802,7 @@ extends java.lang.Object</pre>
  <p>The method returns the identifier of the matrix element depth (the type of
  each individual channel). For example, for a 16-bit signed element array, the
  method returns <code>CV_16S</code>. A complete list of matrix types contains
- the following values:</p>
+ the following valueOfEachSuperpixel:</p>
  <ul>
    <li> <code>CV_8U</code> - 8-bit unsigned integers (<code>0..255</code>)
    <li> <code>CV_8S</code> - 8-bit signed integers (<code>-128..127</code>)
@@ -1845,7 +1845,7 @@ extends java.lang.Object</pre>
  matrix is represented as a single-column matrix. Similarly to "Mat.row" and
  "Mat.col", this is an O(1) operation.</p></div>
 <dl><dt><span class="strong">Parameters:</span></dt><dd><code>d</code> - Single-column matrix that forms a diagonal matrix or index of the
- diagonal, with the following values:
+ diagonal, with the following valueOfEachSuperpixel:
  <ul>
    <li> d=0 is the main diagonal.
    <li> d>0 is a diagonal from the lower half. For example, <code>d=1</code>
@@ -1868,7 +1868,7 @@ extends java.lang.Object</pre>
  matrix is represented as a single-column matrix. Similarly to "Mat.row" and
  "Mat.col", this is an O(1) operation.</p></div>
 <dl><dt><span class="strong">Parameters:</span></dt><dd><code>d</code> - Single-column matrix that forms a diagonal matrix or index of the
- diagonal, with the following values:
+ diagonal, with the following valueOfEachSuperpixel:
  <ul>
    <li> d=0 is the main diagonal.
    <li> d>0 is a diagonal from the lower half. For example, <code>d=1</code>
@@ -2117,7 +2117,7 @@ extends java.lang.Object</pre>
  means that a temporary matrix inversion object is returned by the method and
  can be used further as a part of more complex matrix expressions or can be
  assigned to a matrix.</p></div>
-<dl><dt><span class="strong">Parameters:</span></dt><dd><code>method</code> - Matrix inversion method. Possible values are the following:
+<dl><dt><span class="strong">Parameters:</span></dt><dd><code>method</code> - Matrix inversion method. Possible valueOfEachSuperpixel are the following:
  <ul>
    <li> DECOMP_LU is the LU decomposition. The matrix must be non-singular.
    <li> DECOMP_CHOLESKY is the Cholesky <em>LL^T</em> decomposition for

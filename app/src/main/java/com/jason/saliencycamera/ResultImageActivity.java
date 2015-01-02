@@ -106,7 +106,7 @@ public class ResultImageActivity extends Activity {
                             switch (status) {
                                 case LoaderCallbackInterface.SUCCESS: {
                                     if (bitmap1 != null)
-                                        resultBitmap1 = CommonImageProcessing.SLIC(bitmap1, getApplicationContext());
+                                        resultBitmap1 = CommonImageProcessing.SLIC(bitmap1);
                                     resultBitmap2 = resultBitmap1;
                                     finishLayout();
                                 }
@@ -125,9 +125,10 @@ public class ResultImageActivity extends Activity {
                         public void onManagerConnected(int status) {
                             switch (status) {
                                 case LoaderCallbackInterface.SUCCESS: {
-                                    if (bitmap1 != null && bitmap2 != null)
+                                    if (bitmap1 != null)
                                         resultBitmap1 = CommonImageProcessing.roughDepthMap(bitmap1, bitmap2);
-                                    resultBitmap2 = resultBitmap1;
+                                    if(bitmap2 != null)
+                                        resultBitmap2 = CommonImageProcessing.diffMap(bitmap1,bitmap2);
                                     finishLayout();
                                 }
                                 break;

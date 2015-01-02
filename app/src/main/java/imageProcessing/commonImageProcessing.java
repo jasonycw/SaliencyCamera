@@ -197,12 +197,29 @@ public class CommonImageProcessing {
 
     public static Bitmap SLIC(Bitmap input){
         SLIC slic = new SlicBuilder().buildSLIC();
-        return slic.createBoundedBitmap(input);
+        SuperpixelImage superpixel = slic.createSuperpixel(input);
+        return superpixel.createBoundary(input);
     }
 
-    public static Bitmap SLIC(Bitmap input, Context context){
-        SLIC slic = new SlicBuilder().context(context).buildSLIC();
-        return slic.createBoundedBitmap(input);
+    public static Bitmap diffMap(Bitmap non_flash_image_bitmap, Bitmap flash_image_bitmap) {
+        int width = non_flash_image_bitmap.getWidth();
+        int height = non_flash_image_bitmap.getHeight();
+
+        Mat no_flash_mat = new Mat(height,width, CvType.CV_8UC3);
+        Utils.bitmapToMat(non_flash_image_bitmap,no_flash_mat);
+        Imgproc.cvtColor(no_flash_mat,no_flash_mat,Imgproc.COLOR_BGR2GRAY);
+
+        Mat flash_mat = new Mat(height, width, CvType.CV_8UC3);
+        Utils.bitmapToMat(flash_image_bitmap,flash_mat);
+        Imgproc.cvtColor(flash_mat,flash_mat,Imgproc.COLOR_BGR2GRAY);
+
+        Mat diff_mat = new Mat();
+        Core.subtract(flash_mat,no_flash_mat,diff_mat);
+
+        SLIC slic = new SlicBuilder().buildSLIC();
+        SuperpixelImage superpixel = slic.createSuperpixel(non_flash_image_bitmap);
+
+        return superpixel.calculateValue(diff_mat).getValueBitmap();
     }
 
     public static Bitmap roughDepthMap(Bitmap non_flash_image_bitmap, Bitmap flash_image_bitmap) {
@@ -220,18 +237,9 @@ public class CommonImageProcessing {
         Mat diff_mat = new Mat();
         Core.subtract(flash_mat,no_flash_mat,diff_mat);
 
-        Mat ratio_mat = new Mat();
-        Mat temp_mat = new Mat();
-        Core.divide(flash_mat, no_flash_mat, temp_mat);
-        temp_mat.convertTo(temp_mat,CvType.CV_32F);
-        Core.log(temp_mat,ratio_mat);
+        SLIC slic = new SlicBuilder().buildSLIC();
+        SuperpixelImage superpixel = slic.createSuperpixel(non_flash_image_bitmap);
 
-        ratio_mat.convertTo(ratio_mat,CvType.CV_8UC3);
-        Mat result_mat = diff_mat.mul(ratio_mat);
-
-        Bitmap result_bitmap = Bitmap.createBitmap(width, height, Bitmap.Config.RGB_565);
-        Utils.matToBitmap(result_mat,result_bitmap);
-
-        return result_bitmap;
+        return superpixel.calculateContrastValueMat(diff_mat).getContrastValueBitmap();
     }
 }

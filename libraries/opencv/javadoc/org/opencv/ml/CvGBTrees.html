@@ -271,7 +271,7 @@ extends <a href="../../../org/opencv/ml/CvStatModel.html" title="class in org.op
 <li class="blockList">
 <h4>ABSOLUTE_LOSS</h4>
 <pre>public static final&nbsp;int ABSOLUTE_LOSS</pre>
-<dl><dt><span class="strong">See Also:</span></dt><dd><a href="../../../constant-values.html#org.opencv.ml.CvGBTrees.ABSOLUTE_LOSS">Constant Field Values</a></dd></dl>
+<dl><dt><span class="strong">See Also:</span></dt><dd><a href="../../../constant-valueOfEachSuperpixel.html#org.opencv.ml.CvGBTrees.ABSOLUTE_LOSS">Constant Field Values</a></dd></dl>
 </li>
 </ul>
 <a name="DEVIANCE_LOSS">
@@ -281,7 +281,7 @@ extends <a href="../../../org/opencv/ml/CvStatModel.html" title="class in org.op
 <li class="blockList">
 <h4>DEVIANCE_LOSS</h4>
 <pre>public static final&nbsp;int DEVIANCE_LOSS</pre>
-<dl><dt><span class="strong">See Also:</span></dt><dd><a href="../../../constant-values.html#org.opencv.ml.CvGBTrees.DEVIANCE_LOSS">Constant Field Values</a></dd></dl>
+<dl><dt><span class="strong">See Also:</span></dt><dd><a href="../../../constant-valueOfEachSuperpixel.html#org.opencv.ml.CvGBTrees.DEVIANCE_LOSS">Constant Field Values</a></dd></dl>
 </li>
 </ul>
 <a name="HUBER_LOSS">
@@ -291,7 +291,7 @@ extends <a href="../../../org/opencv/ml/CvStatModel.html" title="class in org.op
 <li class="blockList">
 <h4>HUBER_LOSS</h4>
 <pre>public static final&nbsp;int HUBER_LOSS</pre>
-<dl><dt><span class="strong">See Also:</span></dt><dd><a href="../../../constant-values.html#org.opencv.ml.CvGBTrees.HUBER_LOSS">Constant Field Values</a></dd></dl>
+<dl><dt><span class="strong">See Also:</span></dt><dd><a href="../../../constant-valueOfEachSuperpixel.html#org.opencv.ml.CvGBTrees.HUBER_LOSS">Constant Field Values</a></dd></dl>
 </li>
 </ul>
 <a name="SQUARED_LOSS">
@@ -301,7 +301,7 @@ extends <a href="../../../org/opencv/ml/CvStatModel.html" title="class in org.op
 <li class="blockList">
 <h4>SQUARED_LOSS</h4>
 <pre>public static final&nbsp;int SQUARED_LOSS</pre>
-<dl><dt><span class="strong">See Also:</span></dt><dd><a href="../../../constant-values.html#org.opencv.ml.CvGBTrees.SQUARED_LOSS">Constant Field Values</a></dd></dl>
+<dl><dt><span class="strong">See Also:</span></dt><dd><a href="../../../constant-valueOfEachSuperpixel.html#org.opencv.ml.CvGBTrees.SQUARED_LOSS">Constant Field Values</a></dd></dl>
 </li>
 </ul>
 </li>
@@ -403,7 +403,7 @@ extends <a href="../../../org/opencv/ml/CvStatModel.html" title="class in org.op
  predictions of single trees are computed in a parallel fashion.</p></div>
 <dl><dt><span class="strong">Parameters:</span></dt><dd><code>sample</code> - Input feature vector that has the same format as every training
  set element. If not all the variables were actually used during training,
- <code>sample</code> contains forged values at the appropriate places.</dd><dt><span class="strong">See Also:</span></dt><dd><a href="http://docs.opencv.org/modules/ml/doc/gradient_boosted_trees.html#cvgbtrees-predict">org.opencv.ml.CvGBTrees.predict</a></dd></dl>
+ <code>sample</code> contains forged valueOfEachSuperpixel at the appropriate places.</dd><dt><span class="strong">See Also:</span></dt><dd><a href="http://docs.opencv.org/modules/ml/doc/gradient_boosted_trees.html#cvgbtrees-predict">org.opencv.ml.CvGBTrees.predict</a></dd></dl>
 </li>
 </ul>
 <a name="predict(org.opencv.core.Mat, org.opencv.core.Mat, org.opencv.core.Range, int)">
@@ -426,10 +426,10 @@ extends <a href="../../../org/opencv/ml/CvStatModel.html" title="class in org.op
  predictions of single trees are computed in a parallel fashion.</p></div>
 <dl><dt><span class="strong">Parameters:</span></dt><dd><code>sample</code> - Input feature vector that has the same format as every training
  set element. If not all the variables were actually used during training,
- <code>sample</code> contains forged values at the appropriate places.</dd><dd><code>missing</code> - Missing values mask, which is a dimensional matrix of the same
+ <code>sample</code> contains forged valueOfEachSuperpixel at the appropriate places.</dd><dd><code>missing</code> - Missing valueOfEachSuperpixel mask, which is a dimensional matrix of the same
  size as <code>sample</code> having the <code>CV_8U</code> type.
  <code>1</code> corresponds to the missing value in the same position in the
- <code>sample</code> vector. If there are no missing values in the feature
+ <code>sample</code> vector. If there are no missing valueOfEachSuperpixel in the feature
  vector, an empty matrix can be passed instead of the missing mask.</dd><dd><code>slice</code> - Parameter defining the part of the ensemble used for prediction.
  <p>If <code>slice = Range.all()</code>, all trees are used. Use this parameter
  to get predictions of the GBT models with different ensemble sizes learning
@@ -452,7 +452,7 @@ extends <a href="../../../org/opencv/ml/CvStatModel.html" title="class in org.op
 <div class="block"><p>Trains a Gradient boosted tree model.</p>
 
  <p>The first train method follows the common template (see "CvStatModel.train").
- Both <code>tflag</code> values (<code>CV_ROW_SAMPLE</code>, <code>CV_COL_SAMPLE</code>)
+ Both <code>tflag</code> valueOfEachSuperpixel (<code>CV_ROW_SAMPLE</code>, <code>CV_COL_SAMPLE</code>)
  are supported.
  <code>trainData</code> must be of the <code>CV_32F</code> type.
  <code>responses</code> must be a matrix of type <code>CV_32S</code> or
@@ -488,7 +488,7 @@ extends <a href="../../../org/opencv/ml/CvStatModel.html" title="class in org.op
 <div class="block"><p>Trains a Gradient boosted tree model.</p>
 
  <p>The first train method follows the common template (see "CvStatModel.train").
- Both <code>tflag</code> values (<code>CV_ROW_SAMPLE</code>, <code>CV_COL_SAMPLE</code>)
+ Both <code>tflag</code> valueOfEachSuperpixel (<code>CV_ROW_SAMPLE</code>, <code>CV_COL_SAMPLE</code>)
  are supported.
  <code>trainData</code> must be of the <code>CV_32F</code> type.
  <code>responses</code> must be a matrix of type <code>CV_32S</code> or

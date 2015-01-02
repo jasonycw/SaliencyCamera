@@ -209,14 +209,14 @@ extends java.lang.Object</pre>
 </tr>
 <tr class="altColor">
 <td class="colOne"><code><strong><a href="../../../org/opencv/calib3d/StereoSGBM.html#StereoSGBM()">StereoSGBM</a></strong>()</code>
-<div class="block">Initializes <code>StereoSGBM</code> and sets parameters to custom values.??</div>
+<div class="block">Initializes <code>StereoSGBM</code> and sets parameters to custom valueOfEachSuperpixel.??</div>
 </td>
 </tr>
 <tr class="rowColor">
 <td class="colOne"><code><strong><a href="../../../org/opencv/calib3d/StereoSGBM.html#StereoSGBM(int, int, int)">StereoSGBM</a></strong>(int&nbsp;minDisparity,
           int&nbsp;numDisparities,
           int&nbsp;SADWindowSize)</code>
-<div class="block">Initializes <code>StereoSGBM</code> and sets parameters to custom values.??</div>
+<div class="block">Initializes <code>StereoSGBM</code> and sets parameters to custom valueOfEachSuperpixel.??</div>
 </td>
 </tr>
 <tr class="altColor">
@@ -231,7 +231,7 @@ extends java.lang.Object</pre>
           int&nbsp;speckleWindowSize,
           int&nbsp;speckleRange,
           boolean&nbsp;fullDP)</code>
-<div class="block">Initializes <code>StereoSGBM</code> and sets parameters to custom values.??</div>
+<div class="block">Initializes <code>StereoSGBM</code> and sets parameters to custom valueOfEachSuperpixel.??</div>
 </td>
 </tr>
 </table>
@@ -372,7 +372,7 @@ extends java.lang.Object</pre>
 <li class="blockList">
 <h4>DISP_SCALE</h4>
 <pre>public static final&nbsp;int DISP_SCALE</pre>
-<dl><dt><span class="strong">See Also:</span></dt><dd><a href="../../../constant-values.html#org.opencv.calib3d.StereoSGBM.DISP_SCALE">Constant Field Values</a></dd></dl>
+<dl><dt><span class="strong">See Also:</span></dt><dd><a href="../../../constant-valueOfEachSuperpixel.html#org.opencv.calib3d.StereoSGBM.DISP_SCALE">Constant Field Values</a></dd></dl>
 </li>
 </ul>
 <a name="DISP_SHIFT">
@@ -382,7 +382,7 @@ extends java.lang.Object</pre>
 <li class="blockList">
 <h4>DISP_SHIFT</h4>
 <pre>public static final&nbsp;int DISP_SHIFT</pre>
-<dl><dt><span class="strong">See Also:</span></dt><dd><a href="../../../constant-values.html#org.opencv.calib3d.StereoSGBM.DISP_SHIFT">Constant Field Values</a></dd></dl>
+<dl><dt><span class="strong">See Also:</span></dt><dd><a href="../../../constant-valueOfEachSuperpixel.html#org.opencv.calib3d.StereoSGBM.DISP_SHIFT">Constant Field Values</a></dd></dl>
 </li>
 </ul>
 </li>
@@ -400,7 +400,7 @@ extends java.lang.Object</pre>
 <li class="blockList">
 <h4>StereoSGBM</h4>
 <pre>public&nbsp;StereoSGBM()</pre>
-<div class="block"><p>Initializes <code>StereoSGBM</code> and sets parameters to custom values.??</p>
+<div class="block"><p>Initializes <code>StereoSGBM</code> and sets parameters to custom valueOfEachSuperpixel.??</p>
 
  <p>The first constructor initializes <code>StereoSGBM</code> with all the
  default parameters. So, you only have to set <code>StereoSGBM.numberOfDisparities</code>
@@ -418,7 +418,7 @@ extends java.lang.Object</pre>
 <pre>public&nbsp;StereoSGBM(int&nbsp;minDisparity,
           int&nbsp;numDisparities,
           int&nbsp;SADWindowSize)</pre>
-<div class="block"><p>Initializes <code>StereoSGBM</code> and sets parameters to custom values.??</p>
+<div class="block"><p>Initializes <code>StereoSGBM</code> and sets parameters to custom valueOfEachSuperpixel.??</p>
 
  <p>The first constructor initializes <code>StereoSGBM</code> with all the
  default parameters. So, you only have to set <code>StereoSGBM.numberOfDisparities</code>
@@ -450,7 +450,7 @@ extends java.lang.Object</pre>
           int&nbsp;speckleWindowSize,
           int&nbsp;speckleRange,
           boolean&nbsp;fullDP)</pre>
-<div class="block"><p>Initializes <code>StereoSGBM</code> and sets parameters to custom values.??</p>
+<div class="block"><p>Initializes <code>StereoSGBM</code> and sets parameters to custom valueOfEachSuperpixel.??</p>
 
  <p>The first constructor initializes <code>StereoSGBM</code> with all the
  default parameters. So, you only have to set <code>StereoSGBM.numberOfDisparities</code>
@@ -464,18 +464,18 @@ extends java.lang.Object</pre>
  <code>>=1</code>. Normally, it should be somewhere in the <code>3..11</code>
  range.</dd><dd><code>P1</code> - The first parameter controlling the disparity smoothness. See
  below.</dd><dd><code>P2</code> - The second parameter controlling the disparity smoothness. The
- larger the values are, the smoother the disparity is. <code>P1</code> is the
+ larger the valueOfEachSuperpixel are, the smoother the disparity is. <code>P1</code> is the
  penalty on the disparity change by plus or minus 1 between neighbor pixels.
  <code>P2</code> is the penalty on the disparity change by more than 1 between
  neighbor pixels. The algorithm requires <code>P2 > P1</code>. See
  <code>stereo_match.cpp</code> sample where some reasonably good
- <code>P1</code> and <code>P2</code> values are shown (like <code>8*number_of_image_channels*SADWindowSize*SADWindowSize</code>
+ <code>P1</code> and <code>P2</code> valueOfEachSuperpixel are shown (like <code>8*number_of_image_channels*SADWindowSize*SADWindowSize</code>
  and <code>32*number_of_image_channels*SADWindowSize*SADWindowSize</code>,
  respectively).</dd><dd><code>disp12MaxDiff</code> - Maximum allowed difference (in integer pixel units) in
  the left-right disparity check. Set it to a non-positive value to disable the
  check.</dd><dd><code>preFilterCap</code> - Truncation value for the prefiltered image pixels. The
  algorithm first computes x-derivative at each pixel and clips its value by
- <code>[-preFilterCap, preFilterCap]</code> interval. The result values are
+ <code>[-preFilterCap, preFilterCap]</code> interval. The result valueOfEachSuperpixel are
  passed to the Birchfield-Tomasi pixel cost function.</dd><dd><code>uniquenessRatio</code> - Margin in percentage by which the best (minimum)
  computed cost function value should "win" the second best value to consider
  the found match correct. Normally, a value within the 5-15 range is good

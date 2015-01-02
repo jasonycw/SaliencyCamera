@@ -375,7 +375,7 @@ extends java.lang.Object</pre>
 <li class="blockList">
 <h4>OPTFLOW_FARNEBACK_GAUSSIAN</h4>
 <pre>public static final&nbsp;int OPTFLOW_FARNEBACK_GAUSSIAN</pre>
-<dl><dt><span class="strong">See Also:</span></dt><dd><a href="../../../constant-values.html#org.opencv.video.Video.OPTFLOW_FARNEBACK_GAUSSIAN">Constant Field Values</a></dd></dl>
+<dl><dt><span class="strong">See Also:</span></dt><dd><a href="../../../constant-valueOfEachSuperpixel.html#org.opencv.video.Video.OPTFLOW_FARNEBACK_GAUSSIAN">Constant Field Values</a></dd></dl>
 </li>
 </ul>
 <a name="OPTFLOW_LK_GET_MIN_EIGENVALS">
@@ -385,7 +385,7 @@ extends java.lang.Object</pre>
 <li class="blockList">
 <h4>OPTFLOW_LK_GET_MIN_EIGENVALS</h4>
 <pre>public static final&nbsp;int OPTFLOW_LK_GET_MIN_EIGENVALS</pre>
-<dl><dt><span class="strong">See Also:</span></dt><dd><a href="../../../constant-values.html#org.opencv.video.Video.OPTFLOW_LK_GET_MIN_EIGENVALS">Constant Field Values</a></dd></dl>
+<dl><dt><span class="strong">See Also:</span></dt><dd><a href="../../../constant-valueOfEachSuperpixel.html#org.opencv.video.Video.OPTFLOW_LK_GET_MIN_EIGENVALS">Constant Field Values</a></dd></dl>
 </li>
 </ul>
 <a name="OPTFLOW_USE_INITIAL_FLOW">
@@ -395,7 +395,7 @@ extends java.lang.Object</pre>
 <li class="blockList">
 <h4>OPTFLOW_USE_INITIAL_FLOW</h4>
 <pre>public static final&nbsp;int OPTFLOW_USE_INITIAL_FLOW</pre>
-<dl><dt><span class="strong">See Also:</span></dt><dd><a href="../../../constant-values.html#org.opencv.video.Video.OPTFLOW_USE_INITIAL_FLOW">Constant Field Values</a></dd></dl>
+<dl><dt><span class="strong">See Also:</span></dt><dd><a href="../../../constant-valueOfEachSuperpixel.html#org.opencv.video.Video.OPTFLOW_USE_INITIAL_FLOW">Constant Field Values</a></dd></dl>
 </li>
 </ul>
 </li>
@@ -523,10 +523,10 @@ extends java.lang.Object</pre>
  motion gradient data is correct.</dd><dd><code>orientation</code> - Output motion gradient orientation image that has the same
  type and the same size as <code>mhi</code>. Each pixel of the image is a
  motion orientation, from 0 to 360 degrees.</dd><dd><code>delta1</code> - Minimal (or maximal) allowed difference between
- <code>mhi</code> values within a pixel neighborhood.</dd><dd><code>delta2</code> - Maximal (or minimal) allowed difference between
- <code>mhi</code> values within a pixel neighborhood. That is, the function
+ <code>mhi</code> valueOfEachSuperpixel within a pixel neighborhood.</dd><dd><code>delta2</code> - Maximal (or minimal) allowed difference between
+ <code>mhi</code> valueOfEachSuperpixel within a pixel neighborhood. That is, the function
  finds the minimum (<em>m(x,y)</em>) and maximum (<em>M(x,y)</em>)
- <code>mhi</code> values over <em>3 x 3</em> neighborhood of each pixel and
+ <code>mhi</code> valueOfEachSuperpixel over <em>3 x 3</em> neighborhood of each pixel and
  marks the motion orientation at <em>(x, y)</em> as valid only if
 
  <p><em>min(delta1, delta2) <= M(x,y)-m(x,y) <= max(delta1, delta2).</em></p></dd><dt><span class="strong">See Also:</span></dt><dd><a href="http://docs.opencv.org/modules/video/doc/motion_analysis_and_object_tracking.html#calcmotiongradient">org.opencv.video.Video.calcMotionGradient</a></dd></dl>
@@ -566,10 +566,10 @@ extends java.lang.Object</pre>
  motion gradient data is correct.</dd><dd><code>orientation</code> - Output motion gradient orientation image that has the same
  type and the same size as <code>mhi</code>. Each pixel of the image is a
  motion orientation, from 0 to 360 degrees.</dd><dd><code>delta1</code> - Minimal (or maximal) allowed difference between
- <code>mhi</code> values within a pixel neighborhood.</dd><dd><code>delta2</code> - Maximal (or minimal) allowed difference between
- <code>mhi</code> values within a pixel neighborhood. That is, the function
+ <code>mhi</code> valueOfEachSuperpixel within a pixel neighborhood.</dd><dd><code>delta2</code> - Maximal (or minimal) allowed difference between
+ <code>mhi</code> valueOfEachSuperpixel within a pixel neighborhood. That is, the function
  finds the minimum (<em>m(x,y)</em>) and maximum (<em>M(x,y)</em>)
- <code>mhi</code> values over <em>3 x 3</em> neighborhood of each pixel and
+ <code>mhi</code> valueOfEachSuperpixel over <em>3 x 3</em> neighborhood of each pixel and
  marks the motion orientation at <em>(x, y)</em> as valid only if
 
  <p><em>min(delta1, delta2) <= M(x,y)-m(x,y) <= max(delta1, delta2).</em></p></dd><dd><code>apertureSize</code> - Aperture size of the "Sobel" operator.</dd><dt><span class="strong">See Also:</span></dt><dd><a href="http://docs.opencv.org/modules/video/doc/motion_analysis_and_object_tracking.html#calcmotiongradient">org.opencv.video.Video.calcMotionGradient</a></dd></dl>
@@ -611,11 +611,11 @@ extends java.lang.Object</pre>
  for each image; <code>pyr_scale=0.5</code> means a classical pyramid, where
  each next layer is twice smaller than the previous one.</dd><dd><code>levels</code> - number of pyramid layers including the initial image;
  <code>levels=1</code> means that no extra layers are created and only the
- original images are used.</dd><dd><code>winsize</code> - averaging window size; larger values increase the algorithm
+ original images are used.</dd><dd><code>winsize</code> - averaging window size; larger valueOfEachSuperpixel increase the algorithm
  robustness to image noise and give more chances for fast motion detection,
  but yield more blurred motion field.</dd><dd><code>iterations</code> - number of iterations the algorithm does at each pyramid
  level.</dd><dd><code>poly_n</code> - size of the pixel neighborhood used to find polynomial
- expansion in each pixel; larger values mean that the image will be
+ expansion in each pixel; larger valueOfEachSuperpixel mean that the image will be
  approximated with smoother surfaces, yielding more robust algorithm and more
  blurred motion field, typically <code>poly_n</code> =5 or 7.</dd><dd><code>poly_sigma</code> - standard deviation of the Gaussian that is used to smooth
  derivatives used as a basis for the polynomial expansion; for
@@ -776,7 +776,7 @@ extends java.lang.Object</pre>
    <li> OPTFLOW_USE_INITIAL_FLOW uses initial estimations, stored in
  <code>nextPts</code>; if the flag is not set, then <code>prevPts</code> is
  copied to <code>nextPts</code> and is considered the initial estimate.
-   <li> OPTFLOW_LK_GET_MIN_EIGENVALS use minimum eigen values as an error
+   <li> OPTFLOW_LK_GET_MIN_EIGENVALS use minimum eigen valueOfEachSuperpixel as an error
  measure (see <code>minEigThreshold</code> description); if the flag is not
  set, then L1 distance between patches around the original and a moved point,
  divided by number of pixels in a window, is used as a error measure.
@@ -979,7 +979,7 @@ extends java.lang.Object</pre>
  independent motions (for example, left hand, right hand).</p>
 
  <p>The function finds all of the motion segments and marks them in
- <code>segmask</code> with individual values (1,2,...). It also computes a
+ <code>segmask</code> with individual valueOfEachSuperpixel (1,2,...). It also computes a
  vector with ROIs of motion connected components. After that the motion
  direction for every component can be calculated with "calcGlobalOrientation"
  using the extracted mask of the particular component.</p></div>

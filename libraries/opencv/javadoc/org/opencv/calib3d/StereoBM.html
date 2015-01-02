@@ -122,7 +122,7 @@ extends java.lang.Object</pre>
 
  <p>// SADWindowSize is the size of averaging window used to match pixel blocks</p>
 
- <p>// (larger values mean better robustness to noise, but yield blurry disparity
+ <p>// (larger valueOfEachSuperpixel mean better robustness to noise, but yield blurry disparity
  maps)</p>
 
  <p>StereoBM(int preset, int ndisparities=0, int SADWindowSize=21);</p>
@@ -281,7 +281,7 @@ extends java.lang.Object</pre>
 <li class="blockList">
 <h4>BASIC_PRESET</h4>
 <pre>public static final&nbsp;int BASIC_PRESET</pre>
-<dl><dt><span class="strong">See Also:</span></dt><dd><a href="../../../constant-values.html#org.opencv.calib3d.StereoBM.BASIC_PRESET">Constant Field Values</a></dd></dl>
+<dl><dt><span class="strong">See Also:</span></dt><dd><a href="../../../constant-valueOfEachSuperpixel.html#org.opencv.calib3d.StereoBM.BASIC_PRESET">Constant Field Values</a></dd></dl>
 </li>
 </ul>
 <a name="FISH_EYE_PRESET">
@@ -291,7 +291,7 @@ extends java.lang.Object</pre>
 <li class="blockList">
 <h4>FISH_EYE_PRESET</h4>
 <pre>public static final&nbsp;int FISH_EYE_PRESET</pre>
-<dl><dt><span class="strong">See Also:</span></dt><dd><a href="../../../constant-values.html#org.opencv.calib3d.StereoBM.FISH_EYE_PRESET">Constant Field Values</a></dd></dl>
+<dl><dt><span class="strong">See Also:</span></dt><dd><a href="../../../constant-valueOfEachSuperpixel.html#org.opencv.calib3d.StereoBM.FISH_EYE_PRESET">Constant Field Values</a></dd></dl>
 </li>
 </ul>
 <a name="NARROW_PRESET">
@@ -301,7 +301,7 @@ extends java.lang.Object</pre>
 <li class="blockList">
 <h4>NARROW_PRESET</h4>
 <pre>public static final&nbsp;int NARROW_PRESET</pre>
-<dl><dt><span class="strong">See Also:</span></dt><dd><a href="../../../constant-values.html#org.opencv.calib3d.StereoBM.NARROW_PRESET">Constant Field Values</a></dd></dl>
+<dl><dt><span class="strong">See Also:</span></dt><dd><a href="../../../constant-valueOfEachSuperpixel.html#org.opencv.calib3d.StereoBM.NARROW_PRESET">Constant Field Values</a></dd></dl>
 </li>
 </ul>
 <a name="PREFILTER_NORMALIZED_RESPONSE">
@@ -311,7 +311,7 @@ extends java.lang.Object</pre>
 <li class="blockList">
 <h4>PREFILTER_NORMALIZED_RESPONSE</h4>
 <pre>public static final&nbsp;int PREFILTER_NORMALIZED_RESPONSE</pre>
-<dl><dt><span class="strong">See Also:</span></dt><dd><a href="../../../constant-values.html#org.opencv.calib3d.StereoBM.PREFILTER_NORMALIZED_RESPONSE">Constant Field Values</a></dd></dl>
+<dl><dt><span class="strong">See Also:</span></dt><dd><a href="../../../constant-valueOfEachSuperpixel.html#org.opencv.calib3d.StereoBM.PREFILTER_NORMALIZED_RESPONSE">Constant Field Values</a></dd></dl>
 </li>
 </ul>
 <a name="PREFILTER_XSOBEL">
@@ -321,7 +321,7 @@ extends java.lang.Object</pre>
 <li class="blockList">
 <h4>PREFILTER_XSOBEL</h4>
 <pre>public static final&nbsp;int PREFILTER_XSOBEL</pre>
-<dl><dt><span class="strong">See Also:</span></dt><dd><a href="../../../constant-values.html#org.opencv.calib3d.StereoBM.PREFILTER_XSOBEL">Constant Field Values</a></dd></dl>
+<dl><dt><span class="strong">See Also:</span></dt><dd><a href="../../../constant-valueOfEachSuperpixel.html#org.opencv.calib3d.StereoBM.PREFILTER_XSOBEL">Constant Field Values</a></dd></dl>
 </li>
 </ul>
 </li>
@@ -437,10 +437,10 @@ extends java.lang.Object</pre>
  simultaneously. The function is parallelized with the TBB library.</p></div>
 <dl><dt><span class="strong">Parameters:</span></dt><dd><code>left</code> - Left 8-bit single-channel image.</dd><dd><code>right</code> - Right image of the same size and the same type as the left one.</dd><dd><code>disparity</code> - Output disparity map. It has the same size as the input
  images. When <code>disptype==CV_16S</code>, the map is a 16-bit signed
- single-channel image, containing disparity values scaled by 16. To get the
- true disparity values from such fixed-point representation, you will need to
+ single-channel image, containing disparity valueOfEachSuperpixel scaled by 16. To get the
+ true disparity valueOfEachSuperpixel from such fixed-point representation, you will need to
  divide each <code>disp</code> element by 16. If <code>disptype==CV_32F</code>,
- the disparity map will already contain the real disparity values on output.</dd><dt><span class="strong">See Also:</span></dt><dd><a href="http://docs.opencv.org/modules/calib3d/doc/camera_calibration_and_3d_reconstruction.html#stereobm-operator">org.opencv.calib3d.StereoBM.operator()</a></dd></dl>
+ the disparity map will already contain the real disparity valueOfEachSuperpixel on output.</dd><dt><span class="strong">See Also:</span></dt><dd><a href="http://docs.opencv.org/modules/calib3d/doc/camera_calibration_and_3d_reconstruction.html#stereobm-operator">org.opencv.calib3d.StereoBM.operator()</a></dd></dl>
 </li>
 </ul>
 <a name="compute(org.opencv.core.Mat, org.opencv.core.Mat, org.opencv.core.Mat, int)">
@@ -462,10 +462,10 @@ extends java.lang.Object</pre>
  simultaneously. The function is parallelized with the TBB library.</p></div>
 <dl><dt><span class="strong">Parameters:</span></dt><dd><code>left</code> - Left 8-bit single-channel image.</dd><dd><code>right</code> - Right image of the same size and the same type as the left one.</dd><dd><code>disparity</code> - Output disparity map. It has the same size as the input
  images. When <code>disptype==CV_16S</code>, the map is a 16-bit signed
- single-channel image, containing disparity values scaled by 16. To get the
- true disparity values from such fixed-point representation, you will need to
+ single-channel image, containing disparity valueOfEachSuperpixel scaled by 16. To get the
+ true disparity valueOfEachSuperpixel from such fixed-point representation, you will need to
  divide each <code>disp</code> element by 16. If <code>disptype==CV_32F</code>,
- the disparity map will already contain the real disparity values on output.</dd><dd><code>disptype</code> - Type of the output disparity map, <code>CV_16S</code>
+ the disparity map will already contain the real disparity valueOfEachSuperpixel on output.</dd><dd><code>disptype</code> - Type of the output disparity map, <code>CV_16S</code>
  (default) or <code>CV_32F</code>.</dd><dt><span class="strong">See Also:</span></dt><dd><a href="http://docs.opencv.org/modules/calib3d/doc/camera_calibration_and_3d_reconstruction.html#stereobm-operator">org.opencv.calib3d.StereoBM.operator()</a></dd></dl>
 </li>
 </ul>
