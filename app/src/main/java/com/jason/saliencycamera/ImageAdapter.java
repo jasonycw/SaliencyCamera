@@ -17,10 +17,10 @@ import java.io.IOException;
 public class ImageAdapter extends BaseAdapter {
     // references to our images
     public static String[] NO_FLASH_IMAGE_NAMES = {
-            "toy.jpg","3dprinting.jpg","totoro11.jpg","totoro22.jpg","winnie.jpg","lena2_.png"
+            "chicken.jpg","toy.jpg","3dprinting.jpg","totoro11.jpg","totoro22.jpg","winnie.jpg","lena2_.png"
     };
     public static final String[] FLASH_IMAGE_NAMES = {
-            "toy_lighted.jpg","3dprinting_lighted.jpg","totoro11_lighted.jpg","totoro22_lighted.jpg","winnie_lighted.jpg","lena1_.png"
+            "chicken_lighted.jpg","toy_lighted.jpg","3dprinting_lighted.jpg","totoro11_lighted.jpg","totoro22_lighted.jpg","winnie_lighted.jpg","lena1_.png"
     };
 
     private Context mContext;

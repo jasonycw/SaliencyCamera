@@ -14,6 +14,8 @@ import android.widget.TextView;
 import org.opencv.android.BaseLoaderCallback;
 import org.opencv.android.LoaderCallbackInterface;
 import org.opencv.android.OpenCVLoader;
+import org.opencv.core.MatOfByte;
+import org.opencv.core.MatOfPoint2f;
 
 import java.io.File;
 import java.io.IOException;
@@ -95,9 +97,27 @@ public class ResultImageActivity extends Activity {
                     finishLayout();
                     break;
                 case CommonImageProcessing.MotionDetection:
-                    resultBitmap1 = bitmap1;
-                    resultBitmap2 = bitmap2;
-                    finishLayout();
+                    final Bitmap IIFBitmap1 = LSH.IIF(bitmap1);
+                    final Bitmap IIFBitmap2 = LSH.IIF(bitmap2);
+                    OpenCVLoader.initAsync(OpenCVLoader.OPENCV_VERSION_2_4_9, this, new BaseLoaderCallback(this) {
+                        @Override
+                        public void onManagerConnected(int status) {
+                            switch (status) {
+                                case LoaderCallbackInterface.SUCCESS: {
+                                    if (bitmap1 != null)
+                                        resultBitmap1 = CommonImageProcessing.motionDetection(IIFBitmap1, IIFBitmap2, IIFBitmap1);
+                                    if(bitmap2 != null)
+                                        resultBitmap2 = CommonImageProcessing.motionDetection(IIFBitmap1, IIFBitmap2, IIFBitmap2);
+                                    finishLayout();
+                                }
+                                break;
+                                default: {
+                                    super.onManagerConnected(status);
+                                }
+                                break;
+                            }
+                        }
+                    });
                     break;
                 case CommonImageProcessing.SLIC:
                     OpenCVLoader.initAsync(OpenCVLoader.OPENCV_VERSION_2_4_9, this, new BaseLoaderCallback(this) {
@@ -141,9 +161,33 @@ public class ResultImageActivity extends Activity {
                     });
                     break;
                 case CommonImageProcessing.SaliencyDetection_withMD:
-                    resultBitmap1 = bitmap1;
-                    resultBitmap2 = bitmap2;
-                    finishLayout();
+                    OpenCVLoader.initAsync(OpenCVLoader.OPENCV_VERSION_2_4_9, this, new BaseLoaderCallback(this) {
+                        @Override
+                        public void onManagerConnected(int status) {
+                            switch (status) {
+                                case LoaderCallbackInterface.SUCCESS: {
+                                    if (bitmap1 != null && bitmap2 !=null){
+                                        Bitmap IIFBitmap1 = LSH.IIF(bitmap1);
+                                        Bitmap IIFBitmap2 = LSH.IIF(bitmap2);
+                                        MatOfPoint2f point1 = new MatOfPoint2f();
+                                        MatOfPoint2f point2 = new MatOfPoint2f();
+                                        MatOfByte resultStatus = new MatOfByte();
+                                        CommonImageProcessing.opticalFlow(IIFBitmap1, IIFBitmap2, point1, point2, resultStatus);
+
+
+                                        resultBitmap1 = CommonImageProcessing.motionDetection(IIFBitmap1, IIFBitmap2, IIFBitmap1);
+                                        resultBitmap2 = CommonImageProcessing.motionDetection(IIFBitmap1, IIFBitmap2, IIFBitmap2);
+                                    }
+                                    finishLayout();
+                                }
+                                break;
+                                default: {
+                                    super.onManagerConnected(status);
+                                }
+                                break;
+                            }
+                        }
+                    });
                     break;
             }
         }

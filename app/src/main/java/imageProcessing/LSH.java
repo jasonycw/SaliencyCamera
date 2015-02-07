@@ -15,7 +15,7 @@ public class LSH {
     private static int imgWidth;
     private static int imgHeight;
 
-    private static int bin_number = 32;
+    private static int bin_number = 64;
     private static float alpha = (float) 0.15;
     private static float k = (float) 0.1;
 

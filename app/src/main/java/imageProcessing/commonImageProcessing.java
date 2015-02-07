@@ -13,9 +13,17 @@ import org.opencv.android.Utils;
 import org.opencv.core.Core;
 import org.opencv.core.CvType;
 import org.opencv.core.Mat;
+import org.opencv.core.MatOfByte;
+import org.opencv.core.MatOfFloat;
+import org.opencv.core.MatOfPoint;
+import org.opencv.core.MatOfPoint2f;
 import org.opencv.core.Scalar;
 import org.opencv.core.Point;
 import org.opencv.imgproc.Imgproc;
+import org.opencv.video.Video;
+
+import java.util.ArrayList;
+import java.util.List;
 
 /**
  * Created by Jason on 7/9/2014.
@@ -241,5 +249,81 @@ public class CommonImageProcessing {
         SuperpixelImage superpixel = slic.createSuperpixel(non_flash_image_bitmap);
 
         return superpixel.calculateContrastValueMat(diff_mat).getContrastValueBitmap();
+    }
+
+    public static Bitmap motionDetection(Bitmap non_flash_image_bitmap, Bitmap flash_image_bitmap, Bitmap resultBackgroud){
+        Mat result_mat = new Mat(non_flash_image_bitmap.getHeight(), non_flash_image_bitmap.getWidth(), CvType.CV_8UC3);
+        Utils.bitmapToMat(resultBackgroud,result_mat);
+
+        MatOfPoint2f point1 = new MatOfPoint2f();
+        MatOfPoint2f point2 = new MatOfPoint2f();
+        MatOfByte status = new MatOfByte();
+        opticalFlow(non_flash_image_bitmap, flash_image_bitmap, point1, point2, status);
+
+        List<Point> cornersPrev = new ArrayList<Point>();
+        cornersPrev = point1.toList();
+
+        List<Point> cornersThis = new ArrayList<Point>();
+        cornersThis = point2.toList();
+
+        List<Byte> opticalFlowResultStatus = new ArrayList<Byte>();
+        opticalFlowResultStatus = status.toList();
+
+        int y = opticalFlowResultStatus.size() - 1;
+
+        Point pt, pt2;
+        Scalar colorRed = new Scalar(255, 0, 0, 255);
+        int iLineThickness = 1;
+
+        for (int x = 0; x < y; x++) {
+            if (opticalFlowResultStatus.get(x) == 1) {
+                pt = cornersThis.get(x);
+                pt2 = cornersPrev.get(x);
+
+//                Core.circle(result_mat, pt, 5, colorRed, iLineThickness - 1);
+
+                Core.line(result_mat, pt, pt2, colorRed, iLineThickness);
+            }
+        }
+
+        // Change the value matrix to Bitmap
+        Bitmap result_bitmap = Bitmap.createBitmap(result_mat.width(), result_mat.height(), Bitmap.Config.RGB_565);
+        Utils.matToBitmap(result_mat,result_bitmap);
+        return result_bitmap;
+    }
+
+    public static void opticalFlow(Bitmap bitmap1, Bitmap bitmap2, MatOfPoint2f pointInBitmap1, MatOfPoint2f pointInBitmap2, MatOfByte status){
+        int width = bitmap1.getWidth();
+        int height = bitmap1.getHeight();
+
+        Mat mat1 = new Mat(height,width, CvType.CV_8UC3);
+        Utils.bitmapToMat(bitmap1,mat1);
+
+        Mat mat2 = new Mat(height, width, CvType.CV_8UC3);
+        Utils.bitmapToMat(bitmap2,mat2);
+
+        Imgproc.cvtColor(mat1,mat1,Imgproc.COLOR_BGR2GRAY);
+        Imgproc.cvtColor(mat2,mat2,Imgproc.COLOR_BGR2GRAY);
+
+
+        MatOfPoint samplePoints = new MatOfPoint();
+        int MAX_NUM_OF_SAMPLE_POINT = 100000000;
+        Imgproc.goodFeaturesToTrack(mat1, samplePoints, MAX_NUM_OF_SAMPLE_POINT, 0.0001, 1);
+
+        pointInBitmap1.fromArray(samplePoints.toArray());
+        pointInBitmap2.fromArray(samplePoints.toArray());
+
+        MatOfFloat error = new MatOfFloat();
+
+         /*
+            Parameters:
+                mat1 first 8-bit input image
+                mat2 second input image
+                pointInBitmap1 vector of 2D points for which the flow needs to be found; point coordinates must be single-precision floating-point numbers.
+                pointInBitmap2 output vector of 2D points (with single-precision floating-point coordinates) containing the calculated new positions of input features in the second image; when OPTFLOW_USE_INITIAL_FLOW flag is passed, the vector must have the same size as in the input.
+                status output status vector (of unsigned chars); each element of the vector is set to 1 if the flow for the corresponding features has been found, otherwise, it is set to 0.
+                error output vector of errors; each element of the vector is set to an error for the corresponding feature, type of the error measure can be set in flags parameter; if the flow wasn't found then the error is not defined (use the status parameter to find such cases).
+        */
+        Video.calcOpticalFlowPyrLK(mat1, mat2, pointInBitmap1, pointInBitmap2, status, error);
     }
 }

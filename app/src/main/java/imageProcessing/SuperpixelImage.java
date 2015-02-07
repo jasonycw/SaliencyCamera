@@ -137,6 +137,7 @@ public class SuperpixelImage {
         this.pixelCountForEachSuperpixel.fromList(totalPixelsList);
         this.valueOfEachSuperpixel = new MatOfDouble();
         this.valueOfEachSuperpixel.fromList(valueList);
+        Core.normalize(valueOfEachSuperpixel,valueOfEachSuperpixel,0,255,Core.NORM_MINMAX);
         return this;
     }
 
