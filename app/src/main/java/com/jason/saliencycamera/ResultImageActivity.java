@@ -180,6 +180,7 @@ public class ResultImageActivity extends Activity {
                                         MatOfPoint2f point2 = new MatOfPoint2f();
                                         MatOfByte resultStatus = new MatOfByte();
                                         CommonImageProcessing.opticalFlow(IIFBitmap1, IIFBitmap2, point1, point2, resultStatus);
+//                                        CommonImageProcessing.perPixelOpticalFlow(IIFBitmap1, IIFBitmap2, point1, point2, resultStatus);
 
                                         //Work out the superpixel object for calculation
                                         SLIC slic = new SlicBuilder().buildSLIC();
@@ -187,6 +188,7 @@ public class ResultImageActivity extends Activity {
 
                                         //Calculate the average displacement of each superpixel
                                         superpixel.calculateDisplacement(point1,point2, resultStatus);
+//                                        superpixel.setDisplacement(point1,point2, resultStatus);
 
                                         //Use the superpixel object to calculate the roughDepthMap
                                         resultBitmap1 = CommonImageProcessing.motionCompensatedSaliencyDetection(bitmap1, bitmap2, superpixel);

@@ -259,6 +259,7 @@ public class CommonImageProcessing {
         MatOfPoint2f point2 = new MatOfPoint2f();
         MatOfByte status = new MatOfByte();
         opticalFlow(non_flash_image_bitmap, flash_image_bitmap, point1, point2, status);
+//        perPixelOpticalFlow(non_flash_image_bitmap, flash_image_bitmap, point1, point2, status);
 
         List<Point> cornersPrev = new ArrayList<Point>();
         cornersPrev = point1.toList();
@@ -281,8 +282,8 @@ public class CommonImageProcessing {
                 pt2 = cornersPrev.get(x);
 
 //                Core.circle(result_mat, pt, 5, colorRed, iLineThickness - 1);
-
-                Core.line(result_mat, pt, pt2, colorRed, iLineThickness);
+                if(Math.sqrt(Math.pow(Math.abs(pt.x-pt2.x),2) + Math.pow(Math.abs(pt.y-pt2.y),2)) <= CommonImageProcessing.PIXEL_DISPLACEMENT_THRESHOLD)
+                    Core.line(result_mat, pt, pt2, colorRed, iLineThickness);
             }
         }
 
