@@ -23,6 +23,9 @@ import java.util.Date;
 
 import imageProcessing.CommonImageProcessing;
 import imageProcessing.LSH;
+import imageProcessing.SLIC;
+import imageProcessing.SlicBuilder;
+import imageProcessing.SuperpixelImage;
 
 
 public class ResultImageActivity extends Activity {
@@ -148,7 +151,8 @@ public class ResultImageActivity extends Activity {
                                     if (bitmap1 != null)
                                         resultBitmap1 = CommonImageProcessing.roughDepthMap(bitmap1, bitmap2);
                                     if(bitmap2 != null)
-                                        resultBitmap2 = CommonImageProcessing.diffMap(bitmap1,bitmap2);
+//                                        resultBitmap2 = CommonImageProcessing.diffMap(bitmap1,bitmap2);
+                                        resultBitmap2 = resultBitmap1;
                                     finishLayout();
                                 }
                                 break;
@@ -167,16 +171,26 @@ public class ResultImageActivity extends Activity {
                             switch (status) {
                                 case LoaderCallbackInterface.SUCCESS: {
                                     if (bitmap1 != null && bitmap2 !=null){
+                                        //Generate the IIF images
                                         Bitmap IIFBitmap1 = LSH.IIF(bitmap1);
                                         Bitmap IIFBitmap2 = LSH.IIF(bitmap2);
+
+                                        //Calculate the optical flow using the IIF images
                                         MatOfPoint2f point1 = new MatOfPoint2f();
                                         MatOfPoint2f point2 = new MatOfPoint2f();
                                         MatOfByte resultStatus = new MatOfByte();
                                         CommonImageProcessing.opticalFlow(IIFBitmap1, IIFBitmap2, point1, point2, resultStatus);
 
+                                        //Work out the superpixel object for calculation
+                                        SLIC slic = new SlicBuilder().buildSLIC();
+                                        SuperpixelImage superpixel = slic.createSuperpixel(bitmap1);
 
-                                        resultBitmap1 = CommonImageProcessing.motionDetection(IIFBitmap1, IIFBitmap2, IIFBitmap1);
-                                        resultBitmap2 = CommonImageProcessing.motionDetection(IIFBitmap1, IIFBitmap2, IIFBitmap2);
+                                        //Calculate the average displacement of each superpixel
+                                        superpixel.calculateDisplacement(point1,point2, resultStatus);
+
+                                        //Use the superpixel object to calculate the roughDepthMap
+                                        resultBitmap1 = CommonImageProcessing.motionCompensatedSaliencyDetection(bitmap1, bitmap2, superpixel);
+                                        resultBitmap2 = resultBitmap1;
                                     }
                                     finishLayout();
                                 }

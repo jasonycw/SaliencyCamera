@@ -1,6 +1,5 @@
 package imageProcessing;
 
-import android.content.Context;
 import android.graphics.Bitmap;
 import android.util.Log;
 
@@ -9,20 +8,14 @@ import org.opencv.core.CvType;
 import org.opencv.core.Mat;
 import org.opencv.core.Core;
 import org.opencv.core.MatOfInt;
-import org.opencv.core.MatOfPoint;
 import org.opencv.core.MatOfPoint2f;
 import org.opencv.core.Point;
 import org.opencv.core.Range;
 import org.opencv.core.Scalar;
 import org.opencv.imgproc.Imgproc;
 
-import java.io.File;
-import java.io.FileOutputStream;
 import java.util.ArrayList;
 import java.util.List;
-import java.util.Vector;
-
-import tools.DebugTools;
 
 /**
  * Created by Jason on 12/10/2014.
@@ -225,7 +218,7 @@ public class SLIC {
         }
 
         SuperpixelImage superpixelImage = new SuperpixelImage(centers,label_vec,labels,sobel);
-        return superpixelImage.createBoundary(input);
+        return superpixelImage.createBitmapWithBoundary(input);
 
 //        Bitmap test = Bitmap.createBitmap(im.width() , im.height(), Bitmap.Config.ARGB_8888);
 //        Core.multiply(im, new Scalar(255), im);

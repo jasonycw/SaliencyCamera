@@ -1,6 +1,5 @@
 package imageProcessing;
 
-import android.content.Context;
 import android.graphics.Bitmap;
 import android.graphics.Canvas;
 import android.graphics.Color;
@@ -34,6 +33,7 @@ public class CommonImageProcessing {
     public static final int SLIC = 8;
     public static final int SaliencyDetection_withoutMD = 16;
     public static final int SaliencyDetection_withMD = 32;
+    public static final int PIXEL_DISPLACEMENT_THRESHOLD = 5;
 
 
     public static Bitmap toGrayScale(Bitmap bmpOriginal) {
@@ -206,7 +206,7 @@ public class CommonImageProcessing {
     public static Bitmap SLIC(Bitmap input){
         SLIC slic = new SlicBuilder().buildSLIC();
         SuperpixelImage superpixel = slic.createSuperpixel(input);
-        return superpixel.createBoundary(input);
+        return superpixel.createBitmapWithBoundary(input);
     }
 
     public static Bitmap diffMap(Bitmap non_flash_image_bitmap, Bitmap flash_image_bitmap) {
@@ -305,7 +305,7 @@ public class CommonImageProcessing {
         Imgproc.cvtColor(mat1,mat1,Imgproc.COLOR_BGR2GRAY);
         Imgproc.cvtColor(mat2,mat2,Imgproc.COLOR_BGR2GRAY);
 
-
+        // Find MAX_NUM_OF_SAMPLE_POINT of point as sample point
         MatOfPoint samplePoints = new MatOfPoint();
         int MAX_NUM_OF_SAMPLE_POINT = 100000000;
         Imgproc.goodFeaturesToTrack(mat1, samplePoints, MAX_NUM_OF_SAMPLE_POINT, 0.0001, 1);
@@ -325,5 +325,73 @@ public class CommonImageProcessing {
                 error output vector of errors; each element of the vector is set to an error for the corresponding feature, type of the error measure can be set in flags parameter; if the flow wasn't found then the error is not defined (use the status parameter to find such cases).
         */
         Video.calcOpticalFlowPyrLK(mat1, mat2, pointInBitmap1, pointInBitmap2, status, error);
+    }
+
+    public static void perPixelOpticalFlow(Bitmap bitmap1, Bitmap bitmap2, MatOfPoint2f pointInBitmap1, MatOfPoint2f pointInBitmap2, MatOfByte status){
+        int width = bitmap1.getWidth();
+        int height = bitmap1.getHeight();
+
+        Mat mat1 = new Mat(height,width, CvType.CV_8UC3);
+        Utils.bitmapToMat(bitmap1,mat1);
+
+        Mat mat2 = new Mat(height, width, CvType.CV_8UC3);
+        Utils.bitmapToMat(bitmap2,mat2);
+
+        Imgproc.cvtColor(mat1,mat1,Imgproc.COLOR_BGR2GRAY);
+        Imgproc.cvtColor(mat2,mat2,Imgproc.COLOR_BGR2GRAY);
+
+        // Create a Point object for each pixel
+        ArrayList<Point> points = new ArrayList<Point>();
+        for(int w=0;w<width;w++){
+            for(int h=0;h<height;h++){
+                points.add(new Point(w,h));
+            }
+        }
+        pointInBitmap1.fromList(points);
+        pointInBitmap2.fromList(points);
+
+        MatOfFloat error = new MatOfFloat();
+         /*
+            Parameters:
+                mat1 first 8-bit input image
+                mat2 second input image
+                pointInBitmap1 vector of 2D points for which the flow needs to be found; point coordinates must be single-precision floating-point numbers.
+                pointInBitmap2 output vector of 2D points (with single-precision floating-point coordinates) containing the calculated new positions of input features in the second image; when OPTFLOW_USE_INITIAL_FLOW flag is passed, the vector must have the same size as in the input.
+                status output status vector (of unsigned chars); each element of the vector is set to 1 if the flow for the corresponding features has been found, otherwise, it is set to 0.
+                error output vector of errors; each element of the vector is set to an error for the corresponding feature, type of the error measure can be set in flags parameter; if the flow wasn't found then the error is not defined (use the status parameter to find such cases).
+        */
+        Video.calcOpticalFlowPyrLK(mat1, mat2, pointInBitmap1, pointInBitmap2, status, error);
+    }
+
+    public static Bitmap motionCompensatedSaliencyDetection(Bitmap non_flash_image_bitmap, Bitmap flash_image_bitmap, SuperpixelImage superPixel) {
+        int width = non_flash_image_bitmap.getWidth();
+        int height = non_flash_image_bitmap.getHeight();
+
+        Mat no_flash_mat = new Mat(height,width, CvType.CV_8UC3);
+        Utils.bitmapToMat(non_flash_image_bitmap,no_flash_mat);
+        Imgproc.cvtColor(no_flash_mat,no_flash_mat,Imgproc.COLOR_BGR2GRAY);
+
+        Mat flash_mat = new Mat(height, width, CvType.CV_8UC3);
+        Utils.bitmapToMat(flash_image_bitmap,flash_mat);
+        Imgproc.cvtColor(flash_mat,flash_mat,Imgproc.COLOR_BGR2GRAY);
+
+        Mat diff_mat = new Mat(height,width, CvType.CV_8UC1);
+
+        //Use superpixel displacement value to do the subtraction
+        for (int row_y = 0; row_y < no_flash_mat.rows(); row_y++){
+            for (int column_x = 0; column_x < no_flash_mat.cols(); column_x++){
+                double no_flash_value = no_flash_mat.get(row_y, column_x)[0];
+                Point displacement_offset = superPixel.getDisplacement(column_x, row_y);
+                double flash_value;
+                if(row_y+displacement_offset.y>=0 && column_x+displacement_offset.x>=0 &&
+                    row_y+displacement_offset.y<no_flash_mat.rows() && column_x+displacement_offset.x<no_flash_mat.rows())
+                    flash_value = flash_mat.get((int)(row_y+displacement_offset.y),(int)(column_x+displacement_offset.x))[0];
+                else
+                    flash_value = flash_mat.get(row_y, column_x)[0];
+                diff_mat.put(row_y,column_x,flash_value-no_flash_value);
+            }
+        }
+
+        return superPixel.calculateContrastValueMat(diff_mat).getContrastValueBitmap();
     }
 }
