@@ -32,6 +32,7 @@ public class SuperpixelImage {
     Mat sobel;
     private MatOfPoint2f centersOfSuperpixels = null;
     private MatOfPoint2f displacementOfSuperpixels = null;
+    private MatOfPoint2f displacementOfEachPixels = null;
     private MatOfDouble valueOfEachSuperpixel = null;
     private MatOfDouble contrastValueOfEachSuperpixel = null;
     private MatOfInt listOfSuperpixelsID = null;
@@ -378,15 +379,15 @@ public class SuperpixelImage {
         List<Byte> status = new ArrayList<Byte>();
         status = resultStatus.toList();
 
-        List<Integer> superpixelsIDList = new ArrayList<Integer>();
-        superpixelsIDList = listOfSuperpixelsID.toList();
+//        List<Integer> superpixelsIDList = new ArrayList<Integer>();
+//        superpixelsIDList = listOfSuperpixelsID.toList();
 
         List<Point> superpixelsDisplacementList = new ArrayList<Point>();
-        List<Integer> superpixelsNumberOfVectorList = new ArrayList<Integer>();
-        for(int i=0;i<superpixelsIDList.size();i++) {
-            superpixelsDisplacementList.add(new Point(0, 0));
-            superpixelsNumberOfVectorList.add(0);
-        }
+//        List<Integer> superpixelsNumberOfVectorList = new ArrayList<Integer>();
+//        for(int i=0;i<superpixelsIDList.size();i++) {
+//            superpixelsDisplacementList.add(new Point(0, 0));
+//            superpixelsNumberOfVectorList.add(0);
+//        }
         Point pt, pt2;
         for (int i = 0; i < status.size() - 1; i++) {
             if (status.get(i) == 1) {
@@ -394,27 +395,23 @@ public class SuperpixelImage {
                 pt2 = pointList2.get(i);
 
                 if(Math.sqrt(Math.pow(Math.abs(pt.x-pt2.x),2) + Math.pow(Math.abs(pt.y-pt2.y),2)) <= CommonImageProcessing.PIXEL_DISPLACEMENT_THRESHOLD) {
-                    int superpixelsID = superpixelsIDList.indexOf((int)this.superpixelsID.get((int) pt.y, (int) pt.x)[0]);
-                    int totalVector = superpixelsNumberOfVectorList.get(superpixelsID);
-                    Point originalDisplacement = superpixelsDisplacementList.get(superpixelsID);
-                    Point totalDisplacement = new Point(originalDisplacement.x*totalVector,originalDisplacement.y*totalVector);
-                    Point newDisplacement = new Point(pt2.x-pt.x,pt2.y-pt2.y);
+                    Point displacement = new Point(pt2.x-pt.x,pt2.y-pt2.y);
 
-                    // average the vector
-//                    if(origin_pt.x==0 && origin_pt.y==0) {
-//                        superpixelsDisplacementList.set(superpixelsID, pt2);
-//                    }
-//                    else{
-//                        superpixelsDisplacementList.set(superpixelsID, new Point((pt2.x+origin_pt.x)/2,(pt2.y+origin_pt.y)/2));
-//                    }
-
-                    totalVector++;
-                    superpixelsDisplacementList.set(superpixelsID, new Point((newDisplacement.x+totalDisplacement.x)/totalVector,(newDisplacement.y+totalDisplacement.y)/totalVector));
+                    superpixelsDisplacementList.add(displacement);
                 }
             }
+            else
+                superpixelsDisplacementList.add(new Point(999,999));
         }
 
-        this.displacementOfSuperpixels = new MatOfPoint2f();
-        this.displacementOfSuperpixels.fromList(superpixelsDisplacementList);
+        this.displacementOfEachPixels = new MatOfPoint2f();
+        this.displacementOfEachPixels.fromList(superpixelsDisplacementList);
+    }
+
+    public Point getPixelDisplacement(int x, int y){
+        List<Point> pixelsDisplacementList = new ArrayList<Point>();
+        pixelsDisplacementList = displacementOfEachPixels.toList();
+
+        return pixelsDisplacementList.get(x+y*this.superpixelsID.width());
     }
 }

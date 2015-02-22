@@ -192,6 +192,7 @@ public class ResultImageActivity extends Activity {
 
                                         //Use the superpixel object to calculate the roughDepthMap
                                         resultBitmap1 = CommonImageProcessing.motionCompensatedSaliencyDetection(bitmap1, bitmap2, superpixel);
+//                                        resultBitmap1 = CommonImageProcessing.motionCompensatedSaliencyDetection2(bitmap1, bitmap2, superpixel);
                                         resultBitmap2 = resultBitmap1;
                                     }
                                     finishLayout();

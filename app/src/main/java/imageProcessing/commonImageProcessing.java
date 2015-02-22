@@ -388,7 +388,41 @@ public class CommonImageProcessing {
                     row_y+displacement_offset.y<no_flash_mat.rows() && column_x+displacement_offset.x<no_flash_mat.rows())
                     flash_value = flash_mat.get((int)(row_y+displacement_offset.y),(int)(column_x+displacement_offset.x))[0];
                 else
-                    flash_value = flash_mat.get(row_y, column_x)[0];
+                    flash_value = no_flash_mat.get(row_y, column_x)[0];
+                diff_mat.put(row_y,column_x,flash_value-no_flash_value);
+            }
+        }
+
+        return superPixel.calculateContrastValueMat(diff_mat).getContrastValueBitmap();
+    }
+
+    public static Bitmap motionCompensatedSaliencyDetection2(Bitmap non_flash_image_bitmap, Bitmap flash_image_bitmap, SuperpixelImage superPixel) {
+        int width = non_flash_image_bitmap.getWidth();
+        int height = non_flash_image_bitmap.getHeight();
+
+        Mat no_flash_mat = new Mat(height,width, CvType.CV_8UC3);
+        Utils.bitmapToMat(non_flash_image_bitmap,no_flash_mat);
+        Imgproc.cvtColor(no_flash_mat,no_flash_mat,Imgproc.COLOR_BGR2GRAY);
+
+        Mat flash_mat = new Mat(height, width, CvType.CV_8UC3);
+        Utils.bitmapToMat(flash_image_bitmap,flash_mat);
+        Imgproc.cvtColor(flash_mat,flash_mat,Imgproc.COLOR_BGR2GRAY);
+
+        Mat diff_mat = new Mat(height,width, CvType.CV_8UC1);
+
+        //Use displacement value to do the subtraction
+        for (int row_y = 0; row_y < no_flash_mat.rows(); row_y++){
+            for (int column_x = 0; column_x < no_flash_mat.cols(); column_x++){
+                double no_flash_value = no_flash_mat.get(row_y, column_x)[0];
+                Point displacement_offset = superPixel.getPixelDisplacement(column_x, row_y);
+                double flash_value;
+                if(row_y+displacement_offset.y>=0 && column_x+displacement_offset.x>=0 &&
+                        row_y+displacement_offset.y<no_flash_mat.rows() && column_x+displacement_offset.x<no_flash_mat.rows() &&
+                        (displacement_offset.x!=999 && displacement_offset.y!=999)){
+                    flash_value = flash_mat.get((int)(row_y+displacement_offset.y),(int)(column_x+displacement_offset.x))[0];
+                }
+                else
+                    flash_value = no_flash_mat.get(row_y, column_x)[0];
                 diff_mat.put(row_y,column_x,flash_value-no_flash_value);
             }
         }
