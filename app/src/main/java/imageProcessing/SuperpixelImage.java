@@ -363,9 +363,9 @@ public class SuperpixelImage {
 
         int superpixelsID = superpixelsIDList.indexOf((int)this.superpixelsID.get(y,x)[0]);
         if(superpixelsID==-1) {
-            Log.d("SuperpixelImage.getDisplacement fail!!!!!!!", "this.superpixelsID.get(y,x)[0]: " + this.superpixelsID.get(y,x)[0]);
-            Log.d("SuperpixelImage.getDisplacement fail!!!!!!!", "x: " + x);
-            Log.d("SuperpixelImage.getDisplacement fail!!!!!!!", "y: " + y);
+//            Log.d("SuperpixelImage.getDisplacement fail!!!!!!!", "this.superpixelsID.get(y,x)[0]: " + this.superpixelsID.get(y,x)[0]);
+//            Log.d("SuperpixelImage.getDisplacement fail!!!!!!!", "x: " + x);
+//            Log.d("SuperpixelImage.getDisplacement fail!!!!!!!", "y: " + y);
             return new Point(0,0);
         }
         return superpixelsDisplacementList.get(superpixelsID);

@@ -17,10 +17,72 @@ import java.io.IOException;
 public class ImageAdapter extends BaseAdapter {
     // references to our images
     public static String[] NO_FLASH_IMAGE_NAMES = {
-            "bag.jpg","phone2.jpg","phone3.jpg","chicken.jpg","toy.jpg","3dprinting.jpg","lena2_.png"
+            "object_motion.jpg",
+            "object_motion.jpg",
+            "object_motion.jpg",
+            "object_motion.jpg",
+            "object_motion.jpg",
+            "object_motion.jpg",
+            "object_motion.jpg",
+            "camera_movement.jpg",
+            "camera_movement.jpg",
+            "camera_movement.jpg",
+            "camera_movement.jpg",
+            "camera_movement.jpg",
+            "camera_movement.jpg",
+            "camera_movement.jpg",
+            "camera_movement.jpg",
+            "both_movement.jpg",
+            "both_movement.jpg",
+            "both_movement.jpg",
+            "both_movement.jpg",
+            "both_movement.jpg",
+            "both_movement.jpg",
+            "tennis.jpg",
+            "tennis2.jpg",
+            "building.jpg",
+            "micky.jpg",
+            "bag.jpg",
+            "phone2.jpg",
+            "phone3.jpg",
+            "chicken.jpg",
+            "toy.jpg",
+            "3dprinting.jpg",
+            "lena2_.png"
     };
     public static final String[] FLASH_IMAGE_NAMES = {
-            "bag_lighted.jpg","phone2_lighted.jpg","phone3_lighted.jpg","chicken_lighted.jpg","toy_lighted.jpg","3dprinting_lighted.jpg","lena1_.png"
+            "object_motion_light1.jpg",
+            "object_motion_light2.jpg",
+            "object_motion_light3.jpg",
+            "object_motion_light4.jpg",
+            "object_motion_light5.jpg",
+            "object_motion_light6.jpg",
+            "object_motion_light7.jpg",
+            "camera_movement_light1.jpg",
+            "camera_movement_light2.jpg",
+            "camera_movement_light3.jpg",
+            "camera_movement_light4.jpg",
+            "camera_movement_light5.jpg",
+            "camera_movement_light6.jpg",
+            "camera_movement_light7.jpg",
+            "camera_movement_light8.jpg",
+            "both_movement_light1.jpg",
+            "both_movement_light2.jpg",
+            "both_movement_light3.jpg",
+            "both_movement_light4.jpg",
+            "both_movement_light5.jpg",
+            "both_movement_light6.jpg",
+            "tennis_lighted.jpg",
+            "tennis2_lighted.jpg",
+            "building_lighted.jpg",
+            "micky_lighted.jpg",
+            "bag_lighted.jpg",
+            "phone2_lighted.jpg",
+            "phone3_lighted.jpg",
+            "chicken_lighted.jpg",
+            "toy_lighted.jpg",
+            "3dprinting_lighted.jpg",
+            "lena1_.png"
     };
 
     private Context mContext;
@@ -59,7 +121,8 @@ public class ImageAdapter extends BaseAdapter {
 
 //        imageView.setImageResource(NO_FLASH_IMAGE_NAMES[position]);
         try {
-            imageView.setImageBitmap(BitmapFactory.decodeStream(mContext.getAssets().open(NO_FLASH_IMAGE_NAMES[position])));
+//            imageView.setImageBitmap(BitmapFactory.decodeStream(mContext.getAssets().open(NO_FLASH_IMAGE_NAMES[position])));
+            imageView.setImageBitmap(BitmapFactory.decodeStream(mContext.getAssets().open(FLASH_IMAGE_NAMES[position])));
         } catch (IOException e) {
             e.printStackTrace();
         }

@@ -33,7 +33,7 @@ public class CommonImageProcessing {
     public static final int SLIC = 8;
     public static final int SaliencyDetection_withoutMD = 16;
     public static final int SaliencyDetection_withMD = 32;
-    public static final int PIXEL_DISPLACEMENT_THRESHOLD = 5;
+    public static final int PIXEL_DISPLACEMENT_THRESHOLD = 10;
 
 
     public static Bitmap toGrayScale(Bitmap bmpOriginal) {
@@ -274,6 +274,8 @@ public class CommonImageProcessing {
 
         Point pt, pt2;
         Scalar colorRed = new Scalar(255, 0, 0, 255);
+        Scalar colorGreen = new Scalar(0, 255, 0, 255);
+        Scalar colorBlue = new Scalar(0, 0, 255, 100);
         int iLineThickness = 1;
 
         for (int x = 0; x < y; x++) {
@@ -284,6 +286,12 @@ public class CommonImageProcessing {
 //                Core.circle(result_mat, pt, 5, colorRed, iLineThickness - 1);
                 if(Math.sqrt(Math.pow(Math.abs(pt.x-pt2.x),2) + Math.pow(Math.abs(pt.y-pt2.y),2)) <= CommonImageProcessing.PIXEL_DISPLACEMENT_THRESHOLD)
                     Core.line(result_mat, pt, pt2, colorRed, iLineThickness);
+                else
+                    Core.line(result_mat, pt, pt2, colorBlue, iLineThickness);
+            }
+            else {
+                pt = cornersThis.get(x);
+                Core.line(result_mat, pt, pt, colorGreen, iLineThickness);
             }
         }
 

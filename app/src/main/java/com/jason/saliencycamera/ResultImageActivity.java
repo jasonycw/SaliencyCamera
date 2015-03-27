@@ -4,6 +4,8 @@ import android.app.Activity;
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
 import android.os.Bundle;
+import android.os.Environment;
+import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.MotionEvent;
@@ -18,6 +20,7 @@ import org.opencv.core.MatOfByte;
 import org.opencv.core.MatOfPoint2f;
 
 import java.io.File;
+import java.io.FileOutputStream;
 import java.io.IOException;
 import java.util.Date;
 
@@ -128,9 +131,10 @@ public class ResultImageActivity extends Activity {
                         public void onManagerConnected(int status) {
                             switch (status) {
                                 case LoaderCallbackInterface.SUCCESS: {
-                                    if (bitmap1 != null)
+                                    if (bitmap1 != null && bitmap2 != null){
                                         resultBitmap1 = CommonImageProcessing.SLIC(bitmap1);
-                                    resultBitmap2 = resultBitmap1;
+                                        resultBitmap2 = CommonImageProcessing.SLIC(bitmap2);
+                                    }
                                     finishLayout();
                                 }
                                 break;
@@ -242,6 +246,68 @@ public class ResultImageActivity extends Activity {
             imageView.setImageBitmap(bitmap1);
             resultImageView.setImageBitmap(resultBitmap1);
             textView.setText("used " + timeDifference + " ms");
+            FileOutputStream out = null;
+            try {
+                // Get file name
+                String filename = "";
+                if (picture2Uri != null) {
+                    final File picture2 = new File(picture2Uri);
+                    if (picture2.exists()) {
+                        filename = picture2.getName();
+                    }
+                } else {
+                    filename = drawable2;
+                }
+                int pos = filename.lastIndexOf(".");
+                if (pos > 0) {
+                    filename = filename.substring(0, pos);
+                }
+
+                switch (action){
+                    case CommonImageProcessing.LSHIIF:
+                        filename+="_LSIIF";
+                        break;
+                    case CommonImageProcessing.MotionDetection:
+                        filename+="_MotionDetection";
+                        break;
+                    case CommonImageProcessing.SLIC:
+                        filename+="_SLIC";
+                        break;
+                    case CommonImageProcessing.SaliencyDetection_withoutMD:
+                        filename+="_SaliencyDetection_withoutMD";
+                        break;
+                    case CommonImageProcessing.SaliencyDetection_withMD:
+                        filename+="_SaliencyDetection_withMD";
+                        break;
+                }
+                File mediaStorageDir = new File(Environment.getExternalStoragePublicDirectory(
+                        Environment.DIRECTORY_PICTURES), "SaliencyCameraResult");
+                // This location works best if you want the created images to be shared
+                // between applications and persist after your app has been uninstalled.
+
+                // Create the storage directory if it does not exist
+                if (!mediaStorageDir.exists()) {
+                    if (!mediaStorageDir.mkdirs()) {
+                        Log.d("SaliencyCameraResult", "failed to create directory");
+                    }
+                }
+                else{
+                    out = new FileOutputStream(mediaStorageDir.getPath() + File.separator + filename+"_result"+".png");
+                    resultBitmap1.compress(Bitmap.CompressFormat.PNG, 100, out);
+                    // PNG is a lossless format, the compression factor (100) is ignored
+                }
+            } catch (Exception e) {
+                e.printStackTrace();
+            } finally {
+                try {
+                    if (out != null) {
+                        out.close();
+                    }
+                } catch (IOException e) {
+                    e.printStackTrace();
+                }
+            }
+
         }
 
     }
