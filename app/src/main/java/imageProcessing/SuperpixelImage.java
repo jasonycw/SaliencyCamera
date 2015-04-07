@@ -329,7 +329,7 @@ public class SuperpixelImage {
                 pt = pointList1.get(i);
                 pt2 = pointList2.get(i);
 
-                if(Math.sqrt(Math.pow(Math.abs(pt.x-pt2.x),2) + Math.pow(Math.abs(pt.y-pt2.y),2)) <= CommonImageProcessing.PIXEL_DISPLACEMENT_THRESHOLD) {
+//                if(Math.sqrt(Math.pow(Math.abs(pt.x-pt2.x),2) + Math.pow(Math.abs(pt.y-pt2.y),2)) <= CommonImageProcessing.PIXEL_DISPLACEMENT_THRESHOLD) {
                     int superpixelsID = superpixelsIDList.indexOf((int)this.superpixelsID.get((int) pt.y, (int) pt.x)[0]);
                     int totalVector = superpixelsNumberOfVectorList.get(superpixelsID);
                     Point originalDisplacement = superpixelsDisplacementList.get(superpixelsID);
@@ -346,7 +346,7 @@ public class SuperpixelImage {
 
                     totalVector++;
                     superpixelsDisplacementList.set(superpixelsID, new Point((newDisplacement.x+totalDisplacement.x)/totalVector,(newDisplacement.y+totalDisplacement.y)/totalVector));
-                }
+//                }
             }
         }
 
@@ -394,11 +394,11 @@ public class SuperpixelImage {
                 pt = pointList1.get(i);
                 pt2 = pointList2.get(i);
 
-                if(Math.sqrt(Math.pow(Math.abs(pt.x-pt2.x),2) + Math.pow(Math.abs(pt.y-pt2.y),2)) <= CommonImageProcessing.PIXEL_DISPLACEMENT_THRESHOLD) {
+//                if(Math.sqrt(Math.pow(Math.abs(pt.x-pt2.x),2) + Math.pow(Math.abs(pt.y-pt2.y),2)) <= CommonImageProcessing.PIXEL_DISPLACEMENT_THRESHOLD) {
                     Point displacement = new Point(pt2.x-pt.x,pt2.y-pt2.y);
 
                     superpixelsDisplacementList.add(displacement);
-                }
+//                }
             }
             else
                 superpixelsDisplacementList.add(new Point(999,999));
