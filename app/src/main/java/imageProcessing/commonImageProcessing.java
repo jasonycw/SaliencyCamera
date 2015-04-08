@@ -33,8 +33,10 @@ public class CommonImageProcessing {
     public static final int SLIC = 8;
     public static final int SaliencyDetection_withoutMD = 16;
     public static final int SaliencyDetection_withMD = 32;
-    public static final int PIXEL_DISPLACEMENT_THRESHOLD = 10;
+    public static final int DifferenceImage = 64;
+    public static final int TestAll = 128;
 
+    public static final int PIXEL_DISPLACEMENT_THRESHOLD = 10;
 
     public static Bitmap toGrayScale(Bitmap bmpOriginal) {
         int width, height;
@@ -224,10 +226,14 @@ public class CommonImageProcessing {
         Mat diff_mat = new Mat();
         Core.subtract(flash_mat,no_flash_mat,diff_mat);
 
-        SLIC slic = new SlicBuilder().buildSLIC();
-        SuperpixelImage superpixel = slic.createSuperpixel(non_flash_image_bitmap);
+//        SLIC slic = new SlicBuilder().buildSLIC();
+//        SuperpixelImage superpixel = slic.createSuperpixel(non_flash_image_bitmap);
 
-        return superpixel.calculateValue(diff_mat).getValueBitmap();
+//        return superpixel.calculateValue(diff_mat).getValueBitmap();
+
+        Bitmap result_bitmap = Bitmap.createBitmap(width, height, Bitmap.Config.RGB_565);
+        Utils.matToBitmap(diff_mat,result_bitmap);
+        return result_bitmap;
     }
 
     public static Bitmap roughDepthMap(Bitmap non_flash_image_bitmap, Bitmap flash_image_bitmap) {
@@ -258,6 +264,53 @@ public class CommonImageProcessing {
         MatOfPoint2f point1 = new MatOfPoint2f();
         MatOfPoint2f point2 = new MatOfPoint2f();
         MatOfByte status = new MatOfByte();
+        opticalFlow(non_flash_image_bitmap, flash_image_bitmap, point1, point2, status);
+//        perPixelOpticalFlow(non_flash_image_bitmap, flash_image_bitmap, point1, point2, status);
+
+        List<Point> cornersPrev = new ArrayList<Point>();
+        cornersPrev = point1.toList();
+
+        List<Point> cornersThis = new ArrayList<Point>();
+        cornersThis = point2.toList();
+
+        List<Byte> opticalFlowResultStatus = new ArrayList<Byte>();
+        opticalFlowResultStatus = status.toList();
+
+        int y = opticalFlowResultStatus.size() - 1;
+
+        Point pt, pt2;
+        Scalar colorRed = new Scalar(255, 0, 0, 255);
+        Scalar colorGreen = new Scalar(0, 255, 0, 255);
+        Scalar colorBlue = new Scalar(0, 0, 255, 100);
+        int iLineThickness = 1;
+
+        for (int x = 0; x < y; x++) {
+            if (opticalFlowResultStatus.get(x) == 1) {
+                pt = cornersThis.get(x);
+                pt2 = cornersPrev.get(x);
+
+//                Core.circle(result_mat, pt, 5, colorRed, iLineThickness - 1);
+                if(Math.sqrt(Math.pow(Math.abs(pt.x-pt2.x),2) + Math.pow(Math.abs(pt.y-pt2.y),2)) <= CommonImageProcessing.PIXEL_DISPLACEMENT_THRESHOLD)
+                    Core.line(result_mat, pt, pt2, colorRed, iLineThickness);
+                else
+                    Core.line(result_mat, pt, pt2, colorBlue, iLineThickness);
+            }
+            else {
+                pt = cornersThis.get(x);
+                Core.line(result_mat, pt, pt, colorGreen, iLineThickness);
+            }
+        }
+
+        // Change the value matrix to Bitmap
+        Bitmap result_bitmap = Bitmap.createBitmap(result_mat.width(), result_mat.height(), Bitmap.Config.RGB_565);
+        Utils.matToBitmap(result_mat,result_bitmap);
+        return result_bitmap;
+    }
+
+    public static Bitmap motionDetection(Bitmap non_flash_image_bitmap, Bitmap flash_image_bitmap, Bitmap resultBackgroud, MatOfPoint2f point1, MatOfPoint2f point2, MatOfByte status){
+        Mat result_mat = new Mat(non_flash_image_bitmap.getHeight(), non_flash_image_bitmap.getWidth(), CvType.CV_8UC3);
+        Utils.bitmapToMat(resultBackgroud,result_mat);
+
         opticalFlow(non_flash_image_bitmap, flash_image_bitmap, point1, point2, status);
 //        perPixelOpticalFlow(non_flash_image_bitmap, flash_image_bitmap, point1, point2, status);
 

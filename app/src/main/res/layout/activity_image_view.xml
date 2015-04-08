@@ -54,10 +54,26 @@
             <Button
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:text="Difference Image"
+                android:id="@+id/difference_button"
+                android:layout_centerHorizontal="false" />
+
+            <Button
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
                 android:text="LSH IIF"
                 android:id="@+id/LSHIIF_button"
+                android:layout_toRightOf="@+id/difference_button"
                 android:layout_alignParentTop="true"
-                android:layout_centerHorizontal="true" />
+                android:layout_centerHorizontal="false" />
+
+            <Button
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Test All"
+                android:id="@+id/testAll_button"
+                android:layout_toRightOf="@+id/LSHIIF_button"
+                android:layout_centerHorizontal="false" />
 
             <Button
                 android:layout_width="wrap_content"

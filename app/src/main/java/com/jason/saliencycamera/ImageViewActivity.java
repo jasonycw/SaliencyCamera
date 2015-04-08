@@ -23,12 +23,13 @@ import imageProcessing.CommonImageProcessing;
 
 public class ImageViewActivity extends Activity {
     private ImageView imageView;
+    private Button DifferenceImage_button;
     private Button LSHIIF_button;
     private Button MotionDetection_button;
     private Button SLIC_button;
     private Button Saliency_withoutMD_button;
     private Button Saliency_withMD_button;
-
+    private Button TestAll_button;
 
     private String picture1Uri = "";
     private String picture2Uri = "";
@@ -127,6 +128,16 @@ public class ImageViewActivity extends Activity {
                 }
         );
 
+        DifferenceImage_button = (Button)findViewById(R.id.difference_button);
+        DifferenceImage_button.setOnClickListener(
+                new View.OnClickListener() {
+                    @Override
+                    public void onClick(View v) {
+                        startResultImageActivity(CommonImageProcessing.DifferenceImage);
+                    }
+                }
+        );
+
         MotionDetection_button = (Button)findViewById(R.id.MotionDetection_button);
         MotionDetection_button.setOnClickListener(
                 new View.OnClickListener() {
@@ -163,6 +174,16 @@ public class ImageViewActivity extends Activity {
                     @Override
                     public void onClick(View v) {
                         startResultImageActivity(CommonImageProcessing.SaliencyDetection_withMD);
+                    }
+                }
+        );
+
+        TestAll_button = (Button)findViewById(R.id.testAll_button);
+        TestAll_button.setOnClickListener(
+                new View.OnClickListener() {
+                    @Override
+                    public void onClick(View v) {
+                        startResultImageActivity(CommonImageProcessing.TestAll);
                     }
                 }
         );

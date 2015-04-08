@@ -102,6 +102,26 @@ public class ResultImageActivity extends Activity {
                     resultBitmap2 = LSH.IIF(bitmap2);
                     finishLayout();
                     break;
+                case CommonImageProcessing.DifferenceImage:
+                    OpenCVLoader.initAsync(OpenCVLoader.OPENCV_VERSION_2_4_9, this, new BaseLoaderCallback(this) {
+                        @Override
+                        public void onManagerConnected(int status) {
+                            switch (status) {
+                                case LoaderCallbackInterface.SUCCESS: {
+                                    if (bitmap1 != null)
+                                        resultBitmap1 = CommonImageProcessing.diffMap(bitmap1,bitmap2);
+                                    resultBitmap2 = resultBitmap1;
+                                    finishLayout();
+                                }
+                                break;
+                                default: {
+                                    super.onManagerConnected(status);
+                                }
+                                break;
+                            }
+                        }
+                    });
+                    break;
                 case CommonImageProcessing.MotionDetection:
                     final Bitmap IIFBitmap1 = LSH.IIF(bitmap1);
                     final Bitmap IIFBitmap2 = LSH.IIF(bitmap2);
@@ -210,6 +230,62 @@ public class ResultImageActivity extends Activity {
                         }
                     });
                     break;
+                case CommonImageProcessing.TestAll:
+                    OpenCVLoader.initAsync(OpenCVLoader.OPENCV_VERSION_2_4_9, this, new BaseLoaderCallback(this) {
+                        @Override
+                        public void onManagerConnected(int status) {
+                            switch (status) {
+                                case LoaderCallbackInterface.SUCCESS: {
+                                    if (bitmap1 != null && bitmap2 !=null){
+                                        //Generate the IIF images
+                                        resultBitmap1 = LSH.IIF(bitmap1);
+                                        resultBitmap2 = LSH.IIF(bitmap2);
+                                        finishLayout(CommonImageProcessing.LSHIIF);
+
+                                        //Calculate the optical flow using the IIF images
+                                        MatOfPoint2f point1 = new MatOfPoint2f();
+                                        MatOfPoint2f point2 = new MatOfPoint2f();
+                                        MatOfByte resultStatus = new MatOfByte();
+//                                        CommonImageProcessing.opticalFlow(resultBitmap1, resultBitmap2, point1, point2, resultStatus);
+//                                        CommonImageProcessing.perPixelOpticalFlow(IIFBitmap1, IIFBitmap2, point1, point2, resultStatus);
+                                        resultBitmap1 = CommonImageProcessing.motionDetection(resultBitmap1, resultBitmap2, resultBitmap1, point1, point2, resultStatus);
+                                        resultBitmap2 = resultBitmap1;
+                                        finishLayout(CommonImageProcessing.MotionDetection);
+
+                                        //Work out the superpixel object for calculation
+                                        SLIC slic = new SlicBuilder().buildSLIC();
+                                        SuperpixelImage superpixel = slic.createSuperpixel(bitmap1);
+
+                                        //Calculate the average displacement of each superpixel
+                                        superpixel.calculateDisplacement(point1,point2, resultStatus);
+//                                        superpixel.setDisplacement(point1,point2, resultStatus);
+
+                                        //Get the difference between the two bitmap
+                                        resultBitmap1 = CommonImageProcessing.diffMap(bitmap1,bitmap2);
+                                        resultBitmap2 = resultBitmap1;
+                                        finishLayout(CommonImageProcessing.DifferenceImage);
+
+                                        //Find the rough depth map
+                                        resultBitmap1 = CommonImageProcessing.roughDepthMap(bitmap1, bitmap2);
+                                        resultBitmap2 = resultBitmap1;
+                                        finishLayout(CommonImageProcessing.SaliencyDetection_withoutMD);
+
+                                        //Use the superpixel object to calculate the roughDepthMap
+                                        resultBitmap1 = CommonImageProcessing.motionCompensatedSaliencyDetection(bitmap1, bitmap2, superpixel);
+//                                        resultBitmap1 = CommonImageProcessing.motionCompensatedSaliencyDetection2(bitmap1, bitmap2, superpixel);
+                                        resultBitmap2 = resultBitmap1;
+                                        finishLayout(CommonImageProcessing.SaliencyDetection_withMD);
+                                    }
+                                }
+                                break;
+                                default: {
+                                    super.onManagerConnected(status);
+                                }
+                                break;
+                            }
+                        }
+                    });
+                    break;
             }
         }
         View.OnTouchListener onTouchListener = new View.OnTouchListener() {
@@ -239,7 +315,7 @@ public class ResultImageActivity extends Activity {
         resultImageView.setOnTouchListener(onTouchListener);
     }
 
-    private void finishLayout(){
+    private void finishLayout(int action){
         if(resultBitmap1!=null&&resultBitmap2!=null){
             newDate = new Date();
             timeDifference = newDate.getTime() - oldDate.getTime();
@@ -272,6 +348,9 @@ public class ResultImageActivity extends Activity {
                         break;
                     case CommonImageProcessing.SLIC:
                         filename+="_SLIC";
+                        break;
+                    case CommonImageProcessing.DifferenceImage:
+                        filename+="_DifferenceImage";
                         break;
                     case CommonImageProcessing.SaliencyDetection_withoutMD:
                         filename+="_SaliencyDetection_withoutMD";
@@ -309,7 +388,11 @@ public class ResultImageActivity extends Activity {
             }
 
         }
+    }
 
+    private void finishLayout(){
+        int action = this.action;
+        finishLayout(action);
     }
 
     @Override
