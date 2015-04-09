@@ -1,15 +1,15 @@
-th {
-    border: 1px solid black;
-}
-
 #header-fixed {
     position: fixed;
-    top: 0px; 
-    display:none;
+    top: 0px;
+    left: 3px;
     background-color:white;
     z-index:3;
     font-size: 20px;
-    box-shadow: 0px 4px 2px rgba(0, 0, 0, 0.5);
+    box-shadow: 0px 4px 2px rgba(0, 0, 0, 0.3);
+}
+
+#data-table {
+	margin-top: 28px;
 }
 
 .tableHeader{
@@ -17,12 +17,12 @@ th {
 }
 
 .imageHeader{
-	width:320px;
+	min-width:320px;
 }
 
 .titleRow{
 	text-align:center;
-	font-size: 30px;
+	font-size: 20px;
 	font-weight: bold;
 }
 

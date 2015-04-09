@@ -3,270 +3,29 @@
 <head>
 <link rel="stylesheet" type="text/css" href="./ProjectPage/css/indexpage.css">
 <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
-<script type="text/javascript" async src="./ProjectPage/js/smoothscroll.js" ></script>
+<script type="text/javascript" async src="./ProjectPage/js/testCaseObject.js"></script>
+<script type="text/javascript" async src="./ProjectPage/js/testCases.js"></script>
+<script type="text/javascript" async src="./ProjectPage/js/loadTestCases.js"></script>
 <script type="text/javascript" async src="./ProjectPage/js/indexpage.js" ></script>
 <title>SaliencyCamera Result Comparison</title>
 </head>
 <body>
-<table id="header-fixed"></table>
-<table id="data-table">
+
+<table id="header-fixed">
   <thead class="tableHeader">
     <tr>
-      <th style="width:40">Index</th>
+      <th style="width:50px">Case</th>
       <th class="imageHeader inputImagesHeader">Flash Image</th>
+      <th class="imageHeader">LSHIIF</th>
+      <th class="imageHeader">Optical Flow</th>
+      <th class="imageHeader">Difference Image</th>
       <th class="imageHeader">Saliency without MD</th>
       <th class="imageHeader">Saliency with MD</th>
     </tr>
   </thead>
-  <tr class="titleRow">
-    <td></td>
-    <td>Both Move</td>
-    <td></td>
-    <td></td>
-  </tr>
-  <tr>
-    <td class="indexCell">1</td>
-    <td>
-      <div class="inputImages">
-        <img class="referenceImage" src="./ProjectPage/img/both_movement.jpg">
-        <img class="lightImage" src="./ProjectPage/img/both_movement_light1.jpg">
-      </div>
-    </td>
-    <td><img src="./ProjectPage/img/both_movement_light1_SaliencyDetection_withoutMD_result.png"></td>
-    <td><img src="./ProjectPage/img/both_movement_light1_SaliencyDetection_withMD_result.png"></td>
-  </tr>
-  <tr>
-    <td class="indexCell">2</td>
-    <td>
-      <div class="inputImages">
-        <img class="referenceImage" src="./ProjectPage/img/both_movement.jpg">
-        <img class="lightImage" src="./ProjectPage/img/both_movement_light2.jpg">
-      </div>
-    </td>
-    <td><img src="./ProjectPage/img/both_movement_light2_SaliencyDetection_withoutMD_result.png"></td>
-    <td><img src="./ProjectPage/img/both_movement_light2_SaliencyDetection_withMD_result.png"></td>
-  </tr>
-  <tr>
-    <td class="indexCell">3</td>
-    <td>
-      <div class="inputImages">
-        <img class="referenceImage" src="./ProjectPage/img/both_movement.jpg">
-        <img class="lightImage" src="./ProjectPage/img/both_movement_light3.jpg">
-      </div>
-    </td>
-    <td><img src="./ProjectPage/img/both_movement_light3_SaliencyDetection_withoutMD_result.png"></td>
-    <td><img src="./ProjectPage/img/both_movement_light3_SaliencyDetection_withMD_result.png"></td>
-  </tr>
-  <tr>
-    <td class="indexCell">4</td>
-    <td>
-      <div class="inputImages">
-        <img class="referenceImage" src="./ProjectPage/img/both_movement.jpg">
-        <img class="lightImage" src="./ProjectPage/img/both_movement_light4.jpg">
-      </div>
-    </td>
-    <td><img src="./ProjectPage/img/both_movement_light4_SaliencyDetection_withoutMD_result.png"></td>
-    <td><img src="./ProjectPage/img/both_movement_light4_SaliencyDetection_withMD_result.png"></td>
-  </tr>
-  <tr>
-    <td class="indexCell">5</td>
-    <td>
-      <div class="inputImages">
-        <img class="referenceImage" src="./ProjectPage/img/both_movement.jpg">
-        <img class="lightImage" src="./ProjectPage/img/both_movement_light5.jpg">
-      </div>
-    </td>
-    <td><img src="./ProjectPage/img/both_movement_light5_SaliencyDetection_withoutMD_result.png"></td>
-    <td><img src="./ProjectPage/img/both_movement_light5_SaliencyDetection_withMD_result.png"></td>
-  </tr>
-  <tr>
-    <td class="indexCell">6</td>
-    <td>
-      <div class="inputImages">
-        <img class="referenceImage" src="./ProjectPage/img/both_movement.jpg">
-        <img class="lightImage" src="./ProjectPage/img/both_movement_light6.jpg">
-      </div>
-    </td>
-    <td><img src="./ProjectPage/img/both_movement_light6_SaliencyDetection_withoutMD_result.png"></td>
-    <td><img src="./ProjectPage/img/both_movement_light6_SaliencyDetection_withMD_result.png"></td>
-  </tr>
-  <tr class="titleRow">
-    <td></td>
-    <td>Camera Motion</td>
-    <td></td>
-    <td></td>
-  </tr>
-  <tr>
-    <td class="indexCell">1</td>
-    <td>
-      <div class="inputImages">
-        <img class="referenceImage" src="./ProjectPage/img/camera_movement.jpg">
-        <img class="lightImage" src="./ProjectPage/img/camera_movement_light1.jpg">
-      </div>
-    </td>
-    <td><img src="./ProjectPage/img/camera_movement_light1_SaliencyDetection_withoutMD_result.png"></td>
-    <td><img src="./ProjectPage/img/camera_movement_light1_SaliencyDetection_withMD_result.png"></td>
-  </tr>
-  <tr>
-    <td class="indexCell">2</td>
-    <td>
-      <div class="inputImages">
-        <img class="referenceImage" src="./ProjectPage/img/camera_movement.jpg">
-        <img class="lightImage" src="./ProjectPage/img/camera_movement_light2.jpg">
-      </div>
-    </td>
-    <td><img src="./ProjectPage/img/camera_movement_light2_SaliencyDetection_withoutMD_result.png"></td>
-    <td><img src="./ProjectPage/img/camera_movement_light2_SaliencyDetection_withMD_result.png"></td>
-  </tr>
-  <tr>
-    <td class="indexCell">3</td>
-    <td>
-      <div class="inputImages">
-        <img class="referenceImage" src="./ProjectPage/img/camera_movement.jpg">
-        <img class="lightImage" src="./ProjectPage/img/camera_movement_light3.jpg">
-      </div>
-    </td>
-    <td><img src="./ProjectPage/img/camera_movement_light3_SaliencyDetection_withoutMD_result.png"></td>
-    <td><img src="./ProjectPage/img/camera_movement_light3_SaliencyDetection_withMD_result.png"></td>
-  </tr>
-  <tr>
-    <td class="indexCell">4</td>
-    <td>
-      <div class="inputImages">
-        <img class="referenceImage" src="./ProjectPage/img/camera_movement.jpg">
-        <img class="lightImage" src="./ProjectPage/img/camera_movement_light4.jpg">
-      </div>
-    </td>
-    <td><img src="./ProjectPage/img/camera_movement_light4_SaliencyDetection_withoutMD_result.png"></td>
-    <td><img src="./ProjectPage/img/camera_movement_light4_SaliencyDetection_withMD_result.png"></td>
-  </tr>
-  <tr>
-    <td class="indexCell">5</td>
-    <td>
-      <div class="inputImages">
-        <img class="referenceImage" src="./ProjectPage/img/camera_movement.jpg">
-        <img class="lightImage" src="./ProjectPage/img/camera_movement_light5.jpg">
-      </div>
-    </td>
-    <td><img src="./ProjectPage/img/camera_movement_light5_SaliencyDetection_withoutMD_result.png"></td>
-    <td><img src="./ProjectPage/img/camera_movement_light5_SaliencyDetection_withMD_result.png"></td>
-  </tr>
-  <tr>
-    <td class="indexCell">6</td>
-    <td>
-      <div class="inputImages">
-        <img class="referenceImage" src="./ProjectPage/img/camera_movement.jpg">
-        <img class="lightImage" src="./ProjectPage/img/camera_movement_light6.jpg">
-      </div>
-    </td>
-    <td><img src="./ProjectPage/img/camera_movement_light6_SaliencyDetection_withoutMD_result.png"></td>
-    <td><img src="./ProjectPage/img/camera_movement_light6_SaliencyDetection_withMD_result.png"></td>
-  </tr>
-  <tr>
-    <td class="indexCell">7</td>
-    <td>
-      <div class="inputImages">
-        <img class="referenceImage" src="./ProjectPage/img/camera_movement.jpg">
-        <img class="lightImage" src="./ProjectPage/img/camera_movement_light7.jpg">
-      </div>
-    </td>
-    <td><img src="./ProjectPage/img/camera_movement_light7_SaliencyDetection_withoutMD_result.png"></td>
-    <td><img src="./ProjectPage/img/camera_movement_light7_SaliencyDetection_withMD_result.png"></td>
-  </tr>
-  <tr>
-    <td class="indexCell">8</td>
-    <td>
-      <div class="inputImages">
-        <img class="referenceImage" src="./ProjectPage/img/camera_movement.jpg">
-        <img class="lightImage" src="./ProjectPage/img/camera_movement_light8.jpg">
-      </div>
-    </td>
-    <td><img src="./ProjectPage/img/camera_movement_light8_SaliencyDetection_withoutMD_result.png"></td>
-    <td><img src="./ProjectPage/img/camera_movement_light8_SaliencyDetection_withMD_result.png"></td>
-  </tr>
-  <tr class="titleRow">
-    <td></td>
-    <td>Object Motion</td>
-    <td></td>
-    <td></td>
-  </tr>
-  <tr>
-    <td class="indexCell">1</td>
-    <td>
-      <div class="inputImages">
-        <img class="referenceImage" src="./ProjectPage/img/object_motion.jpg">
-        <img class="lightImage" src="./ProjectPage/img/object_motion_light1.jpg">
-      </div>
-    </td>
-    <td><img src="./ProjectPage/img/object_motion_light1_SaliencyDetection_withoutMD_result.png"></td>
-    <td><img src="./ProjectPage/img/object_motion_light1_SaliencyDetection_withMD_result.png"></td>
-  </tr>
-  <tr>
-    <td class="indexCell">2</td>
-    <td>
-      <div class="inputImages">
-        <img class="referenceImage" src="./ProjectPage/img/object_motion.jpg">
-        <img class="lightImage" src="./ProjectPage/img/object_motion_light2.jpg">
-      </div>
-    </td>
-    <td><img src="./ProjectPage/img/object_motion_light2_SaliencyDetection_withoutMD_result.png"></td>
-    <td><img src="./ProjectPage/img/object_motion_light2_SaliencyDetection_withMD_result.png"></td>
-  </tr>
-  <tr>
-    <td class="indexCell">3</td>
-    <td>
-      <div class="inputImages">
-        <img class="referenceImage" src="./ProjectPage/img/object_motion.jpg">
-        <img class="lightImage" src="./ProjectPage/img/object_motion_light3.jpg">
-      </div>
-    </td>
-    <td><img src="./ProjectPage/img/object_motion_light3_SaliencyDetection_withoutMD_result.png"></td>
-    <td><img src="./ProjectPage/img/object_motion_light3_SaliencyDetection_withMD_result.png"></td>
-  </tr>
-  <tr>
-    <td class="indexCell">4</td>
-    <td>
-      <div class="inputImages">
-        <img class="referenceImage" src="./ProjectPage/img/object_motion.jpg">
-        <img class="lightImage" src="./ProjectPage/img/object_motion_light4.jpg">
-      </div>
-    </td>
-    <td><img src="./ProjectPage/img/object_motion_light4_SaliencyDetection_withoutMD_result.png"></td>
-    <td><img src="./ProjectPage/img/object_motion_light4_SaliencyDetection_withMD_result.png"></td>
-  </tr>
-  <tr>
-    <td class="indexCell">5</td>
-    <td>
-      <div class="inputImages">
-        <img class="referenceImage" src="./ProjectPage/img/object_motion.jpg">
-        <img class="lightImage" src="./ProjectPage/img/object_motion_light5.jpg">
-      </div>
-    </td>
-    <td><img src="./ProjectPage/img/object_motion_light5_SaliencyDetection_withoutMD_result.png"></td>
-    <td><img src="./ProjectPage/img/object_motion_light5_SaliencyDetection_withMD_result.png"></td>
-  </tr>
-  <tr>
-    <td class="indexCell">6</td>
-    <td>
-      <div class="inputImages">
-        <img class="referenceImage" src="./ProjectPage/img/object_motion.jpg">
-        <img class="lightImage" src="./ProjectPage/img/object_motion_light6.jpg">
-      </div>
-    </td>
-    <td><img src="./ProjectPage/img/object_motion_light6_SaliencyDetection_withoutMD_result.png"></td>
-    <td><img src="./ProjectPage/img/object_motion_light6_SaliencyDetection_withMD_result.png"></td>
-  </tr>
-  <tr>
-    <td class="indexCell">7</td>
-    <td>
-      <div class="inputImages">
-        <img class="referenceImage" src="./ProjectPage/img/object_motion.jpg">
-        <img class="lightImage" src="./ProjectPage/img/object_motion_light7.jpg">
-      </div>
-    </td>
-    <td><img src="./ProjectPage/img/object_motion_light7_SaliencyDetection_withoutMD_result.png"></td>
-    <td><img src="./ProjectPage/img/object_motion_light7_SaliencyDetection_withMD_result.png"></td>
-  </tr>
+</table>
+
+<table id="data-table">
 </table>
 
 </body>
