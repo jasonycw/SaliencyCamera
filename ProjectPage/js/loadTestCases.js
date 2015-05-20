@@ -14,7 +14,7 @@ $( document ).ready(function(){
 		// Input Images
 		$("tr[name*='testCaseRow'] img[name*='noFlashImage']")[i].src = './ProjectPage/img/'+testCases[i].noFlashImage;
 		$("tr[name*='testCaseRow'] img[name*='flashImage']")[i].src = './ProjectPage/img/'+testCases[i].flashImage;
-		
+
 		// Output Images
 		$("tr[name*='testCaseRow'] img[name*='lsiif']")[i].src = './ProjectPage/img/'+testCases[i].lsiif;
 		$("tr[name*='testCaseRow'] img[name*='opticalFlow']")[i].src = './ProjectPage/img/'+testCases[i].opticalFlow;
@@ -22,4 +22,6 @@ $( document ).ready(function(){
 		$("tr[name*='testCaseRow'] img[name*='saliencyWithoutMD']")[i].src = './ProjectPage/img/'+testCases[i].saliencyWithoutMD;
 		$("tr[name*='testCaseRow'] img[name*='saliencyWithMD']")[i].src = './ProjectPage/img/'+testCases[i].saliencyWithMD;
 	}
+
+	$(".lightImage").fadeTo(0,0.5);
 });
