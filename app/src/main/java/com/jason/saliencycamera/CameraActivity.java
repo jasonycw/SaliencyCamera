@@ -258,27 +258,29 @@ public class CameraActivity extends Activity {
 
         File mediaStorageDir = new File(Environment.getExternalStoragePublicDirectory(
                 Environment.DIRECTORY_PICTURES), "SaliencyCameraImageBackup");
+        String timeStamp = new SimpleDateFormat("MM-dd").format(date);
+        File todayFile = new File(mediaStorageDir, timeStamp);
         // This location works best if you want the created images to be shared
         // between applications and persist after your app has been uninstalled.
 
         // Create the storage directory if it does not exist
-        if (!mediaStorageDir.exists()) {
-            if (!mediaStorageDir.mkdirs()) {
+        if (!todayFile.exists()) {
+            if (!todayFile.mkdirs()) {
                 Log.d("SaliencyCameraImageBackup", "failed to create directory");
                 return null;
             }
         }
 
         // Create a media file name
-        String timeStamp = new SimpleDateFormat("yyyy-MM-dd_HH:mm:ss.SSS ").format(date);
+        timeStamp = new SimpleDateFormat("yyyy-MM-dd_HH:mm:ss.SSSSSS ").format(date);
         File mediaFile;
         if (type == MEDIA_TYPE_IMAGE) {
-            mediaFile = new File(mediaStorageDir.getPath() + File.separator + timeStamp + "(" + count + ").jpg");
+            mediaFile = new File(todayFile.getPath() + File.separator + timeStamp + "(" + count + ").jpg");
             if (count == 1)
-                picture1Uri = mediaStorageDir.getPath() + File.separator + timeStamp + "(" + count + ").jpg";
+                picture1Uri = todayFile.getPath() + File.separator + timeStamp + "(" + count + ").jpg";
             else if (count == 2)
-                picture2Uri = mediaStorageDir.getPath() + File.separator + timeStamp + "(" + count + ").jpg";
-            Log.d("SAVE AT", "picture" + count + "Uri:\t" + mediaStorageDir.getPath() + File.separator + timeStamp + ".jpg");
+                picture2Uri = todayFile.getPath() + File.separator + timeStamp + "(" + count + ").jpg";
+            Log.d("SAVE AT", "picture" + count + "Uri:\t" + todayFile.getPath() + File.separator + timeStamp + ".jpg");
         } else {
             return null;
         }

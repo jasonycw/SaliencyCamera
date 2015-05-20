@@ -22,6 +22,7 @@ import org.opencv.core.MatOfPoint2f;
 import java.io.File;
 import java.io.FileOutputStream;
 import java.io.IOException;
+import java.text.SimpleDateFormat;
 import java.util.Date;
 
 import imageProcessing.CommonImageProcessing;
@@ -361,17 +362,19 @@ public class ResultImageActivity extends Activity {
                 }
                 File mediaStorageDir = new File(Environment.getExternalStoragePublicDirectory(
                         Environment.DIRECTORY_PICTURES), "SaliencyCameraResult");
+                String timeStamp = new SimpleDateFormat("MM-dd").format(newDate);
+                File todayFile = new File(mediaStorageDir, ""+timeStamp);
                 // This location works best if you want the created images to be shared
                 // between applications and persist after your app has been uninstalled.
 
                 // Create the storage directory if it does not exist
-                if (!mediaStorageDir.exists()) {
-                    if (!mediaStorageDir.mkdirs()) {
-                        Log.d("SaliencyCameraResult", "failed to create directory");
+                if (!todayFile.exists()) {
+                    if (!todayFile.mkdirs()) {
+                        Log.d("SaliencyCameraResult/"+timeStamp, "failed to create directory");
                     }
                 }
-                else{
-                    out = new FileOutputStream(mediaStorageDir.getPath() + File.separator + filename+"_result"+".png");
+                if (todayFile.exists()) {
+                    out = new FileOutputStream(todayFile.getPath() + File.separator + filename+"_result"+".png");
                     resultBitmap1.compress(Bitmap.CompressFormat.PNG, 100, out);
                     // PNG is a lossless format, the compression factor (100) is ignored
                 }

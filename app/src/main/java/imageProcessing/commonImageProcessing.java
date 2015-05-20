@@ -370,7 +370,9 @@ public class CommonImageProcessing {
         // Find MAX_NUM_OF_SAMPLE_POINT of point as sample point
         MatOfPoint samplePoints = new MatOfPoint();
         int MAX_NUM_OF_SAMPLE_POINT = 100000000;
-        Imgproc.goodFeaturesToTrack(mat1, samplePoints, MAX_NUM_OF_SAMPLE_POINT, 0.0001, 1);
+        double QUALITY_LEVEL_RELATIVE_TO_BEST_CORNERS = 0.0001;
+        double MINIMUM_DESTANCE_BETWEEN_EACH_CORNERS = 5;
+        Imgproc.goodFeaturesToTrack(mat1, samplePoints, MAX_NUM_OF_SAMPLE_POINT, QUALITY_LEVEL_RELATIVE_TO_BEST_CORNERS, MINIMUM_DESTANCE_BETWEEN_EACH_CORNERS);
 
         pointInBitmap1.fromArray(samplePoints.toArray());
         pointInBitmap2.fromArray(samplePoints.toArray());
