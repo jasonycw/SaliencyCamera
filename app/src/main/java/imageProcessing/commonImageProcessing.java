@@ -24,6 +24,8 @@ import org.opencv.video.Video;
 import java.util.ArrayList;
 import java.util.List;
 
+import tools.MathHelper;
+
 /**
  * Created by Jason on 7/9/2014.
  */
@@ -36,7 +38,7 @@ public class CommonImageProcessing {
     public static final int DifferenceImage = 64;
     public static final int TestAll = 128;
 
-    public static final int PIXEL_DISPLACEMENT_THRESHOLD = 10;
+    public static final int PIXEL_DISPLACEMENT_THRESHOLD = 50;
 
     public static Bitmap toGrayScale(Bitmap bmpOriginal) {
         int width, height;
@@ -290,7 +292,7 @@ public class CommonImageProcessing {
                 pt2 = cornersPrev.get(x);
 
 //                Core.circle(result_mat, pt, 5, colorRed, iLineThickness - 1);
-                if(Math.sqrt(Math.pow(Math.abs(pt.x-pt2.x),2) + Math.pow(Math.abs(pt.y-pt2.y),2)) <= CommonImageProcessing.PIXEL_DISPLACEMENT_THRESHOLD)
+                if(MathHelper.VectorLength(pt, pt2) <= CommonImageProcessing.PIXEL_DISPLACEMENT_THRESHOLD)
                     Core.line(result_mat, pt, pt2, colorRed, iLineThickness);
                 else
                     Core.line(result_mat, pt, pt2, colorBlue, iLineThickness);
@@ -337,7 +339,7 @@ public class CommonImageProcessing {
                 pt2 = cornersPrev.get(x);
 
 //                Core.circle(result_mat, pt, 5, colorRed, iLineThickness - 1);
-                if(Math.sqrt(Math.pow(Math.abs(pt.x-pt2.x),2) + Math.pow(Math.abs(pt.y-pt2.y),2)) <= CommonImageProcessing.PIXEL_DISPLACEMENT_THRESHOLD)
+                if(MathHelper.VectorLength(pt, pt2) <= CommonImageProcessing.PIXEL_DISPLACEMENT_THRESHOLD)
                     Core.line(result_mat, pt, pt2, colorRed, iLineThickness);
                 else
                     Core.line(result_mat, pt, pt2, colorBlue, iLineThickness);
@@ -448,7 +450,9 @@ public class CommonImageProcessing {
                 Point displacement_offset = superPixel.getDisplacement(column_x, row_y);
                 double flash_value;
                 if(row_y+displacement_offset.y>=0 && column_x+displacement_offset.x>=0 &&
-                    row_y+displacement_offset.y<no_flash_mat.rows() && column_x+displacement_offset.x<no_flash_mat.rows())
+                    row_y+displacement_offset.y<no_flash_mat.rows() && column_x+displacement_offset.x<no_flash_mat.rows() &&
+                    MathHelper.VectorLength(displacement_offset)<= CommonImageProcessing.PIXEL_DISPLACEMENT_THRESHOLD
+                        )
                     flash_value = flash_mat.get((int)(row_y+displacement_offset.y),(int)(column_x+displacement_offset.x))[0];
                 else
                     flash_value = no_flash_mat.get(row_y, column_x)[0];
