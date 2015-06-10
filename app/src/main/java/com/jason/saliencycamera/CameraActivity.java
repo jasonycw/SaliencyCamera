@@ -66,7 +66,8 @@ public class CameraActivity extends Activity {
                 // Turn on flash light and take the next picture
                 mCamera.startPreview();
                 params = mCamera.getParameters();
-                params.setFlashMode(Camera.Parameters.FLASH_MODE_TORCH);
+//                params.setFlashMode(Camera.Parameters.FLASH_MODE_TORCH);
+                params.setFlashMode(Camera.Parameters.FLASH_MODE_OFF);
                 mCamera.setParameters(params);
                 mCamera.takePicture(null, null, mPicture);
                 Log.d("3) TAKE PICTURE", "2nd picture captured");
@@ -128,6 +129,7 @@ public class CameraActivity extends Activity {
         // set resolution
         pictureSize = getSmallestPictureSize(params);
         params.setPictureSize(pictureSize.width, pictureSize.height);
+
         // set Camera parameters
         mCamera.setParameters(params);
 
@@ -142,6 +144,9 @@ public class CameraActivity extends Activity {
                             @Override
                             public void onAutoFocus(boolean success, Camera camera) {
                                 if (success) {
+                                    params.setFlashMode(Camera.Parameters.FLASH_MODE_TORCH);
+                                    mCamera.setParameters(params);
+
                                     // get an image from the camera
                                     camera.takePicture(null, null, mPicture);
                                     Log.d("1) TAKE PICTURE", "1st picture captured");
@@ -277,9 +282,11 @@ public class CameraActivity extends Activity {
         if (type == MEDIA_TYPE_IMAGE) {
             mediaFile = new File(todayFile.getPath() + File.separator + timeStamp + "(" + count + ").jpg");
             if (count == 1)
-                picture1Uri = todayFile.getPath() + File.separator + timeStamp + "(" + count + ").jpg";
-            else if (count == 2)
+//                picture1Uri = todayFile.getPath() + File.separator + timeStamp + "(" + count + ").jpg";
                 picture2Uri = todayFile.getPath() + File.separator + timeStamp + "(" + count + ").jpg";
+            else if (count == 2)
+//                picture2Uri = todayFile.getPath() + File.separator + timeStamp + "(" + count + ").jpg";
+                picture1Uri = todayFile.getPath() + File.separator + timeStamp + "(" + count + ").jpg";
             Log.d("SAVE AT", "picture" + count + "Uri:\t" + todayFile.getPath() + File.separator + timeStamp + ".jpg");
         } else {
             return null;

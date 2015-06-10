@@ -14,8 +14,8 @@
         android:allowBackup="true"
         android:icon="@drawable/ic_launcher"
         android:label="@string/app_name"
-        android:theme="@style/AppTheme"
-        android:largeHeap="true" >
+        android:largeHeap="true"
+        android:theme="@style/AppTheme" >
         <activity
             android:name=".CameraActivity"
             android:label="@string/app_name"
@@ -29,21 +29,25 @@
         <activity
             android:name=".ImageViewActivity"
             android:label="@string/title_activity_image_view"
-            android:screenOrientation="sensorPortrait"
-            android:parentActivityName=".CameraActivity" >
+            android:parentActivityName=".CameraActivity"
+            android:screenOrientation="sensorPortrait" >
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"
                 android:value="com.jason.saliencycamera.CameraActivity" />
         </activity>
         <activity
             android:name=".ResultImageActivity"
-            android:screenOrientation="sensorPortrait"
-            android:label="@string/title_activity_result_image_view" >
+            android:label="@string/title_activity_result_image_view"
+            android:screenOrientation="sensorPortrait" >
         </activity>
         <activity
             android:name=".TestImageActivity"
-            android:screenOrientation="sensorPortrait"
-            android:label="@string/title_activity_test_image" >
+            android:label="@string/title_activity_test_image"
+            android:screenOrientation="sensorPortrait" >
+        </activity>
+        <activity
+            android:name=".TestAllActivity"
+            android:label="@string/title_activity_test_all" >
         </activity>
     </application>
 

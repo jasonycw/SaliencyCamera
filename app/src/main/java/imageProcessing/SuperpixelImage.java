@@ -376,12 +376,12 @@ public class SuperpixelImage {
             if(numberOfVectorUsed>0)
                 displacementOfEachSuperpixelList.set(i,new Point(totalX/numberOfVectorUsed,totalY/numberOfVectorUsed));
 
-            String list = "";
-            for(int j=quaterIndex;j<quaterIndex*3;j++)
-                list += "("+vectorsInASuperpixel.get(j).x+","+vectorsInASuperpixel.get(j).y+"), ";
-            Log.d("Superpixel"+i,"listB4Sort: "+listB4Sort);
-            Log.d("Superpixel"+i,"list: "+list);
-            Log.d("Superpixel"+i,"numberOfVectors: "+numberOfVectors+"\tnumberOfVectorUsed: "+numberOfVectorUsed+"\tTotalPoint: "+totalX+","+totalY+"\tPoint: "+totalX/numberOfVectorUsed+","+totalY/numberOfVectorUsed);
+//            String list = "";
+//            for(int j=quaterIndex;j<quaterIndex*3;j++)
+//                list += "("+vectorsInASuperpixel.get(j).x+","+vectorsInASuperpixel.get(j).y+"), ";
+//            Log.d("Superpixel"+i,"listB4Sort: "+listB4Sort);
+//            Log.d("Superpixel"+i,"list: "+list);
+//            Log.d("Superpixel"+i,"numberOfVectors: "+numberOfVectors+"\tnumberOfVectorUsed: "+numberOfVectorUsed+"\tTotalPoint: "+totalX+","+totalY+"\tPoint: "+totalX/numberOfVectorUsed+","+totalY/numberOfVectorUsed);
         }
 
         this.displacementOfSuperpixels = new MatOfPoint2f();

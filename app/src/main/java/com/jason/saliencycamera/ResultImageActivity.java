@@ -276,6 +276,7 @@ public class ResultImageActivity extends Activity {
 //                                        resultBitmap1 = CommonImageProcessing.motionCompensatedSaliencyDetection2(bitmap1, bitmap2, superpixel);
                                         resultBitmap2 = resultBitmap1;
                                         finishLayout(CommonImageProcessing.SaliencyDetection_withMD);
+                                        finish();
                                     }
                                 }
                                 break;

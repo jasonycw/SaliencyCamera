@@ -10,6 +10,8 @@ import android.widget.AbsListView;
 import android.widget.AdapterView;
 import android.widget.GridView;
 
+import java.util.Date;
+
 
 public class TestImageActivity extends Activity {
 
@@ -49,9 +51,31 @@ public class TestImageActivity extends Activity {
         // automatically handle clicks on the Home/Up button, so long
         // as you specify a parent activity in AndroidManifest.xml.
         int id = item.getItemId();
-        if (id == R.id.action_settings) {
+        if (id == R.id.action_testall) {
+            Intent intent = new Intent(TestImageActivity.this, TestAllActivity.class);
+
+            Bundle bundle = new Bundle();
+            bundle.putStringArray("drawable1Array", ImageAdapter.NO_FLASH_IMAGE_NAMES);
+            bundle.putStringArray("drawable2Array", ImageAdapter.FLASH_IMAGE_NAMES);
+
+            intent.putExtras(bundle);
+            intent.putExtra("date", new Date().getTime());
+            startActivity(intent);
             return true;
         }
         return super.onOptionsItemSelected(item);
+    }
+
+    private void startResultImageActivity(int action, String drawable1, String drawable2){
+        Intent intent = new Intent(TestImageActivity.this, ResultImageActivity.class);
+
+        Bundle bundle = new Bundle();
+        bundle.putInt("ACTION", action);
+        bundle.putString("drawable1", drawable1);
+        bundle.putString("drawable2", drawable2);
+
+        intent.putExtras(bundle);
+        intent.putExtra("date", new Date().getTime());
+        startActivity(intent);
     }
 }
