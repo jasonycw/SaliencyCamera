@@ -15,26 +15,30 @@
 
 var showLightImage = false;
 
-$(".inputImages").mouseenter(function(){
+$(".imagePair").mouseenter(function(){
 	$(".lightImage").fadeTo(0,1);
 	$(".inputImagesHeader").text("Flash Images");
+	$(".lshiifImagesHeader").text("Flash LSHIIF");
 	showLightImage = true;
 });
 
-$(".inputImages").mouseleave(function(){
+$(".imagePair").mouseleave(function(){
 	$(".lightImage").fadeTo(0,0.5);
 	$(".inputImagesHeader").text("Image Pairs");
+	$(".lshiifImagesHeader").text("LSHIIF");
 });
 
-$(".inputImages").click(function() {
+$(".imagePair").click(function() {
 	if(showLightImage){
 		$(".lightImage").fadeTo(0,0);
 		$(".inputImagesHeader").text("No flash Images");
-		showLightImage = false
+		$(".lshiifImagesHeader").text("No flash LSHIIF");
+		showLightImage = false;
 	}
 	else{
 		$(".lightImage").fadeTo(0,1);
 		$(".inputImagesHeader").text("Flash Images");
+		$(".lshiifImagesHeader").text("Flash LSHIIF");
 		showLightImage = true;
 	}
 });
