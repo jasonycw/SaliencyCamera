@@ -23,6 +23,8 @@ $( document ).ready(function(){
 		$("tr[name*='testCaseRow'] img[name*='differenceImage']")[i].src = './ProjectPage/img/'+testCases[i].differenceImage;
 		$("tr[name*='testCaseRow'] img[name*='saliencyWithoutMD']")[i].src = './ProjectPage/img/'+testCases[i].saliencyWithoutMD;
 		$("tr[name*='testCaseRow'] img[name*='saliencyWithMD']")[i].src = './ProjectPage/img/'+testCases[i].saliencyWithMD;
+
+		console.log("Test case " + i + " are loaded");
 	}
 
 	$(".lightImage").fadeTo(0,0.5);
