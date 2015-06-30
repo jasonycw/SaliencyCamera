@@ -455,7 +455,8 @@ public class CommonImageProcessing {
                         )
                     flash_value = flash_mat.get((int)(row_y+displacement_offset.y),(int)(column_x+displacement_offset.x))[0];
                 else
-                    flash_value = no_flash_mat.get(row_y, column_x)[0];
+                    flash_value = flash_mat.get(row_y, column_x)[0];
+//                  flash_value = no_flash_mat.get(row_y, column_x)[0];
                 diff_mat.put(row_y,column_x,flash_value-no_flash_value);
             }
         }
