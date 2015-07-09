@@ -896,7 +896,7 @@ testCases.push(new testCase(
 	"object_movement4_light1_MotionDetection_result.png",
 	"object_movement4_light1_SaliencyDetection_withMD_result.png",
 	"object_movement4_light1_SaliencyDetection_withoutMD_result.png"
-	));
+));
 
 testCases.push(new testCase(
 	"Object Movement",
@@ -908,7 +908,7 @@ testCases.push(new testCase(
 	"object_movement4_light2_MotionDetection_result.png",
 	"object_movement4_light2_SaliencyDetection_withMD_result.png",
 	"object_movement4_light2_SaliencyDetection_withoutMD_result.png"
-	));
+));
 
 testCases.push(new testCase(
 	"Object Movement",
@@ -920,7 +920,7 @@ testCases.push(new testCase(
 	"object_movement4_light3_MotionDetection_result.png",
 	"object_movement4_light3_SaliencyDetection_withMD_result.png",
 	"object_movement4_light3_SaliencyDetection_withoutMD_result.png"
-	));
+));
 
 testCases.push(new testCase(
 	"Object Movement",
@@ -932,7 +932,7 @@ testCases.push(new testCase(
 	"object_movement5_light1_MotionDetection_result.png",
 	"object_movement5_light1_SaliencyDetection_withMD_result.png",
 	"object_movement5_light1_SaliencyDetection_withoutMD_result.png"
-	));
+));
 
 testCases.push(new testCase(
 	"Object Movement",
@@ -944,7 +944,7 @@ testCases.push(new testCase(
 	"object_movement5_light2_MotionDetection_result.png",
 	"object_movement5_light2_SaliencyDetection_withMD_result.png",
 	"object_movement5_light2_SaliencyDetection_withoutMD_result.png"
-	));
+));
 
 testCases.push(new testCase(
 	"Object Movement",
@@ -956,7 +956,7 @@ testCases.push(new testCase(
 	"object_movement5_light3_MotionDetection_result.png",
 	"object_movement5_light3_SaliencyDetection_withMD_result.png",
 	"object_movement5_light3_SaliencyDetection_withoutMD_result.png"
-	));
+));
 
 testCases.push(new testCase(
 	"Object Movement",
@@ -968,7 +968,7 @@ testCases.push(new testCase(
 	"object_movement6_light1_MotionDetection_result.png",
 	"object_movement6_light1_SaliencyDetection_withMD_result.png",
 	"object_movement6_light1_SaliencyDetection_withoutMD_result.png"
-	));
+));
 
 testCases.push(new testCase(
 	"Object Movement",
@@ -980,7 +980,7 @@ testCases.push(new testCase(
 	"object_movement6_light2_MotionDetection_result.png",
 	"object_movement6_light2_SaliencyDetection_withMD_result.png",
 	"object_movement6_light2_SaliencyDetection_withoutMD_result.png"
-	));
+));
 
 testCases.push(new testCase(
 	"Object Movement",
@@ -992,7 +992,7 @@ testCases.push(new testCase(
 	"object_movement6_light3_MotionDetection_result.png",
 	"object_movement6_light3_SaliencyDetection_withMD_result.png",
 	"object_movement6_light3_SaliencyDetection_withoutMD_result.png"
-	));
+));
 
 testCases.push(new testCase(
 	"Object Movement",
@@ -1004,7 +1004,7 @@ testCases.push(new testCase(
 	"object_movement7_light1_MotionDetection_result.png",
 	"object_movement7_light1_SaliencyDetection_withMD_result.png",
 	"object_movement7_light1_SaliencyDetection_withoutMD_result.png"
-	));
+));
 
 testCases.push(new testCase(
 	"Object Movement",
@@ -1016,7 +1016,7 @@ testCases.push(new testCase(
 	"object_movement7_light2_MotionDetection_result.png",
 	"object_movement7_light2_SaliencyDetection_withMD_result.png",
 	"object_movement7_light2_SaliencyDetection_withoutMD_result.png"
-	));
+));
 
 testCases.push(new testCase(
 	"Object Movement",
@@ -1028,7 +1028,7 @@ testCases.push(new testCase(
 	"object_movement7_light3_MotionDetection_result.png",
 	"object_movement7_light3_SaliencyDetection_withMD_result.png",
 	"object_movement7_light3_SaliencyDetection_withoutMD_result.png"
-	));
+));
 
 testCases.push(new testCase(
 	"Object Movement",
@@ -1040,7 +1040,7 @@ testCases.push(new testCase(
 	"object_movement7_light4_MotionDetection_result.png",
 	"object_movement7_light4_SaliencyDetection_withMD_result.png",
 	"object_movement7_light4_SaliencyDetection_withoutMD_result.png"
-	));
+));
 
 testCases.push(new testCase(
 	"Object Movement",
@@ -1052,7 +1052,7 @@ testCases.push(new testCase(
 	"object_movement8_light1_MotionDetection_result.png",
 	"object_movement8_light1_SaliencyDetection_withMD_result.png",
 	"object_movement8_light1_SaliencyDetection_withoutMD_result.png"
-	));
+));
 
 testCases.push(new testCase(
 	"Object Movement",
@@ -1064,7 +1064,7 @@ testCases.push(new testCase(
 	"object_movement8_light2_MotionDetection_result.png",
 	"object_movement8_light2_SaliencyDetection_withMD_result.png",
 	"object_movement8_light2_SaliencyDetection_withoutMD_result.png"
-	));
+));
 
 testCases.push(new testCase(
 	"Object Movement",
@@ -1076,7 +1076,7 @@ testCases.push(new testCase(
 	"object_movement8_light3_MotionDetection_result.png",
 	"object_movement8_light3_SaliencyDetection_withMD_result.png",
 	"object_movement8_light3_SaliencyDetection_withoutMD_result.png"
-	));
+));
 
 testCases.push(new testCase(
 	"Object Movement",
@@ -1088,7 +1088,7 @@ testCases.push(new testCase(
 	"object_movement8_light4_MotionDetection_result.png",
 	"object_movement8_light4_SaliencyDetection_withMD_result.png",
 	"object_movement8_light4_SaliencyDetection_withoutMD_result.png"
-	));
+));
 
 testCases.push(new testCase(
 	"Object Movement",
@@ -1100,7 +1100,7 @@ testCases.push(new testCase(
 	"object_movement9_light1_MotionDetection_result.png",
 	"object_movement9_light1_SaliencyDetection_withMD_result.png",
 	"object_movement9_light1_SaliencyDetection_withoutMD_result.png"
-	));
+));
 
 testCases.push(new testCase(
 	"Object Movement",
@@ -1112,7 +1112,7 @@ testCases.push(new testCase(
 	"object_movement9_light2_MotionDetection_result.png",
 	"object_movement9_light2_SaliencyDetection_withMD_result.png",
 	"object_movement9_light2_SaliencyDetection_withoutMD_result.png"
-	));
+));
 
 testCases.push(new testCase(
 	"Object Movement",
@@ -1124,7 +1124,7 @@ testCases.push(new testCase(
 	"object_movement9_light3_MotionDetection_result.png",
 	"object_movement9_light3_SaliencyDetection_withMD_result.png",
 	"object_movement9_light3_SaliencyDetection_withoutMD_result.png"
-	));
+));
 
 testCases.push(new testCase(
 	"Object Movement",
@@ -1136,7 +1136,7 @@ testCases.push(new testCase(
 	"object_movement9_light4_MotionDetection_result.png",
 	"object_movement9_light4_SaliencyDetection_withMD_result.png",
 	"object_movement9_light4_SaliencyDetection_withoutMD_result.png"
-	));
+));
 
 testCases.push(new testCase(
 	"Object Movement",
@@ -1148,7 +1148,7 @@ testCases.push(new testCase(
 	"object_movement10_light1_MotionDetection_result.png",
 	"object_movement10_light1_SaliencyDetection_withMD_result.png",
 	"object_movement10_light1_SaliencyDetection_withoutMD_result.png"
-	));
+));
 
 testCases.push(new testCase(
 	"Object Movement",
@@ -1160,7 +1160,7 @@ testCases.push(new testCase(
 	"object_movement10_light2_MotionDetection_result.png",
 	"object_movement10_light2_SaliencyDetection_withMD_result.png",
 	"object_movement10_light2_SaliencyDetection_withoutMD_result.png"
-	));
+));
 
 testCases.push(new testCase(
 	"Object Movement",
@@ -1172,7 +1172,7 @@ testCases.push(new testCase(
 	"object_movement10_light3_MotionDetection_result.png",
 	"object_movement10_light3_SaliencyDetection_withMD_result.png",
 	"object_movement10_light3_SaliencyDetection_withoutMD_result.png"
-	));
+));
 
 testCases.push(new testCase(
 	"Object Movement",
@@ -1184,7 +1184,7 @@ testCases.push(new testCase(
 	"object_movement10_light4_MotionDetection_result.png",
 	"object_movement10_light4_SaliencyDetection_withMD_result.png",
 	"object_movement10_light4_SaliencyDetection_withoutMD_result.png"
-	));
+));
 
 testCases.push(new testCase(
 	"Camera Movement",
@@ -1196,7 +1196,7 @@ testCases.push(new testCase(
 	"camera_movement4_light1_MotionDetection_result.png",
 	"camera_movement4_light1_SaliencyDetection_withMD_result.png",
 	"camera_movement4_light1_SaliencyDetection_withoutMD_result.png"
-	));
+));
 
 testCases.push(new testCase(
 	"Camera Movement",
@@ -1208,7 +1208,7 @@ testCases.push(new testCase(
 	"camera_movement4_light2_MotionDetection_result.png",
 	"camera_movement4_light2_SaliencyDetection_withMD_result.png",
 	"camera_movement4_light2_SaliencyDetection_withoutMD_result.png"
-	));
+));
 
 testCases.push(new testCase(
 	"Camera Movement",
@@ -1220,7 +1220,7 @@ testCases.push(new testCase(
 	"camera_movement5_light1_MotionDetection_result.png",
 	"camera_movement5_light1_SaliencyDetection_withMD_result.png",
 	"camera_movement5_light1_SaliencyDetection_withoutMD_result.png"
-	));
+));
 
 testCases.push(new testCase(
 	"Camera Movement",
@@ -1232,7 +1232,7 @@ testCases.push(new testCase(
 	"camera_movement5_light2_MotionDetection_result.png",
 	"camera_movement5_light2_SaliencyDetection_withMD_result.png",
 	"camera_movement5_light2_SaliencyDetection_withoutMD_result.png"
-	));
+));
 
 testCases.push(new testCase(
 	"Camera Movement",
@@ -1244,7 +1244,7 @@ testCases.push(new testCase(
 	"camera_movement6_light1_MotionDetection_result.png",
 	"camera_movement6_light1_SaliencyDetection_withMD_result.png",
 	"camera_movement6_light1_SaliencyDetection_withoutMD_result.png"
-	));
+));
 
 testCases.push(new testCase(
 	"Camera Movement",
@@ -1256,7 +1256,7 @@ testCases.push(new testCase(
 	"camera_movement6_light2_MotionDetection_result.png",
 	"camera_movement6_light2_SaliencyDetection_withMD_result.png",
 	"camera_movement6_light2_SaliencyDetection_withoutMD_result.png"
-	));
+));
 
 testCases.push(new testCase(
 	"Camera Movement",
@@ -1268,7 +1268,7 @@ testCases.push(new testCase(
 	"camera_movement7_light1_MotionDetection_result.png",
 	"camera_movement7_light1_SaliencyDetection_withMD_result.png",
 	"camera_movement7_light1_SaliencyDetection_withoutMD_result.png"
-	));
+));
 
 testCases.push(new testCase(
 	"Camera Movement",
@@ -1280,7 +1280,7 @@ testCases.push(new testCase(
 	"camera_movement7_light2_MotionDetection_result.png",
 	"camera_movement7_light2_SaliencyDetection_withMD_result.png",
 	"camera_movement7_light2_SaliencyDetection_withoutMD_result.png"
-	));
+));
 
 testCases.push(new testCase(
 	"Camera Movement",
@@ -1292,7 +1292,7 @@ testCases.push(new testCase(
 	"camera_movement8_light1_MotionDetection_result.png",
 	"camera_movement8_light1_SaliencyDetection_withMD_result.png",
 	"camera_movement8_light1_SaliencyDetection_withoutMD_result.png"
-	));
+));
 
 testCases.push(new testCase(
 	"Camera Movement",
@@ -1304,7 +1304,7 @@ testCases.push(new testCase(
 	"camera_movement8_light2_MotionDetection_result.png",
 	"camera_movement8_light2_SaliencyDetection_withMD_result.png",
 	"camera_movement8_light2_SaliencyDetection_withoutMD_result.png"
-	));
+));
 
 testCases.push(new testCase(
 	"Camera Movement",
@@ -1316,7 +1316,7 @@ testCases.push(new testCase(
 	"camera_movement9_light1_MotionDetection_result.png",
 	"camera_movement9_light1_SaliencyDetection_withMD_result.png",
 	"camera_movement9_light1_SaliencyDetection_withoutMD_result.png"
-	));
+));
 
 testCases.push(new testCase(
 	"Camera Movement",
@@ -1328,7 +1328,7 @@ testCases.push(new testCase(
 	"camera_movement9_light2_MotionDetection_result.png",
 	"camera_movement9_light2_SaliencyDetection_withMD_result.png",
 	"camera_movement9_light2_SaliencyDetection_withoutMD_result.png"
-	));
+));
 
 testCases.push(new testCase(
 	"Camera Movement",
@@ -1340,7 +1340,7 @@ testCases.push(new testCase(
 	"camera_movement10_light1_MotionDetection_result.png",
 	"camera_movement10_light1_SaliencyDetection_withMD_result.png",
 	"camera_movement10_light1_SaliencyDetection_withoutMD_result.png"
-	));
+));
 
 testCases.push(new testCase(
 	"Camera Movement",
@@ -1352,7 +1352,7 @@ testCases.push(new testCase(
 	"camera_movement10_light2_MotionDetection_result.png",
 	"camera_movement10_light2_SaliencyDetection_withMD_result.png",
 	"camera_movement10_light2_SaliencyDetection_withoutMD_result.png"
-	));
+));
 
 testCases.push(new testCase(
 	"Camera Movement",
@@ -1364,7 +1364,7 @@ testCases.push(new testCase(
 	"camera_movement11_light1_MotionDetection_result.png",
 	"camera_movement11_light1_SaliencyDetection_withMD_result.png",
 	"camera_movement11_light1_SaliencyDetection_withoutMD_result.png"
-	));
+));
 
 testCases.push(new testCase(
 	"Camera Movement",
@@ -1376,7 +1376,7 @@ testCases.push(new testCase(
 	"camera_movement11_light2_MotionDetection_result.png",
 	"camera_movement11_light2_SaliencyDetection_withMD_result.png",
 	"camera_movement11_light2_SaliencyDetection_withoutMD_result.png"
-	));
+));
 
 testCases.push(new testCase(
 	"Camera Movement",
@@ -1388,7 +1388,7 @@ testCases.push(new testCase(
 	"camera_movement11_light3_MotionDetection_result.png",
 	"camera_movement11_light3_SaliencyDetection_withMD_result.png",
 	"camera_movement11_light3_SaliencyDetection_withoutMD_result.png"
-	));
+));
 
 testCases.push(new testCase(
 	"Camera Movement",
@@ -1400,7 +1400,7 @@ testCases.push(new testCase(
 	"camera_movement12_light1_MotionDetection_result.png",
 	"camera_movement12_light1_SaliencyDetection_withMD_result.png",
 	"camera_movement12_light1_SaliencyDetection_withoutMD_result.png"
-	));
+));
 
 testCases.push(new testCase(
 	"Camera Movement",
@@ -1412,7 +1412,7 @@ testCases.push(new testCase(
 	"camera_movement12_light2_MotionDetection_result.png",
 	"camera_movement12_light2_SaliencyDetection_withMD_result.png",
 	"camera_movement12_light2_SaliencyDetection_withoutMD_result.png"
-	));
+));
 
 testCases.push(new testCase(
 	"Camera Movement",
@@ -1424,7 +1424,7 @@ testCases.push(new testCase(
 	"camera_movement12_light3_MotionDetection_result.png",
 	"camera_movement12_light3_SaliencyDetection_withMD_result.png",
 	"camera_movement12_light3_SaliencyDetection_withoutMD_result.png"
-	));
+));
 
 testCases.push(new testCase(
 	"Camera Movement",
@@ -1436,7 +1436,7 @@ testCases.push(new testCase(
 	"camera_movement13_light1_MotionDetection_result.png",
 	"camera_movement13_light1_SaliencyDetection_withMD_result.png",
 	"camera_movement13_light1_SaliencyDetection_withoutMD_result.png"
-	));
+));
 
 testCases.push(new testCase(
 	"Camera Movement",
@@ -1448,7 +1448,7 @@ testCases.push(new testCase(
 	"camera_movement13_light2_MotionDetection_result.png",
 	"camera_movement13_light2_SaliencyDetection_withMD_result.png",
 	"camera_movement13_light2_SaliencyDetection_withoutMD_result.png"
-	));
+));
 
 testCases.push(new testCase(
 	"Camera Movement",
@@ -1460,7 +1460,7 @@ testCases.push(new testCase(
 	"camera_movement13_light3_MotionDetection_result.png",
 	"camera_movement13_light3_SaliencyDetection_withMD_result.png",
 	"camera_movement13_light3_SaliencyDetection_withoutMD_result.png"
-	));
+));
 
 testCases.push(new testCase(
 	"Both Movement",
@@ -1472,7 +1472,7 @@ testCases.push(new testCase(
 	"both_movement4_light1_MotionDetection_result.png",
 	"both_movement4_light1_SaliencyDetection_withMD_result.png",
 	"both_movement4_light1_SaliencyDetection_withoutMD_result.png"
-	));
+));
 
 testCases.push(new testCase(
 	"Both Movement",
@@ -1484,7 +1484,7 @@ testCases.push(new testCase(
 	"both_movement4_light2_MotionDetection_result.png",
 	"both_movement4_light2_SaliencyDetection_withMD_result.png",
 	"both_movement4_light2_SaliencyDetection_withoutMD_result.png"
-	));
+));
 
 testCases.push(new testCase(
 	"Both Movement",
@@ -1496,7 +1496,7 @@ testCases.push(new testCase(
 	"both_movement5_light1_MotionDetection_result.png",
 	"both_movement5_light1_SaliencyDetection_withMD_result.png",
 	"both_movement5_light1_SaliencyDetection_withoutMD_result.png"
-	));
+));
 
 testCases.push(new testCase(
 	"Both Movement",
@@ -1508,7 +1508,7 @@ testCases.push(new testCase(
 	"both_movement5_light2_MotionDetection_result.png",
 	"both_movement5_light2_SaliencyDetection_withMD_result.png",
 	"both_movement5_light2_SaliencyDetection_withoutMD_result.png"
-	));
+));
 
 testCases.push(new testCase(
 	"Both Movement",
@@ -1520,7 +1520,7 @@ testCases.push(new testCase(
 	"both_movement6_light1_MotionDetection_result.png",
 	"both_movement6_light1_SaliencyDetection_withMD_result.png",
 	"both_movement6_light1_SaliencyDetection_withoutMD_result.png"
-	));
+));
 
 testCases.push(new testCase(
 	"Both Movement",
@@ -1532,7 +1532,7 @@ testCases.push(new testCase(
 	"both_movement6_light2_MotionDetection_result.png",
 	"both_movement6_light2_SaliencyDetection_withMD_result.png",
 	"both_movement6_light2_SaliencyDetection_withoutMD_result.png"
-	));
+));
 
 testCases.push(new testCase(
 	"Both Movement",
@@ -1544,7 +1544,7 @@ testCases.push(new testCase(
 	"both_movement7_light1_MotionDetection_result.png",
 	"both_movement7_light1_SaliencyDetection_withMD_result.png",
 	"both_movement7_light1_SaliencyDetection_withoutMD_result.png"
-	));
+));
 
 testCases.push(new testCase(
 	"Background Movement",
@@ -1556,7 +1556,7 @@ testCases.push(new testCase(
 	"background_movement4_light1_MotionDetection_result.png",
 	"background_movement4_light1_SaliencyDetection_withMD_result.png",
 	"background_movement4_light1_SaliencyDetection_withoutMD_result.png"
-	));
+));
 
 testCases.push(new testCase(
 	"Background Movement",
@@ -1568,7 +1568,7 @@ testCases.push(new testCase(
 	"background_movement5_light1_MotionDetection_result.png",
 	"background_movement5_light1_SaliencyDetection_withMD_result.png",
 	"background_movement5_light1_SaliencyDetection_withoutMD_result.png"
-	));
+));
 
 testCases.push(new testCase(
 	"Background Movement",
@@ -1580,7 +1580,7 @@ testCases.push(new testCase(
 	"background_movement6_light1_MotionDetection_result.png",
 	"background_movement6_light1_SaliencyDetection_withMD_result.png",
 	"background_movement6_light1_SaliencyDetection_withoutMD_result.png"
-	));
+));
 testCases.push(new testCase(
       "chess1",
       "chess1.jpg",
@@ -1591,7 +1591,7 @@ testCases.push(new testCase(
       "chess1_light1_MotionDetection_result.png",
       "chess1_light1_SaliencyDetection_withMD_result.png",
       "chess1_light1_SaliencyDetection_withoutMD_result.png"
-      ));
+));
 
 testCases.push(new testCase(
       "chess1",
@@ -1603,7 +1603,7 @@ testCases.push(new testCase(
       "chess1_light2_MotionDetection_result.png",
       "chess1_light2_SaliencyDetection_withMD_result.png",
       "chess1_light2_SaliencyDetection_withoutMD_result.png"
-      ));
+));
 
 testCases.push(new testCase(
       "chess2",
@@ -1615,7 +1615,7 @@ testCases.push(new testCase(
       "chess2_light1_MotionDetection_result.png",
       "chess2_light1_SaliencyDetection_withMD_result.png",
       "chess2_light1_SaliencyDetection_withoutMD_result.png"
-      ));
+));
 
 testCases.push(new testCase(
       "chess2",
@@ -1627,7 +1627,7 @@ testCases.push(new testCase(
       "chess2_light2_MotionDetection_result.png",
       "chess2_light2_SaliencyDetection_withMD_result.png",
       "chess2_light2_SaliencyDetection_withoutMD_result.png"
-      ));
+));
 
 testCases.push(new testCase(
       "cube1",
@@ -1639,7 +1639,7 @@ testCases.push(new testCase(
       "cube1_light1_MotionDetection_result.png",
       "cube1_light1_SaliencyDetection_withMD_result.png",
       "cube1_light1_SaliencyDetection_withoutMD_result.png"
-      ));
+));
 
 testCases.push(new testCase(
       "cube1",
@@ -1651,7 +1651,7 @@ testCases.push(new testCase(
       "cube1_light2_MotionDetection_result.png",
       "cube1_light2_SaliencyDetection_withMD_result.png",
       "cube1_light2_SaliencyDetection_withoutMD_result.png"
-      ));
+));
 
 testCases.push(new testCase(
       "cube2",
@@ -1663,7 +1663,7 @@ testCases.push(new testCase(
       "cube2_light1_MotionDetection_result.png",
       "cube2_light1_SaliencyDetection_withMD_result.png",
       "cube2_light1_SaliencyDetection_withoutMD_result.png"
-      ));
+));
 
 testCases.push(new testCase(
       "cube2",
@@ -1675,7 +1675,7 @@ testCases.push(new testCase(
       "cube2_light2_MotionDetection_result.png",
       "cube2_light2_SaliencyDetection_withMD_result.png",
       "cube2_light2_SaliencyDetection_withoutMD_result.png"
-      ));
+));
 
 testCases.push(new testCase(
       "cube3",
@@ -1687,7 +1687,7 @@ testCases.push(new testCase(
       "cube3_light1_MotionDetection_result.png",
       "cube3_light1_SaliencyDetection_withMD_result.png",
       "cube3_light1_SaliencyDetection_withoutMD_result.png"
-      ));
+));
 
 testCases.push(new testCase(
       "cube3",
@@ -1699,7 +1699,7 @@ testCases.push(new testCase(
       "cube3_light2_MotionDetection_result.png",
       "cube3_light2_SaliencyDetection_withMD_result.png",
       "cube3_light2_SaliencyDetection_withoutMD_result.png"
-      ));
+));
 
 testCases.push(new testCase(
       "cube4",
@@ -1711,7 +1711,7 @@ testCases.push(new testCase(
       "cube4_light1_MotionDetection_result.png",
       "cube4_light1_SaliencyDetection_withMD_result.png",
       "cube4_light1_SaliencyDetection_withoutMD_result.png"
-      ));
+));
 
 testCases.push(new testCase(
       "cube4",
@@ -1723,7 +1723,7 @@ testCases.push(new testCase(
       "cube4_light2_MotionDetection_result.png",
       "cube4_light2_SaliencyDetection_withMD_result.png",
       "cube4_light2_SaliencyDetection_withoutMD_result.png"
-      ));
+));
 
 testCases.push(new testCase(
       "elephant10",
@@ -1735,7 +1735,7 @@ testCases.push(new testCase(
       "elephant10_light1_MotionDetection_result.png",
       "elephant10_light1_SaliencyDetection_withMD_result.png",
       "elephant10_light1_SaliencyDetection_withoutMD_result.png"
-      ));
+));
 
 testCases.push(new testCase(
       "elephant10",
@@ -1747,7 +1747,7 @@ testCases.push(new testCase(
       "elephant10_light3_MotionDetection_result.png",
       "elephant10_light3_SaliencyDetection_withMD_result.png",
       "elephant10_light3_SaliencyDetection_withoutMD_result.png"
-      ));
+));
 
 testCases.push(new testCase(
       "elephant11",
@@ -1759,7 +1759,7 @@ testCases.push(new testCase(
       "elephant11_light1_MotionDetection_result.png",
       "elephant11_light1_SaliencyDetection_withMD_result.png",
       "elephant11_light1_SaliencyDetection_withoutMD_result.png"
-      ));
+));
 
 testCases.push(new testCase(
       "elephant11",
@@ -1771,7 +1771,7 @@ testCases.push(new testCase(
       "elephant11_light3_MotionDetection_result.png",
       "elephant11_light3_SaliencyDetection_withMD_result.png",
       "elephant11_light3_SaliencyDetection_withoutMD_result.png"
-      ));
+));
 
 testCases.push(new testCase(
       "elephant12",
@@ -1783,7 +1783,7 @@ testCases.push(new testCase(
       "elephant12_light1_MotionDetection_result.png",
       "elephant12_light1_SaliencyDetection_withMD_result.png",
       "elephant12_light1_SaliencyDetection_withoutMD_result.png"
-      ));
+));
 
 testCases.push(new testCase(
       "elephant12",
@@ -1795,7 +1795,7 @@ testCases.push(new testCase(
       "elephant12_light2_MotionDetection_result.png",
       "elephant12_light2_SaliencyDetection_withMD_result.png",
       "elephant12_light2_SaliencyDetection_withoutMD_result.png"
-      ));
+));
 
 testCases.push(new testCase(
       "elephant13",
@@ -1807,7 +1807,7 @@ testCases.push(new testCase(
       "elephant13_light1_MotionDetection_result.png",
       "elephant13_light1_SaliencyDetection_withMD_result.png",
       "elephant13_light1_SaliencyDetection_withoutMD_result.png"
-      ));
+));
 
 testCases.push(new testCase(
       "elephant13",
@@ -1819,7 +1819,7 @@ testCases.push(new testCase(
       "elephant13_light2_MotionDetection_result.png",
       "elephant13_light2_SaliencyDetection_withMD_result.png",
       "elephant13_light2_SaliencyDetection_withoutMD_result.png"
-      ));
+));
 
 testCases.push(new testCase(
       "elephant14",
@@ -1831,7 +1831,7 @@ testCases.push(new testCase(
       "elephant14_light1_MotionDetection_result.png",
       "elephant14_light1_SaliencyDetection_withMD_result.png",
       "elephant14_light1_SaliencyDetection_withoutMD_result.png"
-      ));
+));
 
 testCases.push(new testCase(
       "elephant14",
@@ -1843,7 +1843,7 @@ testCases.push(new testCase(
       "elephant14_light2_MotionDetection_result.png",
       "elephant14_light2_SaliencyDetection_withMD_result.png",
       "elephant14_light2_SaliencyDetection_withoutMD_result.png"
-      ));
+));
 
 testCases.push(new testCase(
       "elephant15",
@@ -1855,7 +1855,7 @@ testCases.push(new testCase(
       "elephant15_light1_MotionDetection_result.png",
       "elephant15_light1_SaliencyDetection_withMD_result.png",
       "elephant15_light1_SaliencyDetection_withoutMD_result.png"
-      ));
+));
 
 testCases.push(new testCase(
       "elephant15",
@@ -1867,7 +1867,7 @@ testCases.push(new testCase(
       "elephant15_light2_MotionDetection_result.png",
       "elephant15_light2_SaliencyDetection_withMD_result.png",
       "elephant15_light2_SaliencyDetection_withoutMD_result.png"
-      ));
+));
 
 testCases.push(new testCase(
       "elephant16",
@@ -1879,7 +1879,7 @@ testCases.push(new testCase(
       "elephant16_light1_MotionDetection_result.png",
       "elephant16_light1_SaliencyDetection_withMD_result.png",
       "elephant16_light1_SaliencyDetection_withoutMD_result.png"
-      ));
+));
 
 testCases.push(new testCase(
       "elephant16",
@@ -1891,7 +1891,7 @@ testCases.push(new testCase(
       "elephant16_light2_MotionDetection_result.png",
       "elephant16_light2_SaliencyDetection_withMD_result.png",
       "elephant16_light2_SaliencyDetection_withoutMD_result.png"
-      ));
+));
 
 testCases.push(new testCase(
       "elephant17",
@@ -1903,7 +1903,7 @@ testCases.push(new testCase(
       "elephant17_light1_MotionDetection_result.png",
       "elephant17_light1_SaliencyDetection_withMD_result.png",
       "elephant17_light1_SaliencyDetection_withoutMD_result.png"
-      ));
+));
 
 testCases.push(new testCase(
       "elephant17",
@@ -1915,7 +1915,7 @@ testCases.push(new testCase(
       "elephant17_light2_MotionDetection_result.png",
       "elephant17_light2_SaliencyDetection_withMD_result.png",
       "elephant17_light2_SaliencyDetection_withoutMD_result.png"
-      ));
+));
 
 testCases.push(new testCase(
       "elephant1",
@@ -1927,7 +1927,7 @@ testCases.push(new testCase(
       "elephant1_light1_MotionDetection_result.png",
       "elephant1_light1_SaliencyDetection_withMD_result.png",
       "elephant1_light1_SaliencyDetection_withoutMD_result.png"
-      ));
+));
 
 testCases.push(new testCase(
       "elephant1",
@@ -1939,7 +1939,7 @@ testCases.push(new testCase(
       "elephant1_light2_MotionDetection_result.png",
       "elephant1_light2_SaliencyDetection_withMD_result.png",
       "elephant1_light2_SaliencyDetection_withoutMD_result.png"
-      ));
+));
 
 testCases.push(new testCase(
       "elephant2",
@@ -1951,7 +1951,7 @@ testCases.push(new testCase(
       "elephant2_light1_MotionDetection_result.png",
       "elephant2_light1_SaliencyDetection_withMD_result.png",
       "elephant2_light1_SaliencyDetection_withoutMD_result.png"
-      ));
+));
 
 testCases.push(new testCase(
       "elephant2",
@@ -1963,7 +1963,7 @@ testCases.push(new testCase(
       "elephant2_light2_MotionDetection_result.png",
       "elephant2_light2_SaliencyDetection_withMD_result.png",
       "elephant2_light2_SaliencyDetection_withoutMD_result.png"
-      ));
+));
 
 testCases.push(new testCase(
       "elephant3",
@@ -1975,7 +1975,7 @@ testCases.push(new testCase(
       "elephant3_light1_MotionDetection_result.png",
       "elephant3_light1_SaliencyDetection_withMD_result.png",
       "elephant3_light1_SaliencyDetection_withoutMD_result.png"
-      ));
+));
 
 testCases.push(new testCase(
       "elephant3",
@@ -1987,7 +1987,7 @@ testCases.push(new testCase(
       "elephant3_light2_MotionDetection_result.png",
       "elephant3_light2_SaliencyDetection_withMD_result.png",
       "elephant3_light2_SaliencyDetection_withoutMD_result.png"
-      ));
+));
 
 testCases.push(new testCase(
       "elephant4",
@@ -1999,7 +1999,7 @@ testCases.push(new testCase(
       "elephant4_light1_MotionDetection_result.png",
       "elephant4_light1_SaliencyDetection_withMD_result.png",
       "elephant4_light1_SaliencyDetection_withoutMD_result.png"
-      ));
+));
 
 testCases.push(new testCase(
       "elephant4",
@@ -2011,7 +2011,7 @@ testCases.push(new testCase(
       "elephant4_light2_MotionDetection_result.png",
       "elephant4_light2_SaliencyDetection_withMD_result.png",
       "elephant4_light2_SaliencyDetection_withoutMD_result.png"
-      ));
+));
 
 testCases.push(new testCase(
       "elephant5",
@@ -2023,7 +2023,7 @@ testCases.push(new testCase(
       "elephant5_light1_MotionDetection_result.png",
       "elephant5_light1_SaliencyDetection_withMD_result.png",
       "elephant5_light1_SaliencyDetection_withoutMD_result.png"
-      ));
+));
 
 testCases.push(new testCase(
       "elephant5",
@@ -2035,7 +2035,7 @@ testCases.push(new testCase(
       "elephant5_light2_MotionDetection_result.png",
       "elephant5_light2_SaliencyDetection_withMD_result.png",
       "elephant5_light2_SaliencyDetection_withoutMD_result.png"
-      ));
+));
 
 testCases.push(new testCase(
       "elephant6",
@@ -2047,7 +2047,7 @@ testCases.push(new testCase(
       "elephant6_light1_MotionDetection_result.png",
       "elephant6_light1_SaliencyDetection_withMD_result.png",
       "elephant6_light1_SaliencyDetection_withoutMD_result.png"
-      ));
+));
 
 testCases.push(new testCase(
       "elephant6",
@@ -2059,7 +2059,7 @@ testCases.push(new testCase(
       "elephant6_light2_MotionDetection_result.png",
       "elephant6_light2_SaliencyDetection_withMD_result.png",
       "elephant6_light2_SaliencyDetection_withoutMD_result.png"
-      ));
+));
 
 testCases.push(new testCase(
       "elephant7",
@@ -2071,7 +2071,7 @@ testCases.push(new testCase(
       "elephant7_light1_MotionDetection_result.png",
       "elephant7_light1_SaliencyDetection_withMD_result.png",
       "elephant7_light1_SaliencyDetection_withoutMD_result.png"
-      ));
+));
 
 testCases.push(new testCase(
       "elephant8",
@@ -2083,7 +2083,7 @@ testCases.push(new testCase(
       "elephant8_light1_MotionDetection_result.png",
       "elephant8_light1_SaliencyDetection_withMD_result.png",
       "elephant8_light1_SaliencyDetection_withoutMD_result.png"
-      ));
+));
 
 testCases.push(new testCase(
       "elephant9",
@@ -2095,7 +2095,7 @@ testCases.push(new testCase(
       "elephant9_light2_MotionDetection_result.png",
       "elephant9_light2_SaliencyDetection_withMD_result.png",
       "elephant9_light2_SaliencyDetection_withoutMD_result.png"
-      ));
+));
 
 testCases.push(new testCase(
       "elephant9",
@@ -2107,7 +2107,7 @@ testCases.push(new testCase(
       "elephant9_light3_MotionDetection_result.png",
       "elephant9_light3_SaliencyDetection_withMD_result.png",
       "elephant9_light3_SaliencyDetection_withoutMD_result.png"
-      ));
+));
 
 testCases.push(new testCase(
       "pillar1",
@@ -2119,7 +2119,7 @@ testCases.push(new testCase(
       "pillar1_light1_MotionDetection_result.png",
       "pillar1_light1_SaliencyDetection_withMD_result.png",
       "pillar1_light1_SaliencyDetection_withoutMD_result.png"
-      ));
+));
 
 testCases.push(new testCase(
       "pillar2",
@@ -2131,7 +2131,7 @@ testCases.push(new testCase(
       "pillar2_light1_MotionDetection_result.png",
       "pillar2_light1_SaliencyDetection_withMD_result.png",
       "pillar2_light1_SaliencyDetection_withoutMD_result.png"
-      ));
+));
 
 testCases.push(new testCase(
       "pillar2",
@@ -2143,7 +2143,7 @@ testCases.push(new testCase(
       "pillar2_light2_MotionDetection_result.png",
       "pillar2_light2_SaliencyDetection_withMD_result.png",
       "pillar2_light2_SaliencyDetection_withoutMD_result.png"
-      ));
+));
 
 testCases.push(new testCase(
       "pillar3",
@@ -2155,7 +2155,7 @@ testCases.push(new testCase(
       "pillar3_light1_MotionDetection_result.png",
       "pillar3_light1_SaliencyDetection_withMD_result.png",
       "pillar3_light1_SaliencyDetection_withoutMD_result.png"
-      ));
+));
 
 testCases.push(new testCase(
       "pillar3",
@@ -2167,7 +2167,7 @@ testCases.push(new testCase(
       "pillar3_light2_MotionDetection_result.png",
       "pillar3_light2_SaliencyDetection_withMD_result.png",
       "pillar3_light2_SaliencyDetection_withoutMD_result.png"
-      ));
+));
 
 testCases.push(new testCase(
       "plane10",
@@ -2179,7 +2179,7 @@ testCases.push(new testCase(
       "plane10_light1_MotionDetection_result.png",
       "plane10_light1_SaliencyDetection_withMD_result.png",
       "plane10_light1_SaliencyDetection_withoutMD_result.png"
-      ));
+));
 
 testCases.push(new testCase(
       "plane11",
@@ -2191,7 +2191,7 @@ testCases.push(new testCase(
       "plane11_light1_MotionDetection_result.png",
       "plane11_light1_SaliencyDetection_withMD_result.png",
       "plane11_light1_SaliencyDetection_withoutMD_result.png"
-      ));
+));
 
 testCases.push(new testCase(
       "plane11",
@@ -2203,7 +2203,7 @@ testCases.push(new testCase(
       "plane11_light2_MotionDetection_result.png",
       "plane11_light2_SaliencyDetection_withMD_result.png",
       "plane11_light2_SaliencyDetection_withoutMD_result.png"
-      ));
+));
 
 testCases.push(new testCase(
       "plane12",
@@ -2215,7 +2215,7 @@ testCases.push(new testCase(
       "plane12_light1_MotionDetection_result.png",
       "plane12_light1_SaliencyDetection_withMD_result.png",
       "plane12_light1_SaliencyDetection_withoutMD_result.png"
-      ));
+));
 
 testCases.push(new testCase(
       "plane12",
@@ -2227,7 +2227,7 @@ testCases.push(new testCase(
       "plane12_light2_MotionDetection_result.png",
       "plane12_light2_SaliencyDetection_withMD_result.png",
       "plane12_light2_SaliencyDetection_withoutMD_result.png"
-      ));
+));
 
 testCases.push(new testCase(
       "plane13",
@@ -2239,7 +2239,7 @@ testCases.push(new testCase(
       "plane13_light1_MotionDetection_result.png",
       "plane13_light1_SaliencyDetection_withMD_result.png",
       "plane13_light1_SaliencyDetection_withoutMD_result.png"
-      ));
+));
 
 testCases.push(new testCase(
       "plane14",
@@ -2251,7 +2251,7 @@ testCases.push(new testCase(
       "plane14_light1_MotionDetection_result.png",
       "plane14_light1_SaliencyDetection_withMD_result.png",
       "plane14_light1_SaliencyDetection_withoutMD_result.png"
-      ));
+));
 
 testCases.push(new testCase(
       "plane14",
@@ -2263,7 +2263,7 @@ testCases.push(new testCase(
       "plane14_light2_MotionDetection_result.png",
       "plane14_light2_SaliencyDetection_withMD_result.png",
       "plane14_light2_SaliencyDetection_withoutMD_result.png"
-      ));
+));
 
 testCases.push(new testCase(
       "plane15",
@@ -2275,7 +2275,7 @@ testCases.push(new testCase(
       "plane15_light1_MotionDetection_result.png",
       "plane15_light1_SaliencyDetection_withMD_result.png",
       "plane15_light1_SaliencyDetection_withoutMD_result.png"
-      ));
+));
 
 testCases.push(new testCase(
       "plane15",
@@ -2287,7 +2287,7 @@ testCases.push(new testCase(
       "plane15_light2_MotionDetection_result.png",
       "plane15_light2_SaliencyDetection_withMD_result.png",
       "plane15_light2_SaliencyDetection_withoutMD_result.png"
-      ));
+));
 
 testCases.push(new testCase(
       "plane16",
@@ -2299,7 +2299,7 @@ testCases.push(new testCase(
       "plane16_light1_MotionDetection_result.png",
       "plane16_light1_SaliencyDetection_withMD_result.png",
       "plane16_light1_SaliencyDetection_withoutMD_result.png"
-      ));
+));
 
 testCases.push(new testCase(
       "plane16",
@@ -2311,7 +2311,7 @@ testCases.push(new testCase(
       "plane16_light2_MotionDetection_result.png",
       "plane16_light2_SaliencyDetection_withMD_result.png",
       "plane16_light2_SaliencyDetection_withoutMD_result.png"
-      ));
+));
 
 testCases.push(new testCase(
       "plane17",
@@ -2323,7 +2323,7 @@ testCases.push(new testCase(
       "plane17_light1_MotionDetection_result.png",
       "plane17_light1_SaliencyDetection_withMD_result.png",
       "plane17_light1_SaliencyDetection_withoutMD_result.png"
-      ));
+));
 
 testCases.push(new testCase(
       "plane17",
@@ -2335,7 +2335,7 @@ testCases.push(new testCase(
       "plane17_light2_MotionDetection_result.png",
       "plane17_light2_SaliencyDetection_withMD_result.png",
       "plane17_light2_SaliencyDetection_withoutMD_result.png"
-      ));
+));
 
 testCases.push(new testCase(
       "plane18",
@@ -2347,7 +2347,7 @@ testCases.push(new testCase(
       "plane18_light1_MotionDetection_result.png",
       "plane18_light1_SaliencyDetection_withMD_result.png",
       "plane18_light1_SaliencyDetection_withoutMD_result.png"
-      ));
+));
 
 testCases.push(new testCase(
       "plane18",
@@ -2359,7 +2359,7 @@ testCases.push(new testCase(
       "plane18_light2_MotionDetection_result.png",
       "plane18_light2_SaliencyDetection_withMD_result.png",
       "plane18_light2_SaliencyDetection_withoutMD_result.png"
-      ));
+));
 
 testCases.push(new testCase(
       "plane19",
@@ -2371,7 +2371,7 @@ testCases.push(new testCase(
       "plane19_light1_MotionDetection_result.png",
       "plane19_light1_SaliencyDetection_withMD_result.png",
       "plane19_light1_SaliencyDetection_withoutMD_result.png"
-      ));
+));
 
 testCases.push(new testCase(
       "plane19",
@@ -2383,7 +2383,7 @@ testCases.push(new testCase(
       "plane19_light2_MotionDetection_result.png",
       "plane19_light2_SaliencyDetection_withMD_result.png",
       "plane19_light2_SaliencyDetection_withoutMD_result.png"
-      ));
+));
 
 testCases.push(new testCase(
       "plane1",
@@ -2395,7 +2395,7 @@ testCases.push(new testCase(
       "plane1_light1_MotionDetection_result.png",
       "plane1_light1_SaliencyDetection_withMD_result.png",
       "plane1_light1_SaliencyDetection_withoutMD_result.png"
-      ));
+));
 
 testCases.push(new testCase(
       "plane20",
@@ -2407,7 +2407,7 @@ testCases.push(new testCase(
       "plane20_light1_MotionDetection_result.png",
       "plane20_light1_SaliencyDetection_withMD_result.png",
       "plane20_light1_SaliencyDetection_withoutMD_result.png"
-      ));
+));
 
 testCases.push(new testCase(
       "plane21",
@@ -2419,7 +2419,7 @@ testCases.push(new testCase(
       "plane21_light1_MotionDetection_result.png",
       "plane21_light1_SaliencyDetection_withMD_result.png",
       "plane21_light1_SaliencyDetection_withoutMD_result.png"
-      ));
+));
 
 testCases.push(new testCase(
       "plane21",
@@ -2431,7 +2431,7 @@ testCases.push(new testCase(
       "plane21_light2_MotionDetection_result.png",
       "plane21_light2_SaliencyDetection_withMD_result.png",
       "plane21_light2_SaliencyDetection_withoutMD_result.png"
-      ));
+));
 
 testCases.push(new testCase(
       "plane22",
@@ -2443,7 +2443,7 @@ testCases.push(new testCase(
       "plane22_light1_MotionDetection_result.png",
       "plane22_light1_SaliencyDetection_withMD_result.png",
       "plane22_light1_SaliencyDetection_withoutMD_result.png"
-      ));
+));
 
 testCases.push(new testCase(
       "plane22",
@@ -2455,7 +2455,7 @@ testCases.push(new testCase(
       "plane22_light2_MotionDetection_result.png",
       "plane22_light2_SaliencyDetection_withMD_result.png",
       "plane22_light2_SaliencyDetection_withoutMD_result.png"
-      ));
+));
 
 testCases.push(new testCase(
       "plane23",
@@ -2467,7 +2467,7 @@ testCases.push(new testCase(
       "plane23_light1_MotionDetection_result.png",
       "plane23_light1_SaliencyDetection_withMD_result.png",
       "plane23_light1_SaliencyDetection_withoutMD_result.png"
-      ));
+));
 
 testCases.push(new testCase(
       "plane23",
@@ -2479,7 +2479,7 @@ testCases.push(new testCase(
       "plane23_light2_MotionDetection_result.png",
       "plane23_light2_SaliencyDetection_withMD_result.png",
       "plane23_light2_SaliencyDetection_withoutMD_result.png"
-      ));
+));
 
 testCases.push(new testCase(
       "plane24",
@@ -2491,7 +2491,7 @@ testCases.push(new testCase(
       "plane24_light1_MotionDetection_result.png",
       "plane24_light1_SaliencyDetection_withMD_result.png",
       "plane24_light1_SaliencyDetection_withoutMD_result.png"
-      ));
+));
 
 testCases.push(new testCase(
       "plane24",
@@ -2503,7 +2503,7 @@ testCases.push(new testCase(
       "plane24_light2_MotionDetection_result.png",
       "plane24_light2_SaliencyDetection_withMD_result.png",
       "plane24_light2_SaliencyDetection_withoutMD_result.png"
-      ));
+));
 
 testCases.push(new testCase(
       "plane25",
@@ -2515,7 +2515,7 @@ testCases.push(new testCase(
       "plane25_light1_MotionDetection_result.png",
       "plane25_light1_SaliencyDetection_withMD_result.png",
       "plane25_light1_SaliencyDetection_withoutMD_result.png"
-      ));
+));
 
 testCases.push(new testCase(
       "plane25",
@@ -2527,7 +2527,7 @@ testCases.push(new testCase(
       "plane25_light2_MotionDetection_result.png",
       "plane25_light2_SaliencyDetection_withMD_result.png",
       "plane25_light2_SaliencyDetection_withoutMD_result.png"
-      ));
+));
 
 testCases.push(new testCase(
       "plane25",
@@ -2539,7 +2539,7 @@ testCases.push(new testCase(
       "plane25_light3_MotionDetection_result.png",
       "plane25_light3_SaliencyDetection_withMD_result.png",
       "plane25_light3_SaliencyDetection_withoutMD_result.png"
-      ));
+));
 
 testCases.push(new testCase(
       "plane26",
@@ -2551,7 +2551,7 @@ testCases.push(new testCase(
       "plane26_light1_MotionDetection_result.png",
       "plane26_light1_SaliencyDetection_withMD_result.png",
       "plane26_light1_SaliencyDetection_withoutMD_result.png"
-      ));
+));
 
 testCases.push(new testCase(
       "plane26",
@@ -2563,7 +2563,7 @@ testCases.push(new testCase(
       "plane26_light2_MotionDetection_result.png",
       "plane26_light2_SaliencyDetection_withMD_result.png",
       "plane26_light2_SaliencyDetection_withoutMD_result.png"
-      ));
+));
 
 testCases.push(new testCase(
       "plane26",
@@ -2575,7 +2575,7 @@ testCases.push(new testCase(
       "plane26_light3_MotionDetection_result.png",
       "plane26_light3_SaliencyDetection_withMD_result.png",
       "plane26_light3_SaliencyDetection_withoutMD_result.png"
-      ));
+));
 
 testCases.push(new testCase(
       "plane27",
@@ -2587,7 +2587,7 @@ testCases.push(new testCase(
       "plane27_light1_MotionDetection_result.png",
       "plane27_light1_SaliencyDetection_withMD_result.png",
       "plane27_light1_SaliencyDetection_withoutMD_result.png"
-      ));
+));
 
 testCases.push(new testCase(
       "plane27",
@@ -2599,7 +2599,7 @@ testCases.push(new testCase(
       "plane27_light2_MotionDetection_result.png",
       "plane27_light2_SaliencyDetection_withMD_result.png",
       "plane27_light2_SaliencyDetection_withoutMD_result.png"
-      ));
+));
 
 testCases.push(new testCase(
       "plane27",
@@ -2611,7 +2611,7 @@ testCases.push(new testCase(
       "plane27_light3_MotionDetection_result.png",
       "plane27_light3_SaliencyDetection_withMD_result.png",
       "plane27_light3_SaliencyDetection_withoutMD_result.png"
-      ));
+));
 
 testCases.push(new testCase(
       "plane28",
@@ -2623,7 +2623,7 @@ testCases.push(new testCase(
       "plane28_light1_MotionDetection_result.png",
       "plane28_light1_SaliencyDetection_withMD_result.png",
       "plane28_light1_SaliencyDetection_withoutMD_result.png"
-      ));
+));
 
 testCases.push(new testCase(
       "plane28",
@@ -2635,7 +2635,7 @@ testCases.push(new testCase(
       "plane28_light2_MotionDetection_result.png",
       "plane28_light2_SaliencyDetection_withMD_result.png",
       "plane28_light2_SaliencyDetection_withoutMD_result.png"
-      ));
+));
 
 testCases.push(new testCase(
       "plane28",
@@ -2647,7 +2647,7 @@ testCases.push(new testCase(
       "plane28_light3_MotionDetection_result.png",
       "plane28_light3_SaliencyDetection_withMD_result.png",
       "plane28_light3_SaliencyDetection_withoutMD_result.png"
-      ));
+));
 
 testCases.push(new testCase(
       "plane29",
@@ -2659,7 +2659,7 @@ testCases.push(new testCase(
       "plane29_light1_MotionDetection_result.png",
       "plane29_light1_SaliencyDetection_withMD_result.png",
       "plane29_light1_SaliencyDetection_withoutMD_result.png"
-      ));
+));
 
 testCases.push(new testCase(
       "plane29",
@@ -2671,7 +2671,7 @@ testCases.push(new testCase(
       "plane29_light2_MotionDetection_result.png",
       "plane29_light2_SaliencyDetection_withMD_result.png",
       "plane29_light2_SaliencyDetection_withoutMD_result.png"
-      ));
+));
 
 testCases.push(new testCase(
       "plane29",
@@ -2683,7 +2683,7 @@ testCases.push(new testCase(
       "plane29_light3_MotionDetection_result.png",
       "plane29_light3_SaliencyDetection_withMD_result.png",
       "plane29_light3_SaliencyDetection_withoutMD_result.png"
-      ));
+));
 
 testCases.push(new testCase(
       "plane2",
@@ -2695,7 +2695,7 @@ testCases.push(new testCase(
       "plane2_light1_MotionDetection_result.png",
       "plane2_light1_SaliencyDetection_withMD_result.png",
       "plane2_light1_SaliencyDetection_withoutMD_result.png"
-      ));
+));
 
 testCases.push(new testCase(
       "plane2",
@@ -2707,7 +2707,7 @@ testCases.push(new testCase(
       "plane2_light2_MotionDetection_result.png",
       "plane2_light2_SaliencyDetection_withMD_result.png",
       "plane2_light2_SaliencyDetection_withoutMD_result.png"
-      ));
+));
 
 testCases.push(new testCase(
       "plane30",
@@ -2719,7 +2719,7 @@ testCases.push(new testCase(
       "plane30_light1_MotionDetection_result.png",
       "plane30_light1_SaliencyDetection_withMD_result.png",
       "plane30_light1_SaliencyDetection_withoutMD_result.png"
-      ));
+));
 
 testCases.push(new testCase(
       "plane30",
@@ -2731,7 +2731,7 @@ testCases.push(new testCase(
       "plane30_light2_MotionDetection_result.png",
       "plane30_light2_SaliencyDetection_withMD_result.png",
       "plane30_light2_SaliencyDetection_withoutMD_result.png"
-      ));
+));
 
 testCases.push(new testCase(
       "plane30",
@@ -2743,7 +2743,7 @@ testCases.push(new testCase(
       "plane30_light3_MotionDetection_result.png",
       "plane30_light3_SaliencyDetection_withMD_result.png",
       "plane30_light3_SaliencyDetection_withoutMD_result.png"
-      ));
+));
 
 testCases.push(new testCase(
       "plane31",
@@ -2755,7 +2755,7 @@ testCases.push(new testCase(
       "plane31_light1_MotionDetection_result.png",
       "plane31_light1_SaliencyDetection_withMD_result.png",
       "plane31_light1_SaliencyDetection_withoutMD_result.png"
-      ));
+));
 
 testCases.push(new testCase(
       "plane31",
@@ -2767,7 +2767,7 @@ testCases.push(new testCase(
       "plane31_light2_MotionDetection_result.png",
       "plane31_light2_SaliencyDetection_withMD_result.png",
       "plane31_light2_SaliencyDetection_withoutMD_result.png"
-      ));
+));
 
 testCases.push(new testCase(
       "plane32",
@@ -2779,7 +2779,7 @@ testCases.push(new testCase(
       "plane32_light1_MotionDetection_result.png",
       "plane32_light1_SaliencyDetection_withMD_result.png",
       "plane32_light1_SaliencyDetection_withoutMD_result.png"
-      ));
+));
 
 testCases.push(new testCase(
       "plane32",
@@ -2791,7 +2791,7 @@ testCases.push(new testCase(
       "plane32_light2_MotionDetection_result.png",
       "plane32_light2_SaliencyDetection_withMD_result.png",
       "plane32_light2_SaliencyDetection_withoutMD_result.png"
-      ));
+));
 
 testCases.push(new testCase(
       "plane33",
@@ -2803,7 +2803,7 @@ testCases.push(new testCase(
       "plane33_light1_MotionDetection_result.png",
       "plane33_light1_SaliencyDetection_withMD_result.png",
       "plane33_light1_SaliencyDetection_withoutMD_result.png"
-      ));
+));
 
 testCases.push(new testCase(
       "plane33",
@@ -2815,7 +2815,7 @@ testCases.push(new testCase(
       "plane33_light2_MotionDetection_result.png",
       "plane33_light2_SaliencyDetection_withMD_result.png",
       "plane33_light2_SaliencyDetection_withoutMD_result.png"
-      ));
+));
 
 testCases.push(new testCase(
       "plane34",
@@ -2827,7 +2827,7 @@ testCases.push(new testCase(
       "plane34_light1_MotionDetection_result.png",
       "plane34_light1_SaliencyDetection_withMD_result.png",
       "plane34_light1_SaliencyDetection_withoutMD_result.png"
-      ));
+));
 
 testCases.push(new testCase(
       "plane34",
@@ -2839,7 +2839,7 @@ testCases.push(new testCase(
       "plane34_light2_MotionDetection_result.png",
       "plane34_light2_SaliencyDetection_withMD_result.png",
       "plane34_light2_SaliencyDetection_withoutMD_result.png"
-      ));
+));
 
 testCases.push(new testCase(
       "plane35",
@@ -2851,7 +2851,7 @@ testCases.push(new testCase(
       "plane35_light1_MotionDetection_result.png",
       "plane35_light1_SaliencyDetection_withMD_result.png",
       "plane35_light1_SaliencyDetection_withoutMD_result.png"
-      ));
+));
 
 testCases.push(new testCase(
       "plane35",
@@ -2863,7 +2863,7 @@ testCases.push(new testCase(
       "plane35_light2_MotionDetection_result.png",
       "plane35_light2_SaliencyDetection_withMD_result.png",
       "plane35_light2_SaliencyDetection_withoutMD_result.png"
-      ));
+));
 
 testCases.push(new testCase(
       "plane36",
@@ -2875,7 +2875,7 @@ testCases.push(new testCase(
       "plane36_light1_MotionDetection_result.png",
       "plane36_light1_SaliencyDetection_withMD_result.png",
       "plane36_light1_SaliencyDetection_withoutMD_result.png"
-      ));
+));
 
 testCases.push(new testCase(
       "plane36",
@@ -2887,7 +2887,7 @@ testCases.push(new testCase(
       "plane36_light2_MotionDetection_result.png",
       "plane36_light2_SaliencyDetection_withMD_result.png",
       "plane36_light2_SaliencyDetection_withoutMD_result.png"
-      ));
+));
 
 testCases.push(new testCase(
       "plane37",
@@ -2899,7 +2899,7 @@ testCases.push(new testCase(
       "plane37_light1_MotionDetection_result.png",
       "plane37_light1_SaliencyDetection_withMD_result.png",
       "plane37_light1_SaliencyDetection_withoutMD_result.png"
-      ));
+));
 
 testCases.push(new testCase(
       "plane37",
@@ -2911,7 +2911,7 @@ testCases.push(new testCase(
       "plane37_light2_MotionDetection_result.png",
       "plane37_light2_SaliencyDetection_withMD_result.png",
       "plane37_light2_SaliencyDetection_withoutMD_result.png"
-      ));
+));
 
 testCases.push(new testCase(
       "plane38",
@@ -2923,7 +2923,7 @@ testCases.push(new testCase(
       "plane38_light1_MotionDetection_result.png",
       "plane38_light1_SaliencyDetection_withMD_result.png",
       "plane38_light1_SaliencyDetection_withoutMD_result.png"
-      ));
+));
 
 testCases.push(new testCase(
       "plane38",
@@ -2935,7 +2935,7 @@ testCases.push(new testCase(
       "plane38_light2_MotionDetection_result.png",
       "plane38_light2_SaliencyDetection_withMD_result.png",
       "plane38_light2_SaliencyDetection_withoutMD_result.png"
-      ));
+));
 
 testCases.push(new testCase(
       "plane39",
@@ -2947,7 +2947,7 @@ testCases.push(new testCase(
       "plane39_light1_MotionDetection_result.png",
       "plane39_light1_SaliencyDetection_withMD_result.png",
       "plane39_light1_SaliencyDetection_withoutMD_result.png"
-      ));
+));
 
 testCases.push(new testCase(
       "plane39",
@@ -2959,7 +2959,7 @@ testCases.push(new testCase(
       "plane39_light2_MotionDetection_result.png",
       "plane39_light2_SaliencyDetection_withMD_result.png",
       "plane39_light2_SaliencyDetection_withoutMD_result.png"
-      ));
+));
 
 testCases.push(new testCase(
       "plane3",
@@ -2971,7 +2971,7 @@ testCases.push(new testCase(
       "plane3_light1_MotionDetection_result.png",
       "plane3_light1_SaliencyDetection_withMD_result.png",
       "plane3_light1_SaliencyDetection_withoutMD_result.png"
-      ));
+));
 
 testCases.push(new testCase(
       "plane3",
@@ -2983,7 +2983,7 @@ testCases.push(new testCase(
       "plane3_light2_MotionDetection_result.png",
       "plane3_light2_SaliencyDetection_withMD_result.png",
       "plane3_light2_SaliencyDetection_withoutMD_result.png"
-      ));
+));
 
 testCases.push(new testCase(
       "plane40",
@@ -2995,7 +2995,7 @@ testCases.push(new testCase(
       "plane40_light1_MotionDetection_result.png",
       "plane40_light1_SaliencyDetection_withMD_result.png",
       "plane40_light1_SaliencyDetection_withoutMD_result.png"
-      ));
+));
 
 testCases.push(new testCase(
       "plane40",
@@ -3007,7 +3007,7 @@ testCases.push(new testCase(
       "plane40_light2_MotionDetection_result.png",
       "plane40_light2_SaliencyDetection_withMD_result.png",
       "plane40_light2_SaliencyDetection_withoutMD_result.png"
-      ));
+));
 
 testCases.push(new testCase(
       "plane41",
@@ -3019,7 +3019,7 @@ testCases.push(new testCase(
       "plane41_light1_MotionDetection_result.png",
       "plane41_light1_SaliencyDetection_withMD_result.png",
       "plane41_light1_SaliencyDetection_withoutMD_result.png"
-      ));
+));
 
 testCases.push(new testCase(
       "plane41",
@@ -3031,7 +3031,7 @@ testCases.push(new testCase(
       "plane41_light2_MotionDetection_result.png",
       "plane41_light2_SaliencyDetection_withMD_result.png",
       "plane41_light2_SaliencyDetection_withoutMD_result.png"
-      ));
+));
 
 testCases.push(new testCase(
       "plane42",
@@ -3043,7 +3043,7 @@ testCases.push(new testCase(
       "plane42_light1_MotionDetection_result.png",
       "plane42_light1_SaliencyDetection_withMD_result.png",
       "plane42_light1_SaliencyDetection_withoutMD_result.png"
-      ));
+));
 
 testCases.push(new testCase(
       "plane42",
@@ -3055,7 +3055,7 @@ testCases.push(new testCase(
       "plane42_light2_MotionDetection_result.png",
       "plane42_light2_SaliencyDetection_withMD_result.png",
       "plane42_light2_SaliencyDetection_withoutMD_result.png"
-      ));
+));
 
 testCases.push(new testCase(
       "plane43",
@@ -3067,7 +3067,7 @@ testCases.push(new testCase(
       "plane43_light1_MotionDetection_result.png",
       "plane43_light1_SaliencyDetection_withMD_result.png",
       "plane43_light1_SaliencyDetection_withoutMD_result.png"
-      ));
+));
 
 testCases.push(new testCase(
       "plane4",
@@ -3079,7 +3079,7 @@ testCases.push(new testCase(
       "plane4_light1_MotionDetection_result.png",
       "plane4_light1_SaliencyDetection_withMD_result.png",
       "plane4_light1_SaliencyDetection_withoutMD_result.png"
-      ));
+));
 
 testCases.push(new testCase(
       "plane4",
@@ -3091,7 +3091,7 @@ testCases.push(new testCase(
       "plane4_light2_MotionDetection_result.png",
       "plane4_light2_SaliencyDetection_withMD_result.png",
       "plane4_light2_SaliencyDetection_withoutMD_result.png"
-      ));
+));
 
 testCases.push(new testCase(
       "plane5",
@@ -3103,7 +3103,7 @@ testCases.push(new testCase(
       "plane5_light1_MotionDetection_result.png",
       "plane5_light1_SaliencyDetection_withMD_result.png",
       "plane5_light1_SaliencyDetection_withoutMD_result.png"
-      ));
+));
 
 testCases.push(new testCase(
       "plane6",
@@ -3115,7 +3115,7 @@ testCases.push(new testCase(
       "plane6_light1_MotionDetection_result.png",
       "plane6_light1_SaliencyDetection_withMD_result.png",
       "plane6_light1_SaliencyDetection_withoutMD_result.png"
-      ));
+));
 
 testCases.push(new testCase(
       "plane6",
@@ -3127,7 +3127,7 @@ testCases.push(new testCase(
       "plane6_light2_MotionDetection_result.png",
       "plane6_light2_SaliencyDetection_withMD_result.png",
       "plane6_light2_SaliencyDetection_withoutMD_result.png"
-      ));
+));
 
 testCases.push(new testCase(
       "plane7",
@@ -3139,7 +3139,7 @@ testCases.push(new testCase(
       "plane7_light1_MotionDetection_result.png",
       "plane7_light1_SaliencyDetection_withMD_result.png",
       "plane7_light1_SaliencyDetection_withoutMD_result.png"
-      ));
+));
 
 testCases.push(new testCase(
       "plane7",
@@ -3151,7 +3151,7 @@ testCases.push(new testCase(
       "plane7_light2_MotionDetection_result.png",
       "plane7_light2_SaliencyDetection_withMD_result.png",
       "plane7_light2_SaliencyDetection_withoutMD_result.png"
-      ));
+));
 
 testCases.push(new testCase(
       "plane8",
@@ -3163,7 +3163,7 @@ testCases.push(new testCase(
       "plane8_light1_MotionDetection_result.png",
       "plane8_light1_SaliencyDetection_withMD_result.png",
       "plane8_light1_SaliencyDetection_withoutMD_result.png"
-      ));
+));
 
 testCases.push(new testCase(
       "plane8",
@@ -3175,7 +3175,7 @@ testCases.push(new testCase(
       "plane8_light2_MotionDetection_result.png",
       "plane8_light2_SaliencyDetection_withMD_result.png",
       "plane8_light2_SaliencyDetection_withoutMD_result.png"
-      ));
+));
 
 testCases.push(new testCase(
       "plane9",
@@ -3187,7 +3187,7 @@ testCases.push(new testCase(
       "plane9_light1_MotionDetection_result.png",
       "plane9_light1_SaliencyDetection_withMD_result.png",
       "plane9_light1_SaliencyDetection_withoutMD_result.png"
-      ));
+));
 
 testCases.push(new testCase(
       "plane9",
@@ -3199,7 +3199,7 @@ testCases.push(new testCase(
       "plane9_light2_MotionDetection_result.png",
       "plane9_light2_SaliencyDetection_withMD_result.png",
       "plane9_light2_SaliencyDetection_withoutMD_result.png"
-      ));
+));
 
 testCases.push(new testCase(
       "redcube1",
@@ -3211,7 +3211,7 @@ testCases.push(new testCase(
       "redcube1_light1_MotionDetection_result.png",
       "redcube1_light1_SaliencyDetection_withMD_result.png",
       "redcube1_light1_SaliencyDetection_withoutMD_result.png"
-      ));
+));
 
 testCases.push(new testCase(
       "redcube1",
@@ -3223,7 +3223,7 @@ testCases.push(new testCase(
       "redcube1_light2_MotionDetection_result.png",
       "redcube1_light2_SaliencyDetection_withMD_result.png",
       "redcube1_light2_SaliencyDetection_withoutMD_result.png"
-      ));
+));
 
 testCases.push(new testCase(
       "redcube2",
@@ -3235,7 +3235,7 @@ testCases.push(new testCase(
       "redcube2_light1_MotionDetection_result.png",
       "redcube2_light1_SaliencyDetection_withMD_result.png",
       "redcube2_light1_SaliencyDetection_withoutMD_result.png"
-      ));
+));
 
 testCases.push(new testCase(
       "redcube2",
@@ -3247,7 +3247,7 @@ testCases.push(new testCase(
       "redcube2_light2_MotionDetection_result.png",
       "redcube2_light2_SaliencyDetection_withMD_result.png",
       "redcube2_light2_SaliencyDetection_withoutMD_result.png"
-      ));
+));
 
 testCases.push(new testCase(
       "redcube3",
@@ -3259,7 +3259,7 @@ testCases.push(new testCase(
       "redcube3_light1_MotionDetection_result.png",
       "redcube3_light1_SaliencyDetection_withMD_result.png",
       "redcube3_light1_SaliencyDetection_withoutMD_result.png"
-      ));
+));
 
 testCases.push(new testCase(
       "triangle1",
@@ -3271,7 +3271,7 @@ testCases.push(new testCase(
       "triangle1_light1_MotionDetection_result.png",
       "triangle1_light1_SaliencyDetection_withMD_result.png",
       "triangle1_light1_SaliencyDetection_withoutMD_result.png"
-      ));
+));
 
 testCases.push(new testCase(
       "triangle1",
@@ -3283,7 +3283,7 @@ testCases.push(new testCase(
       "triangle1_light2_MotionDetection_result.png",
       "triangle1_light2_SaliencyDetection_withMD_result.png",
       "triangle1_light2_SaliencyDetection_withoutMD_result.png"
-      ));
+));
 
 testCases.push(new testCase(
       "triangle2",
@@ -3295,7 +3295,7 @@ testCases.push(new testCase(
       "triangle2_light1_MotionDetection_result.png",
       "triangle2_light1_SaliencyDetection_withMD_result.png",
       "triangle2_light1_SaliencyDetection_withoutMD_result.png"
-      ));
+));
 
 testCases.push(new testCase(
       "triangle2",
@@ -3307,7 +3307,7 @@ testCases.push(new testCase(
       "triangle2_light2_MotionDetection_result.png",
       "triangle2_light2_SaliencyDetection_withMD_result.png",
       "triangle2_light2_SaliencyDetection_withoutMD_result.png"
-      ));
+));
 
 testCases.push(new testCase(
       "triangle3",
@@ -3319,7 +3319,7 @@ testCases.push(new testCase(
       "triangle3_light1_MotionDetection_result.png",
       "triangle3_light1_SaliencyDetection_withMD_result.png",
       "triangle3_light1_SaliencyDetection_withoutMD_result.png"
-      ));
+));
 
 testCases.push(new testCase(
       "triangle4",
@@ -3331,7 +3331,7 @@ testCases.push(new testCase(
       "triangle4_light1_MotionDetection_result.png",
       "triangle4_light1_SaliencyDetection_withMD_result.png",
       "triangle4_light1_SaliencyDetection_withoutMD_result.png"
-      ));
+));
 
 testCases.push(new testCase(
       "triangle5",
@@ -3343,7 +3343,7 @@ testCases.push(new testCase(
       "triangle5_light1_MotionDetection_result.png",
       "triangle5_light1_SaliencyDetection_withMD_result.png",
       "triangle5_light1_SaliencyDetection_withoutMD_result.png"
-      ));
+));
 
 testCases.push(new testCase(
       "triangle5",
@@ -3355,7 +3355,7 @@ testCases.push(new testCase(
       "triangle5_light2_MotionDetection_result.png",
       "triangle5_light2_SaliencyDetection_withMD_result.png",
       "triangle5_light2_SaliencyDetection_withoutMD_result.png"
-      ));
+));
 
 testCases.push(new testCase(
       "triangle6",
@@ -3367,7 +3367,7 @@ testCases.push(new testCase(
       "triangle6_light1_MotionDetection_result.png",
       "triangle6_light1_SaliencyDetection_withMD_result.png",
       "triangle6_light1_SaliencyDetection_withoutMD_result.png"
-      ));
+));
 
 testCases.push(new testCase(
       "triangle6",
@@ -3379,7 +3379,7 @@ testCases.push(new testCase(
       "triangle6_light2_MotionDetection_result.png",
       "triangle6_light2_SaliencyDetection_withMD_result.png",
       "triangle6_light2_SaliencyDetection_withoutMD_result.png"
-      ));
+));
 
 testCases.push(new testCase(
 		"bear10",
@@ -3391,7 +3391,7 @@ testCases.push(new testCase(
 		"bear10_light1_MotionDetection_result.png",
 		"bear10_light1_SaliencyDetection_withMD_result.png",
 		"bear10_light1_SaliencyDetection_withoutMD_result.png"
-		));
+));
 
 testCases.push(new testCase(
 		"bear11",
@@ -3403,7 +3403,7 @@ testCases.push(new testCase(
 		"bear11_light1_MotionDetection_result.png",
 		"bear11_light1_SaliencyDetection_withMD_result.png",
 		"bear11_light1_SaliencyDetection_withoutMD_result.png"
-		));
+));
 
 testCases.push(new testCase(
 		"bear12",
@@ -3415,7 +3415,7 @@ testCases.push(new testCase(
 		"bear12_light1_MotionDetection_result.png",
 		"bear12_light1_SaliencyDetection_withMD_result.png",
 		"bear12_light1_SaliencyDetection_withoutMD_result.png"
-		));
+));
 
 testCases.push(new testCase(
 		"bear12",
@@ -3427,7 +3427,7 @@ testCases.push(new testCase(
 		"bear12_light2_MotionDetection_result.png",
 		"bear12_light2_SaliencyDetection_withMD_result.png",
 		"bear12_light2_SaliencyDetection_withoutMD_result.png"
-		));
+));
 
 testCases.push(new testCase(
 		"bear13",
@@ -3439,7 +3439,7 @@ testCases.push(new testCase(
 		"bear13_light1_MotionDetection_result.png",
 		"bear13_light1_SaliencyDetection_withMD_result.png",
 		"bear13_light1_SaliencyDetection_withoutMD_result.png"
-		));
+));
 
 testCases.push(new testCase(
 		"bear13",
@@ -3451,7 +3451,7 @@ testCases.push(new testCase(
 		"bear13_light2_MotionDetection_result.png",
 		"bear13_light2_SaliencyDetection_withMD_result.png",
 		"bear13_light2_SaliencyDetection_withoutMD_result.png"
-		));
+));
 
 testCases.push(new testCase(
 		"bear14",
@@ -3463,7 +3463,7 @@ testCases.push(new testCase(
 		"bear14_light1_MotionDetection_result.png",
 		"bear14_light1_SaliencyDetection_withMD_result.png",
 		"bear14_light1_SaliencyDetection_withoutMD_result.png"
-		));
+));
 
 testCases.push(new testCase(
 		"bear15",
@@ -3475,7 +3475,7 @@ testCases.push(new testCase(
 		"bear15_light1_MotionDetection_result.png",
 		"bear15_light1_SaliencyDetection_withMD_result.png",
 		"bear15_light1_SaliencyDetection_withoutMD_result.png"
-		));
+));
 
 testCases.push(new testCase(
 		"bear1",
@@ -3487,7 +3487,7 @@ testCases.push(new testCase(
 		"bear1_light1_MotionDetection_result.png",
 		"bear1_light1_SaliencyDetection_withMD_result.png",
 		"bear1_light1_SaliencyDetection_withoutMD_result.png"
-		));
+));
 
 testCases.push(new testCase(
 		"bear2",
@@ -3499,7 +3499,7 @@ testCases.push(new testCase(
 		"bear2_light1_MotionDetection_result.png",
 		"bear2_light1_SaliencyDetection_withMD_result.png",
 		"bear2_light1_SaliencyDetection_withoutMD_result.png"
-		));
+));
 
 testCases.push(new testCase(
 		"bear2",
@@ -3511,7 +3511,7 @@ testCases.push(new testCase(
 		"bear2_light2_MotionDetection_result.png",
 		"bear2_light2_SaliencyDetection_withMD_result.png",
 		"bear2_light2_SaliencyDetection_withoutMD_result.png"
-		));
+));
 
 testCases.push(new testCase(
 		"bear3",
@@ -3523,7 +3523,7 @@ testCases.push(new testCase(
 		"bear3_light1_MotionDetection_result.png",
 		"bear3_light1_SaliencyDetection_withMD_result.png",
 		"bear3_light1_SaliencyDetection_withoutMD_result.png"
-		));
+));
 
 testCases.push(new testCase(
 		"bear3",
@@ -3535,7 +3535,7 @@ testCases.push(new testCase(
 		"bear3_light2_MotionDetection_result.png",
 		"bear3_light2_SaliencyDetection_withMD_result.png",
 		"bear3_light2_SaliencyDetection_withoutMD_result.png"
-		));
+));
 
 testCases.push(new testCase(
 		"bear4",
@@ -3547,7 +3547,7 @@ testCases.push(new testCase(
 		"bear4_light1_MotionDetection_result.png",
 		"bear4_light1_SaliencyDetection_withMD_result.png",
 		"bear4_light1_SaliencyDetection_withoutMD_result.png"
-		));
+));
 
 testCases.push(new testCase(
 		"bear4",
@@ -3559,7 +3559,7 @@ testCases.push(new testCase(
 		"bear4_light2_MotionDetection_result.png",
 		"bear4_light2_SaliencyDetection_withMD_result.png",
 		"bear4_light2_SaliencyDetection_withoutMD_result.png"
-		));
+));
 
 testCases.push(new testCase(
 		"bear5",
@@ -3571,7 +3571,7 @@ testCases.push(new testCase(
 		"bear5_light1_MotionDetection_result.png",
 		"bear5_light1_SaliencyDetection_withMD_result.png",
 		"bear5_light1_SaliencyDetection_withoutMD_result.png"
-		));
+));
 
 testCases.push(new testCase(
 		"bear5",
@@ -3583,7 +3583,7 @@ testCases.push(new testCase(
 		"bear5_light2_MotionDetection_result.png",
 		"bear5_light2_SaliencyDetection_withMD_result.png",
 		"bear5_light2_SaliencyDetection_withoutMD_result.png"
-		));
+));
 
 testCases.push(new testCase(
 		"bear6",
@@ -3595,7 +3595,7 @@ testCases.push(new testCase(
 		"bear6_light1_MotionDetection_result.png",
 		"bear6_light1_SaliencyDetection_withMD_result.png",
 		"bear6_light1_SaliencyDetection_withoutMD_result.png"
-		));
+));
 
 testCases.push(new testCase(
 		"bear6",
@@ -3607,7 +3607,7 @@ testCases.push(new testCase(
 		"bear6_light2_MotionDetection_result.png",
 		"bear6_light2_SaliencyDetection_withMD_result.png",
 		"bear6_light2_SaliencyDetection_withoutMD_result.png"
-		));
+));
 
 testCases.push(new testCase(
 		"bear7",
@@ -3619,7 +3619,7 @@ testCases.push(new testCase(
 		"bear7_light1_MotionDetection_result.png",
 		"bear7_light1_SaliencyDetection_withMD_result.png",
 		"bear7_light1_SaliencyDetection_withoutMD_result.png"
-		));
+));
 
 testCases.push(new testCase(
 		"bear7",
@@ -3631,7 +3631,7 @@ testCases.push(new testCase(
 		"bear7_light2_MotionDetection_result.png",
 		"bear7_light2_SaliencyDetection_withMD_result.png",
 		"bear7_light2_SaliencyDetection_withoutMD_result.png"
-		));
+));
 
 testCases.push(new testCase(
 		"bear8",
@@ -3643,7 +3643,7 @@ testCases.push(new testCase(
 		"bear8_light1_MotionDetection_result.png",
 		"bear8_light1_SaliencyDetection_withMD_result.png",
 		"bear8_light1_SaliencyDetection_withoutMD_result.png"
-		));
+));
 
 testCases.push(new testCase(
 		"bear8",
@@ -3655,7 +3655,7 @@ testCases.push(new testCase(
 		"bear8_light2_MotionDetection_result.png",
 		"bear8_light2_SaliencyDetection_withMD_result.png",
 		"bear8_light2_SaliencyDetection_withoutMD_result.png"
-		));
+));
 
 testCases.push(new testCase(
 		"bear9",
@@ -3667,7 +3667,7 @@ testCases.push(new testCase(
 		"bear9_light1_MotionDetection_result.png",
 		"bear9_light1_SaliencyDetection_withMD_result.png",
 		"bear9_light1_SaliencyDetection_withoutMD_result.png"
-		));
+));
 
 testCases.push(new testCase(
 		"cow1",
@@ -3679,7 +3679,7 @@ testCases.push(new testCase(
 		"cow1_light1_MotionDetection_result.png",
 		"cow1_light1_SaliencyDetection_withMD_result.png",
 		"cow1_light1_SaliencyDetection_withoutMD_result.png"
-		));
+));
 
 testCases.push(new testCase(
 		"dog1",
@@ -3691,7 +3691,7 @@ testCases.push(new testCase(
 		"dog1_light1_MotionDetection_result.png",
 		"dog1_light1_SaliencyDetection_withMD_result.png",
 		"dog1_light1_SaliencyDetection_withoutMD_result.png"
-		));
+));
 
 testCases.push(new testCase(
 		"dog1",
@@ -3703,7 +3703,7 @@ testCases.push(new testCase(
 		"dog1_light2_MotionDetection_result.png",
 		"dog1_light2_SaliencyDetection_withMD_result.png",
 		"dog1_light2_SaliencyDetection_withoutMD_result.png"
-		));
+));
 
 testCases.push(new testCase(
 		"dog2",
@@ -3715,7 +3715,7 @@ testCases.push(new testCase(
 		"dog2_light1_MotionDetection_result.png",
 		"dog2_light1_SaliencyDetection_withMD_result.png",
 		"dog2_light1_SaliencyDetection_withoutMD_result.png"
-		));
+));
 
 testCases.push(new testCase(
 		"dog2",
@@ -3727,7 +3727,7 @@ testCases.push(new testCase(
 		"dog2_light2_MotionDetection_result.png",
 		"dog2_light2_SaliencyDetection_withMD_result.png",
 		"dog2_light2_SaliencyDetection_withoutMD_result.png"
-		));
+));
 
 testCases.push(new testCase(
 		"dog3",
@@ -3739,7 +3739,7 @@ testCases.push(new testCase(
 		"dog3_light1_MotionDetection_result.png",
 		"dog3_light1_SaliencyDetection_withMD_result.png",
 		"dog3_light1_SaliencyDetection_withoutMD_result.png"
-		));
+));
 
 testCases.push(new testCase(
 		"dog4",
@@ -3751,7 +3751,7 @@ testCases.push(new testCase(
 		"dog4_light1_MotionDetection_result.png",
 		"dog4_light1_SaliencyDetection_withMD_result.png",
 		"dog4_light1_SaliencyDetection_withoutMD_result.png"
-		));
+));
 
 testCases.push(new testCase(
 		"dog5",
@@ -3763,7 +3763,7 @@ testCases.push(new testCase(
 		"dog5_light1_MotionDetection_result.png",
 		"dog5_light1_SaliencyDetection_withMD_result.png",
 		"dog5_light1_SaliencyDetection_withoutMD_result.png"
-		));
+));
 
 testCases.push(new testCase(
 		"dog6",
@@ -3775,7 +3775,7 @@ testCases.push(new testCase(
 		"dog6_light1_MotionDetection_result.png",
 		"dog6_light1_SaliencyDetection_withMD_result.png",
 		"dog6_light1_SaliencyDetection_withoutMD_result.png"
-		));
+));
 
 testCases.push(new testCase(
 		"rabbit1",
@@ -3787,7 +3787,7 @@ testCases.push(new testCase(
 		"rabbit1_light1_MotionDetection_result.png",
 		"rabbit1_light1_SaliencyDetection_withMD_result.png",
 		"rabbit1_light1_SaliencyDetection_withoutMD_result.png"
-		));
+));
 
 testCases.push(new testCase(
 		"rabbit2",
@@ -3799,7 +3799,7 @@ testCases.push(new testCase(
 		"rabbit2_light1_MotionDetection_result.png",
 		"rabbit2_light1_SaliencyDetection_withMD_result.png",
 		"rabbit2_light1_SaliencyDetection_withoutMD_result.png"
-		));
+));
 
 testCases.push(new testCase(
 		"rabbit2",
@@ -3811,7 +3811,7 @@ testCases.push(new testCase(
 		"rabbit2_light2_MotionDetection_result.png",
 		"rabbit2_light2_SaliencyDetection_withMD_result.png",
 		"rabbit2_light2_SaliencyDetection_withoutMD_result.png"
-		));
+));
 
 testCases.push(new testCase(
 		"rabbit3",
@@ -3823,7 +3823,7 @@ testCases.push(new testCase(
 		"rabbit3_light1_MotionDetection_result.png",
 		"rabbit3_light1_SaliencyDetection_withMD_result.png",
 		"rabbit3_light1_SaliencyDetection_withoutMD_result.png"
-		));
+));
 
 testCases.push(new testCase(
 		"rabbit3",
@@ -3835,7 +3835,7 @@ testCases.push(new testCase(
 		"rabbit3_light2_MotionDetection_result.png",
 		"rabbit3_light2_SaliencyDetection_withMD_result.png",
 		"rabbit3_light2_SaliencyDetection_withoutMD_result.png"
-		));
+));
 
 testCases.push(new testCase(
 		"rabbit4",
@@ -3847,7 +3847,7 @@ testCases.push(new testCase(
 		"rabbit4_light1_MotionDetection_result.png",
 		"rabbit4_light1_SaliencyDetection_withMD_result.png",
 		"rabbit4_light1_SaliencyDetection_withoutMD_result.png"
-		));
+));
 
 testCases.push(new testCase(
 		"rabbit4",
@@ -3859,7 +3859,7 @@ testCases.push(new testCase(
 		"rabbit4_light2_MotionDetection_result.png",
 		"rabbit4_light2_SaliencyDetection_withMD_result.png",
 		"rabbit4_light2_SaliencyDetection_withoutMD_result.png"
-		));
+));
 
 testCases.push(new testCase(
 		"sina10",
@@ -3871,7 +3871,7 @@ testCases.push(new testCase(
 		"sina10_light1_MotionDetection_result.png",
 		"sina10_light1_SaliencyDetection_withMD_result.png",
 		"sina10_light1_SaliencyDetection_withoutMD_result.png"
-		));
+));
 
 testCases.push(new testCase(
 		"sina11",
@@ -3883,7 +3883,7 @@ testCases.push(new testCase(
 		"sina11_light1_MotionDetection_result.png",
 		"sina11_light1_SaliencyDetection_withMD_result.png",
 		"sina11_light1_SaliencyDetection_withoutMD_result.png"
-		));
+));
 
 testCases.push(new testCase(
 		"sina12",
@@ -3895,7 +3895,7 @@ testCases.push(new testCase(
 		"sina12_light1_MotionDetection_result.png",
 		"sina12_light1_SaliencyDetection_withMD_result.png",
 		"sina12_light1_SaliencyDetection_withoutMD_result.png"
-		));
+));
 
 testCases.push(new testCase(
 		"sina1",
@@ -3907,7 +3907,7 @@ testCases.push(new testCase(
 		"sina1_light1_MotionDetection_result.png",
 		"sina1_light1_SaliencyDetection_withMD_result.png",
 		"sina1_light1_SaliencyDetection_withoutMD_result.png"
-		));
+));
 
 testCases.push(new testCase(
 		"sina1",
@@ -3919,7 +3919,7 @@ testCases.push(new testCase(
 		"sina1_light2_MotionDetection_result.png",
 		"sina1_light2_SaliencyDetection_withMD_result.png",
 		"sina1_light2_SaliencyDetection_withoutMD_result.png"
-		));
+));
 
 testCases.push(new testCase(
 		"sina2",
@@ -3931,7 +3931,7 @@ testCases.push(new testCase(
 		"sina2_light1_MotionDetection_result.png",
 		"sina2_light1_SaliencyDetection_withMD_result.png",
 		"sina2_light1_SaliencyDetection_withoutMD_result.png"
-		));
+));
 
 testCases.push(new testCase(
 		"sina2",
@@ -3943,7 +3943,7 @@ testCases.push(new testCase(
 		"sina2_light2_MotionDetection_result.png",
 		"sina2_light2_SaliencyDetection_withMD_result.png",
 		"sina2_light2_SaliencyDetection_withoutMD_result.png"
-		));
+));
 
 testCases.push(new testCase(
 		"sina3",
@@ -3955,7 +3955,7 @@ testCases.push(new testCase(
 		"sina3_light1_MotionDetection_result.png",
 		"sina3_light1_SaliencyDetection_withMD_result.png",
 		"sina3_light1_SaliencyDetection_withoutMD_result.png"
-		));
+));
 
 testCases.push(new testCase(
 		"sina3",
@@ -3967,7 +3967,7 @@ testCases.push(new testCase(
 		"sina3_light2_MotionDetection_result.png",
 		"sina3_light2_SaliencyDetection_withMD_result.png",
 		"sina3_light2_SaliencyDetection_withoutMD_result.png"
-		));
+));
 
 testCases.push(new testCase(
 		"sina4",
@@ -3979,7 +3979,7 @@ testCases.push(new testCase(
 		"sina4_light1_MotionDetection_result.png",
 		"sina4_light1_SaliencyDetection_withMD_result.png",
 		"sina4_light1_SaliencyDetection_withoutMD_result.png"
-		));
+));
 
 testCases.push(new testCase(
 		"sina4",
@@ -3991,7 +3991,7 @@ testCases.push(new testCase(
 		"sina4_light2_MotionDetection_result.png",
 		"sina4_light2_SaliencyDetection_withMD_result.png",
 		"sina4_light2_SaliencyDetection_withoutMD_result.png"
-		));
+));
 
 testCases.push(new testCase(
 		"sina5",
@@ -4003,7 +4003,7 @@ testCases.push(new testCase(
 		"sina5_light1_MotionDetection_result.png",
 		"sina5_light1_SaliencyDetection_withMD_result.png",
 		"sina5_light1_SaliencyDetection_withoutMD_result.png"
-		));
+));
 
 testCases.push(new testCase(
 		"sina6",
@@ -4015,7 +4015,7 @@ testCases.push(new testCase(
 		"sina6_light1_MotionDetection_result.png",
 		"sina6_light1_SaliencyDetection_withMD_result.png",
 		"sina6_light1_SaliencyDetection_withoutMD_result.png"
-		));
+));
 
 testCases.push(new testCase(
 		"sina7",
@@ -4027,7 +4027,7 @@ testCases.push(new testCase(
 		"sina7_light1_MotionDetection_result.png",
 		"sina7_light1_SaliencyDetection_withMD_result.png",
 		"sina7_light1_SaliencyDetection_withoutMD_result.png"
-		));
+));
 
 testCases.push(new testCase(
 		"sina7",
@@ -4039,7 +4039,7 @@ testCases.push(new testCase(
 		"sina7_light2_MotionDetection_result.png",
 		"sina7_light2_SaliencyDetection_withMD_result.png",
 		"sina7_light2_SaliencyDetection_withoutMD_result.png"
-		));
+));
 
 testCases.push(new testCase(
 		"sina8",
@@ -4051,7 +4051,7 @@ testCases.push(new testCase(
 		"sina8_light1_MotionDetection_result.png",
 		"sina8_light1_SaliencyDetection_withMD_result.png",
 		"sina8_light1_SaliencyDetection_withoutMD_result.png"
-		));
+));
 
 testCases.push(new testCase(
 		"sina8",
@@ -4063,7 +4063,7 @@ testCases.push(new testCase(
 		"sina8_light2_MotionDetection_result.png",
 		"sina8_light2_SaliencyDetection_withMD_result.png",
 		"sina8_light2_SaliencyDetection_withoutMD_result.png"
-		));
+));
 
 testCases.push(new testCase(
 		"sina9",
@@ -4075,4 +4075,4 @@ testCases.push(new testCase(
 		"sina9_light1_MotionDetection_result.png",
 		"sina9_light1_SaliencyDetection_withMD_result.png",
 		"sina9_light1_SaliencyDetection_withoutMD_result.png"
-		));
+));
