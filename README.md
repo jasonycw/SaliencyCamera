@@ -1,6 +1,7 @@
 # SaliencyCamera
 This is an Android application for implementing the flash no-flash image saliency detection algorithm posted by Shengfeng He.
 
+## Background
 The original project page can be found here 
 http://www.shengfenghe.com/saliency-detection-with-flash-and-no-flash-image-pairs.html
 
@@ -12,5 +13,8 @@ http://www.shengfenghe.com/visual-tracking-via-locality-sensitive-histograms.htm
 
 This application also utilizes the OpenCV library for Android to do the image calculation and Optical Flow detection
 
-The testing result will be posted here http://jasonycw.github.io/SaliencyCamera/
+## Testing result
+http://jasonycw.github.io/SaliencyCamera/result.html
 
+## Video Demo
+[![Youtube Video](http://i.imgur.com/oUg7s4x.png)](https://youtu.be/ElHUmCufvcQ)
