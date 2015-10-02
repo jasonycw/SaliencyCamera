@@ -14,7 +14,7 @@ http://www.shengfenghe.com/visual-tracking-via-locality-sensitive-histograms.htm
 This application also utilizes the OpenCV library for Android to do the image calculation and Optical Flow detection
 
 ## Testing result
-http://jasonycw.github.io/SaliencyCamera/results.html
+[http://jasonycw.github.io/SaliencyCamera/results.html](http://goo.gl/FO3JfU "Project Result Page")
 
 ## Video Demo
 [![Youtube Video](http://i.imgur.com/oUg7s4x.png)](https://youtu.be/ElHUmCufvcQ)
