@@ -18,3 +18,5 @@ This application also utilizes the OpenCV library for Android to do the image ca
 
 ## Video Demo
 [![Youtube Video](http://i.imgur.com/oUg7s4x.png)](https://youtu.be/ElHUmCufvcQ)
+
+[![Visualization of the codebase](./diagram.svg)](https://mango-dune-07a8b7110.1.azurestaticapps.net/?repo=jasonycw%2FSaliencyCamera)
